@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:iconly/iconly.dart';
-import 'package:iconsax/iconsax.dart';
 import 'package:pandabar/pandabar.dart';
 import 'package:paysenta/ui/pages/profile/profile.dart';
 
