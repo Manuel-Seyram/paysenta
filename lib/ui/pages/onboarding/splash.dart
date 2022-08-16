@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:paysenta/ui/shared/constants.dart';
 
 import 'onboarding.dart';
 
