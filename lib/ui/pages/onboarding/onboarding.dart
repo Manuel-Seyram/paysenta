@@ -68,7 +68,7 @@ class _OnboardingState extends State<Onboarding> {
                 ),
               ),
             ),
-            Gap(50),
+            const Gap(50),
             Expanded(
               child: PageView.builder(
                 scrollDirection: Axis.horizontal,
@@ -104,7 +104,7 @@ class _OnboardingState extends State<Onboarding> {
                 ],
               ),
             ),
-            Gap(60),
+            const Gap(60),
           ],
         ));
   }

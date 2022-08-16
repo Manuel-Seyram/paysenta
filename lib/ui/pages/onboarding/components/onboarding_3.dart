@@ -21,7 +21,9 @@ class OnboardingComponent3 extends StatelessWidget {
             Navigator.popAndPushNamed(context, GetStarted.id);
           }
         } else {
-          print('dragged from left');
+          if (kDebugMode) {
+            print('dragged from left');
+          }
         }
       },
       child: Column(
