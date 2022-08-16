@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iconly/iconly.dart';
@@ -6,14 +5,13 @@ import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
 import '../../utils/countries.dart';
 import '../constants.dart';
-import 'custom_textfield.dart';
 
 class CustomCountryPicker extends StatefulWidget {
-  String countyCode;
-  CustomCountryPicker({
+  const CustomCountryPicker({
     Key? key,
     required this.countyCode,
   }) : super(key: key);
+  final String countyCode;
 
   @override
   State<CustomCountryPicker> createState() => _CustomCountryPickerState();
