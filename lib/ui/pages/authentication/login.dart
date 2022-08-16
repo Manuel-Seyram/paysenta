@@ -73,7 +73,10 @@ class _LoginState extends State<Login> {
                       height: 150,
                       color: primaryColor,
                       child: const Center(
-                        child: Text("Login Image goes here"),
+                        child: Text(
+                          "Login Image goes here",
+                          style: TextStyle(color: whiteColor),
+                        ),
                       ),
                     ),
                     const Gap(30),
@@ -99,7 +102,7 @@ class _LoginState extends State<Login> {
                               onTap: () async {
                                 _countryCode =
                                     await showCupertinoModalBottomSheet(
-                                        expand: true,
+                                        // expand: true,
                                         isDismissible: false,
                                         context: context,
                                         backgroundColor:
