@@ -6,7 +6,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:paysenta/ui/shared/constants.dart';
 import 'package:paysenta/ui/shared/widgets/custom_button.dart';
-import 'package:paysenta/ui/shared/widgets/custom_textfield.dart';
 
 import '../../shared/widgets/custom_country_picker.dart';
 import '../../utils/countries.dart';
@@ -22,7 +21,6 @@ class Register extends StatefulWidget {
 class _RegisterState extends State<Register> {
   final TextEditingController _phoneNumberTextController =
       TextEditingController();
-  final TextEditingController _passwordTextController = TextEditingController();
 
   bool obscureText = true;
 

@@ -4,7 +4,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:paysenta/ui/pages/navigator/bottom_navigator_bar.dart';
 import 'package:paysenta/ui/shared/constants.dart';
 import 'package:paysenta/ui/shared/widgets/custom_button.dart';
-import 'package:paysenta/ui/shared/widgets/custom_textfield.dart';
 
 import '../../shared/widgets/otp_inputfield.dart';
 
