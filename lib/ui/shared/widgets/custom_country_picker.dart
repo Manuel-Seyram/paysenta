@@ -1,10 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:iconly/iconly.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
 import '../../utils/countries.dart';
 import '../constants.dart';
+import 'custom_textfield.dart';
 
 class CustomCountryPicker extends StatefulWidget {
   String countyCode;
@@ -41,134 +43,107 @@ class _CustomCountryPickerState extends State<CustomCountryPicker> {
   Widget build(BuildContext dialogContext) {
     return Material(
       child: Container(
+        height: MediaQuery.of(context).size.height * 0.9,
         decoration: const BoxDecoration(
             borderRadius: BorderRadius.vertical(
               top: Radius.circular(12),
             ),
             color: whiteColor),
-        child: CupertinoPageScaffold(
-          backgroundColor: whiteColor.withOpacity(0),
-          child: Column(
-            children: [
-              Container(
-                height: 53,
-                decoration: const BoxDecoration(
-                  color: primaryColor,
-                  borderRadius: BorderRadius.vertical(
-                    top: Radius.circular(12),
-                  ),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 16.0, vertical: 18.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.pop(context, widget.countyCode);
-                        },
-                        child: const Icon(
-                          IconlyLight.arrow_left_2,
-                          color: whiteColor,
-                        ),
-                      ),
-                      Text(
-                        "Select Country", // style: bodyRG
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.pop(context, widget.countyCode);
-                        },
-                        child: Text(
-                          "Done", // style: bodyRG
-                        ),
-                      ),
-                    ],
-                  ),
+        child: Column(
+          children: [
+            Container(
+              height: 60,
+              decoration: const BoxDecoration(
+                color: whiteColor,
+                borderRadius: BorderRadius.vertical(
+                  top: Radius.circular(12),
                 ),
               ),
-              // Padding(
-              //   padding: const EdgeInsets.symmetric(
-              //     horizontal: 20,
-              //   ),
-              //   child: CustomTextField(
-              //     textFieldLabel: "",
-              //     isReadOnly: false,
-              //     textController: controller,
-              //     onChanged: (value) {
-              //       setState(() {});
-              //     },
-              //     hintText: '',
-              //     prefixIcon: Icon(CupertinoIcons.search),
-              //   ),
-              // ),
-              Expanded(
-                child: ListView(
-                  physics: const BouncingScrollPhysics(
-                    parent: AlwaysScrollableScrollPhysics(),
-                  ),
-                  controller: ModalScrollController.of(context),
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 20.0,
-                    vertical: 40.0,
-                  ),
-                  children: countries().map((country) {
-                    if (country == null) {
-                      return const Text('Country not found');
-                    }
-                    return Column(
-                      children: [
-                        ListTile(
-                          textColor: (country['name'] == 'Ghana' ||
-                                  country['name'] == 'Nigeria')
-                              ? null
-                              : Colors.grey[400],
-                          onTap: () {
-                            if (country['name'] == 'Ghana' ||
-                                country['name'] == 'Nigeria') {
-                              Navigator.pop(dialogContext, country['code']);
-                            } else {
-                              ScaffoldMessenger.of(dialogContext)
-                                  .showSnackBar(const SnackBar(
-                                content: Text(
-                                    'Express Instructor is currently only available for Ghana and Nigeria.'),
-                                duration: Duration(seconds: 1),
-                              ));
-                            }
-                          },
-                          minVerticalPadding: 0,
-                          leading: ClipRRect(
-                            borderRadius: BorderRadius.circular(13),
-                            child: Image.asset(
-                              country['flag'],
-                              height: 26,
-                              width: 26,
-                              fit: BoxFit.fill,
-                              color: (country['name'] == 'Ghana' ||
-                                      country['name'] == 'Nigeria')
-                                  ? null
-                                  : Colors.grey.withOpacity(1),
-                              colorBlendMode: BlendMode.lighten,
-                            ),
-                          ),
-                          subtitle: Text(
-                            country['region'],
-                            style: const TextStyle(
-                              fontSize: 12,
-                            ),
-                          ),
-                          title: Text(country['name']),
-                          trailing: Text(country['code']),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(
+                    horizontal: 16.0, vertical: 18.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pop(context, widget.countyCode);
+                      },
+                      child: const Icon(
+                        IconlyLight.arrow_left_2,
+                        color: blackColor,
+                      ),
+                    ),
+                    Text(
+                      "Select Country",
+                      style: GoogleFonts.manrope(
+                        fontWeight: FontWeight.w600,
+                        color: blackColor,
+                        fontSize: 16,
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pop(context, widget.countyCode);
+                      },
+                      child: Text(
+                        "Done",
+                        style: GoogleFonts.manrope(
+                          fontWeight: FontWeight.w600,
+                          color: blackColor,
+                          fontSize: 16,
                         ),
-                        const Divider()
-                      ],
-                    );
-                  }).toList(),
+                      ),
+                    ),
+                  ],
                 ),
-              )
-            ],
-          ),
+              ),
+            ),
+            Expanded(
+              child: ListView(
+                physics: const BouncingScrollPhysics(
+                  parent: AlwaysScrollableScrollPhysics(),
+                ),
+                controller: ModalScrollController.of(context),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 20.0,
+                  vertical: 40.0,
+                ),
+                children: countries().map((country) {
+                  return Column(
+                    children: [
+                      ListTile(
+                        // textColor: Colors.grey[400],
+                        onTap: () {
+                          Navigator.pop(dialogContext, country['code']);
+                        },
+                        minVerticalPadding: 0,
+                        leading: ClipRRect(
+                          borderRadius: BorderRadius.circular(13),
+                          child: Image.asset(
+                            country['flag'],
+                            height: 26,
+                            width: 26,
+                            fit: BoxFit.fill,
+                            colorBlendMode: BlendMode.lighten,
+                          ),
+                        ),
+                        subtitle: Text(
+                          country['region'],
+                          style: const TextStyle(
+                            fontSize: 12,
+                          ),
+                        ),
+                        title: Text(country['name']),
+                        trailing: Text(country['code']),
+                      ),
+                      const Divider()
+                    ],
+                  );
+                }).toList(),
+              ),
+            )
+          ],
         ),
       ),
     );

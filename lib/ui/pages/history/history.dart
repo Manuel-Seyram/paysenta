@@ -24,6 +24,7 @@ class _HistoryPageState extends State<HistoryPage> {
             automaticallyImplyLeading: false,
             backgroundColor: primaryColor,
             leadingWidth: 100,
+            centerTitle: false,
             title: Padding(
               padding: const EdgeInsets.only(left: 8.0),
               child: Text(
