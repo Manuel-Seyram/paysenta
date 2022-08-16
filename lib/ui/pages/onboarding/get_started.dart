@@ -15,9 +15,9 @@ class GetStarted extends StatelessWidget {
       backgroundColor: primaryColor,
       body: SafeArea(
         child: SingleChildScrollView(
-          physics:
-              BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
-          padding: EdgeInsets.symmetric(horizontal: 24),
+          physics: const BouncingScrollPhysics(
+              parent: AlwaysScrollableScrollPhysics()),
+          padding: const EdgeInsets.symmetric(horizontal: 24),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
@@ -29,7 +29,7 @@ class GetStarted extends StatelessWidget {
                     fontSize: 22,
                     color: Colors.white),
               ),
-              Gap(30),
+              const Gap(30),
               Container(
                 height: 300,
                 width: MediaQuery.of(context).size.width,
@@ -37,7 +37,7 @@ class GetStarted extends StatelessWidget {
                     color: Colors.amber, shape: BoxShape.circle),
                 child: const Center(),
               ),
-              Gap(20),
+              const Gap(20),
               Text(
                 "Welcome to PAYSENTA",
                 textAlign: TextAlign.center,
@@ -54,7 +54,7 @@ class GetStarted extends StatelessWidget {
                     fontSize: 14,
                     color: whiteColor.withOpacity(0.7)),
               ),
-              Gap(50),
+              const Gap(50),
               CustomButton(
                 color: Colors.amber,
                 borderSideColor: whiteColor,
@@ -72,7 +72,7 @@ class GetStarted extends StatelessWidget {
                       color: Colors.white),
                 ),
               ),
-              Gap(20),
+              const Gap(20),
               CustomButton(
                 color: primaryColor,
                 borderSideColor: Colors.white,
