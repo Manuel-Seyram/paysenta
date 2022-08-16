@@ -43,7 +43,7 @@ class Home extends StatelessWidget {
                 title: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Gap(20),
+                    const Gap(20),
                     Text(
                       "Balance",
                       style: GoogleFonts.nunito(
@@ -624,7 +624,7 @@ class Home extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Gap(120),
+                  const Gap(120),
                 ],
               ))
             ],
