@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../constants.dart';
-import '../textstyles.dart';
 
 class CustomTextField extends StatelessWidget {
   const CustomTextField({
@@ -14,47 +13,32 @@ class CustomTextField extends StatelessWidget {
     final TextInputType? keyboardType,
     String? hintText,
     final Widget? prefixWidget,
-    final String? subLabel,
     TextStyle? textStyle,
     TextStyle? hintStyle,
     final double? boxHeight,
     final bool? isMultiline,
-    final Color? labelTextColor,
-    final TextStyle? labelTextStyle,
-    final Color? subLabelTextColor,
-    final TextStyle? subLabelTextStyle,
     final bool? obscureText,
   })  : _textFieldLabel = textFieldLabel,
         _emailTextController = emailTextController,
         _isReadOnly = isReadOnly,
         _widget = widget,
         _keyboardType = keyboardType,
-        _hintText = hintText,
         _prefixWidget = prefixWidget,
-        _subLabel = subLabel,
         _textStyle = textStyle,
-        _hintStyle = hintStyle,
         _boxHeight = boxHeight,
         _isMultiline = isMultiline,
-        _labelTextColor = labelTextColor,
-        _labelTextStyle = labelTextStyle,
         _obscureText = obscureText,
         super(key: key);
   final bool? _obscureText;
   final TextEditingController _emailTextController;
-  final String? _subLabel;
   final String _textFieldLabel;
   final bool _isReadOnly;
   final Widget? _widget;
   final TextInputType? _keyboardType;
   final Widget? _prefixWidget;
-  final String? _hintText;
   final TextStyle? _textStyle;
-  final TextStyle? _hintStyle;
   final double? _boxHeight;
   final bool? _isMultiline;
-  final Color? _labelTextColor;
-  final TextStyle? _labelTextStyle;
 
   @override
   Widget build(BuildContext context) {
@@ -100,7 +84,7 @@ class CustomTextField extends StatelessWidget {
               ),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(5),
-                borderSide: BorderSide(color: primaryColor, width: 1),
+                borderSide: const BorderSide(color: primaryColor, width: 1),
               ),
             ),
           ),
