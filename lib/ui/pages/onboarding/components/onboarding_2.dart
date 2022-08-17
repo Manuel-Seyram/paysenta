@@ -13,11 +13,10 @@ class OnboardingComponent2 extends StatelessWidget {
         Container(
           height: 300,
           width: MediaQuery.of(context).size.width,
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
           decoration:
-              const BoxDecoration(color: Colors.amber, shape: BoxShape.circle),
-          child: const Center(
-            child: Text("Image 2 goes here"),
-          ),
+              const BoxDecoration(color: primaryColor1, shape: BoxShape.circle),
+          child: Image.asset("assets/images/illustrations/scan-to-pay-1.png"),
         ),
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 28),

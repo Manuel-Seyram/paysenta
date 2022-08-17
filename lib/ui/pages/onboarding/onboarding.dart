@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -19,11 +20,6 @@ class Onboarding extends StatefulWidget {
 class _OnboardingState extends State<Onboarding> {
   int _currentPage = 0;
   final PageController _pageController = PageController(initialPage: 0);
-  List<Widget> onboardingPageList = [
-    const OnboardingComponent1(),
-    const OnboardingComponent2(),
-    const OnboardingComponent3(),
-  ];
 
   @override
   void dispose() {
@@ -33,41 +29,59 @@ class _OnboardingState extends State<Onboarding> {
 
   @override
   Widget build(BuildContext context) {
+    List<Widget> onboardingPageList = [
+      const OnboardingComponent1(),
+      const OnboardingComponent2(),
+      GestureDetector(
+          onHorizontalDragEnd: (DragEndDetails dragDownDetails) {
+            if (dragDownDetails.primaryVelocity == 0) {
+              return;
+            } // user have just tapped on screen (no dragging)
+
+            if (dragDownDetails.primaryVelocity?.compareTo(0) == -1) {
+              if (kDebugMode) {
+                Navigator.popAndPushNamed(context, GetStarted.id);
+              }
+            } else {
+              setState(() {
+                _currentPage = _currentPage--;
+              });
+              if (kDebugMode) {
+                print('dragged from left');
+              }
+            }
+          },
+          child: const OnboardingComponent3()),
+    ];
+
     return Scaffold(
         backgroundColor: primaryColor,
-        body: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 12.0),
-              child: SafeArea(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "PAYSENTA LOGO",
-                      style: GoogleFonts.amiri(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w700,
-                        color: whiteColor,
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.popAndPushNamed(context, GetStarted.id);
-                      },
-                      child: Text(
-                        "SKIP",
-                        style: GoogleFonts.manrope(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600,
-                          color: whiteColor,
-                        ),
-                      ),
-                    )
-                  ],
+        appBar: AppBar(
+          automaticallyImplyLeading: false,
+          backgroundColor: primaryColor,
+          elevation: 0.0,
+          actions: [
+            GestureDetector(
+              onTap: () {
+                Navigator.popAndPushNamed(context, GetStarted.id);
+              },
+              child: Padding(
+                padding: const EdgeInsets.symmetric(
+                    vertical: 10.0, horizontal: 24.0),
+                child: Text(
+                  "SKIP",
+                  style: GoogleFonts.manrope(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
+                    color: whiteColor,
+                  ),
                 ),
               ),
-            ),
+            )
+          ],
+        ),
+        body: Column(
+          children: [
             const Gap(50),
             Expanded(
               child: PageView.builder(

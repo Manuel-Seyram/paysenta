@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:paysenta/ui/pages/authentication/login.dart';
 import 'package:paysenta/ui/pages/authentication/register.dart';
+import 'package:paysenta/ui/pages/authentication/set_password.dart';
 import 'package:paysenta/ui/pages/authentication/verify_otp.dart';
 import 'package:paysenta/ui/pages/navigator/bottom_navigator_bar.dart';
 import 'package:paysenta/ui/pages/onboarding/get_started.dart';
@@ -31,6 +32,7 @@ class MyApp extends StatelessWidget {
         Login.id: (context) => const Login(),
         Register.id: (context) => const Register(),
         VerifyOTP.id: (context) => const VerifyOTP(),
+        SetPassword.id: (context) => const SetPassword(),
         MainPageNavigator.id: (context) => const MainPageNavigator(),
       },
     );

@@ -21,21 +21,21 @@ class GetStarted extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Text(
-                "PAYSENTA LOGO",
-                textAlign: TextAlign.center,
-                style: GoogleFonts.amiri(
-                    fontWeight: FontWeight.w600,
-                    fontSize: 22,
-                    color: Colors.white),
+              const Gap(30),
+              Image.asset(
+                "assets/images/logo.webp",
+                color: whiteColor,
+                height: 70,
               ),
               const Gap(30),
               Container(
                 height: 300,
                 width: MediaQuery.of(context).size.width,
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                 decoration: const BoxDecoration(
-                    color: Colors.amber, shape: BoxShape.circle),
-                child: const Center(),
+                    color: primaryColor1, shape: BoxShape.circle),
+                child: Image.asset("assets/images/illustrations/money-1.png"),
               ),
               const Gap(20),
               Text(
@@ -56,8 +56,8 @@ class GetStarted extends StatelessWidget {
               ),
               const Gap(50),
               CustomButton(
-                color: Colors.amber,
-                borderSideColor: whiteColor,
+                color: whiteColor,
+                borderSideColor: primaryColor1,
                 width: double.infinity,
                 height: 50,
                 onPressed: () {
@@ -67,9 +67,10 @@ class GetStarted extends StatelessWidget {
                 label: Text(
                   "Login",
                   style: GoogleFonts.nunito(
-                      fontWeight: FontWeight.w500,
-                      fontSize: 16,
-                      color: Colors.white),
+                    fontWeight: FontWeight.w500,
+                    fontSize: 16,
+                    color: primaryColor,
+                  ),
                 ),
               ),
               const Gap(20),

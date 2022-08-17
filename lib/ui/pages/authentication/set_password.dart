@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../shared/constants.dart';
 import '../../shared/widgets/custom_button.dart';
 import '../../shared/widgets/custom_textfield.dart';
+import '../navigator/bottom_navigator_bar.dart';
 
 class SetPassword extends StatefulWidget {
   const SetPassword({Key? key}) : super(key: key);
@@ -58,12 +59,9 @@ class _SetPasswordState extends State<SetPassword> {
                       style: GoogleFonts.amiri(
                           fontSize: 24, fontWeight: FontWeight.w600),
                     ),
-                    Container(
-                      height: 150,
-                      color: primaryColor,
-                      child: const Center(
-                        child: Text("Login Image goes here"),
-                      ),
+                    Image.asset(
+                      "assets/images/illustrations/password.png",
+                      height: 160,
                     ),
                     const Gap(30),
                     const Text(
@@ -113,7 +111,9 @@ class _SetPasswordState extends State<SetPassword> {
                       color: primaryColor,
                       width: double.infinity,
                       height: 45,
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, MainPageNavigator.id);
+                      },
                       radius: 10,
                       label: Text(
                         "Login",

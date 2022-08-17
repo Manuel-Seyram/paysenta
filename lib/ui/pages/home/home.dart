@@ -4,7 +4,6 @@ import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iconly/iconly.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:paysenta/ui/shared/widgets/custom_button.dart';
 
 import '../../shared/constants.dart';
 
@@ -359,24 +358,22 @@ class Home extends StatelessWidget {
                                 ),
                                 child: Row(
                                   children: [
-                                    Container(
-                                      height: 150,
-                                      width: 150,
-                                      decoration: const BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        color: whiteColor,
+                                    Expanded(
+                                      flex: 5,
+                                      child: Image.asset(
+                                        "assets/images/illustrations/discount-3.png",
                                       ),
                                     ),
-                                    const Gap(50),
                                     Expanded(
+                                      flex: 3,
                                       child: Column(
                                         mainAxisAlignment:
                                             MainAxisAlignment.center,
                                         children: [
                                           Text(
-                                            "data data",
+                                            "DISCOUNT",
                                             style: GoogleFonts.nunito(
-                                              fontSize: 20,
+                                              fontSize: 18,
                                               fontWeight: FontWeight.w600,
                                               color: whiteColor,
                                             ),
@@ -384,26 +381,36 @@ class Home extends StatelessWidget {
                                           Text(
                                             "30%",
                                             style: GoogleFonts.acme(
-                                              fontSize: 38,
+                                              fontSize: 40,
                                               fontWeight: FontWeight.w600,
                                               color: whiteColor,
                                             ),
                                           ),
                                           Text(
-                                            "datadatadata",
+                                            "use the promo code",
                                             style: GoogleFonts.nunito(
-                                              fontSize: 12,
+                                              fontSize: 10,
                                               fontWeight: FontWeight.w600,
                                               color: whiteColor,
                                             ),
                                           ),
-                                          CustomButton(
+                                          const Gap(5),
+                                          Container(
+                                            padding: const EdgeInsets.symmetric(
+                                                horizontal: 10, vertical: 5),
+                                            decoration: BoxDecoration(
                                               color: whiteColor,
-                                              width: 100,
-                                              height: 30,
-                                              onPressed: () {},
-                                              radius: 10,
-                                              label: const Text("Opt In"))
+                                              borderRadius:
+                                                  BorderRadius.circular(10),
+                                            ),
+                                            child: Text(
+                                              "PAYSENT22",
+                                              style: GoogleFonts.manrope(
+                                                  fontSize: 14,
+                                                  color: primaryColor,
+                                                  fontWeight: FontWeight.w800),
+                                            ),
+                                          ),
                                         ],
                                       ),
                                     )
@@ -424,24 +431,22 @@ class Home extends StatelessWidget {
                                 ),
                                 child: Row(
                                   children: [
-                                    Container(
-                                      height: 150,
-                                      width: 150,
-                                      decoration: const BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        color: whiteColor,
-                                      ),
-                                    ),
-                                    const Gap(50),
                                     Expanded(
+                                      flex: 5,
+                                      child: Image.asset(
+                                          "assets/images/illustrations/discount.png"),
+                                    ),
+                                    // const Gap(50),
+                                    Expanded(
+                                      flex: 3,
                                       child: Column(
                                         mainAxisAlignment:
                                             MainAxisAlignment.center,
                                         children: [
                                           Text(
-                                            "data data",
+                                            "DISCOUNT",
                                             style: GoogleFonts.nunito(
-                                              fontSize: 20,
+                                              fontSize: 18,
                                               fontWeight: FontWeight.w600,
                                               color: whiteColor,
                                             ),
@@ -449,26 +454,36 @@ class Home extends StatelessWidget {
                                           Text(
                                             "30%",
                                             style: GoogleFonts.acme(
-                                              fontSize: 38,
+                                              fontSize: 40,
                                               fontWeight: FontWeight.w600,
                                               color: whiteColor,
                                             ),
                                           ),
                                           Text(
-                                            "datadatadata",
+                                            "use the promo code",
                                             style: GoogleFonts.nunito(
-                                              fontSize: 12,
+                                              fontSize: 10,
                                               fontWeight: FontWeight.w600,
                                               color: whiteColor,
                                             ),
                                           ),
-                                          CustomButton(
+                                          const Gap(5),
+                                          Container(
+                                            padding: const EdgeInsets.symmetric(
+                                                horizontal: 10, vertical: 5),
+                                            decoration: BoxDecoration(
                                               color: whiteColor,
-                                              width: 100,
-                                              height: 30,
-                                              onPressed: () {},
-                                              radius: 10,
-                                              label: const Text("Opt In"))
+                                              borderRadius:
+                                                  BorderRadius.circular(10),
+                                            ),
+                                            child: Text(
+                                              "PAYSENT22",
+                                              style: GoogleFonts.manrope(
+                                                  fontSize: 14,
+                                                  color: primaryColor,
+                                                  fontWeight: FontWeight.w800),
+                                            ),
+                                          ),
                                         ],
                                       ),
                                     )
@@ -484,29 +499,26 @@ class Home extends StatelessWidget {
                                 padding: const EdgeInsets.symmetric(
                                     vertical: 10, horizontal: 20),
                                 decoration: BoxDecoration(
-                                  color: Colors.pink,
+                                  color: Colors.pinkAccent,
                                   borderRadius: BorderRadius.circular(20),
                                 ),
                                 child: Row(
                                   children: [
-                                    Container(
-                                      height: 150,
-                                      width: 150,
-                                      decoration: const BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        color: whiteColor,
-                                      ),
-                                    ),
-                                    const Gap(50),
                                     Expanded(
+                                      flex: 5,
+                                      child: Image.asset(
+                                          "assets/images/illustrations/discount-1.png"),
+                                    ),
+                                    Expanded(
+                                      flex: 3,
                                       child: Column(
                                         mainAxisAlignment:
                                             MainAxisAlignment.center,
                                         children: [
                                           Text(
-                                            "data data",
+                                            "DISCOUNT",
                                             style: GoogleFonts.nunito(
-                                              fontSize: 20,
+                                              fontSize: 18,
                                               fontWeight: FontWeight.w600,
                                               color: whiteColor,
                                             ),
@@ -514,26 +526,108 @@ class Home extends StatelessWidget {
                                           Text(
                                             "30%",
                                             style: GoogleFonts.acme(
-                                              fontSize: 38,
+                                              fontSize: 40,
                                               fontWeight: FontWeight.w600,
                                               color: whiteColor,
                                             ),
                                           ),
                                           Text(
-                                            "datadatadata",
+                                            "use the promo code",
                                             style: GoogleFonts.nunito(
-                                              fontSize: 12,
+                                              fontSize: 10,
                                               fontWeight: FontWeight.w600,
                                               color: whiteColor,
                                             ),
                                           ),
-                                          CustomButton(
+                                          const Gap(5),
+                                          Container(
+                                            padding: const EdgeInsets.symmetric(
+                                                horizontal: 10, vertical: 5),
+                                            decoration: BoxDecoration(
                                               color: whiteColor,
-                                              width: 100,
-                                              height: 30,
-                                              onPressed: () {},
-                                              radius: 10,
-                                              label: const Text("Opt In"))
+                                              borderRadius:
+                                                  BorderRadius.circular(10),
+                                            ),
+                                            child: Text(
+                                              "PAYSENT22",
+                                              style: GoogleFonts.manrope(
+                                                  fontSize: 14,
+                                                  color: primaryColor,
+                                                  fontWeight: FontWeight.w800),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 8.0),
+                              child: Container(
+                                height: 170,
+                                padding: const EdgeInsets.symmetric(
+                                    vertical: 10, horizontal: 20),
+                                decoration: BoxDecoration(
+                                  color: Colors.greenAccent,
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                child: Row(
+                                  children: [
+                                    Expanded(
+                                      flex: 5,
+                                      child: Image.asset(
+                                          "assets/images/illustrations/discount-.png"),
+                                    ),
+                                    Expanded(
+                                      flex: 3,
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Text(
+                                            "DISCOUNT",
+                                            style: GoogleFonts.nunito(
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.w600,
+                                              color: whiteColor,
+                                            ),
+                                          ),
+                                          Text(
+                                            "30%",
+                                            style: GoogleFonts.acme(
+                                              fontSize: 40,
+                                              fontWeight: FontWeight.w600,
+                                              color: whiteColor,
+                                            ),
+                                          ),
+                                          Text(
+                                            "use the promo code",
+                                            style: GoogleFonts.nunito(
+                                              fontSize: 10,
+                                              fontWeight: FontWeight.w600,
+                                              color: whiteColor,
+                                            ),
+                                          ),
+                                          const Gap(5),
+                                          Container(
+                                            padding: const EdgeInsets.symmetric(
+                                                horizontal: 10, vertical: 5),
+                                            decoration: BoxDecoration(
+                                              color: whiteColor,
+                                              borderRadius:
+                                                  BorderRadius.circular(10),
+                                            ),
+                                            child: Text(
+                                              "PAYSENT22",
+                                              style: GoogleFonts.manrope(
+                                                  fontSize: 14,
+                                                  color: primaryColor,
+                                                  fontWeight: FontWeight.w800),
+                                            ),
+                                          ),
                                         ],
                                       ),
                                     )
@@ -547,7 +641,7 @@ class Home extends StatelessWidget {
                             aspectRatio: 16 / 7,
                             // enlargeCenterPage: true,
                             initialPage: 0,
-                            autoPlay: true,
+                            autoPlay: false,
                           ),
                         ),
                       ],
