@@ -160,210 +160,139 @@ class Home extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 18, vertical: 20),
-                    margin: const EdgeInsets.symmetric(horizontal: 24),
-                    decoration: BoxDecoration(
-                      color: whiteColor,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Column(
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Column(
-                              children: [
-                                Container(
-                                  color: Colors.yellow.withOpacity(0.2),
-                                  padding: const EdgeInsets.symmetric(
-                                      vertical: 10, horizontal: 10),
-                                  child: const Icon(
-                                    Icons.bolt,
-                                    size: 40,
-                                    color: Colors.amber,
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 18, vertical: 20),
+                      margin: const EdgeInsets.symmetric(horizontal: 24),
+                      decoration: BoxDecoration(
+                        color: whiteColor,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Wrap(
+                        spacing: 22,
+                        runSpacing: 20,
+                        children: [
+                          Column(
+                            children: [
+                              Container(
+                                color: Colors.yellow.withOpacity(0.2),
+                                padding: const EdgeInsets.symmetric(
+                                    vertical: 10, horizontal: 10),
+                                child: const Icon(
+                                  Icons.bolt,
+                                  size: 40,
+                                  color: Colors.amber,
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(top: 8.0),
+                                child: Text(
+                                  "Electricity",
+                                  style: GoogleFonts.nunito(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w400,
+                                    color: blackColor,
                                   ),
                                 ),
-                                Padding(
-                                  padding: const EdgeInsets.only(top: 8.0),
-                                  child: Text(
-                                    "Electricity",
-                                    style: GoogleFonts.nunito(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w400,
-                                      color: blackColor,
-                                    ),
-                                  ),
-                                )
-                              ],
-                            ),
-                            Column(
-                              children: [
-                                Container(
-                                  color:
-                                      Colors.lightGreenAccent.withOpacity(0.2),
-                                  padding: const EdgeInsets.symmetric(
-                                      vertical: 10, horizontal: 10),
-                                  child: const Icon(
-                                    Icons.wifi_2_bar,
-                                    size: 40,
-                                    color: Colors.lightGreenAccent,
+                              )
+                            ],
+                          ),
+                          Column(
+                            children: [
+                              Container(
+                                color: Colors.lightGreenAccent.withOpacity(0.2),
+                                padding: const EdgeInsets.symmetric(
+                                    vertical: 10, horizontal: 10),
+                                child: const Icon(
+                                  Icons.wifi_2_bar,
+                                  size: 40,
+                                  color: Colors.lightGreenAccent,
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(top: 8.0),
+                                child: Text(
+                                  "Internet",
+                                  style: GoogleFonts.nunito(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w400,
+                                    color: blackColor,
                                   ),
                                 ),
-                                Padding(
-                                  padding: const EdgeInsets.only(top: 8.0),
-                                  child: Text(
-                                    "Internet",
-                                    style: GoogleFonts.nunito(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w400,
-                                      color: blackColor,
-                                    ),
-                                  ),
-                                )
-                              ],
-                            ),
-                            Column(
-                              children: [
-                                Container(
-                                  color: Colors.blue.withOpacity(0.2),
-                                  padding: const EdgeInsets.symmetric(
-                                      vertical: 10, horizontal: 10),
-                                  child: const Icon(
-                                    Icons.water_drop,
-                                    size: 40,
-                                    color: Colors.blue,
+                              )
+                            ],
+                          ),
+                          Column(
+                            children: [
+                              Container(
+                                color: Colors.redAccent.withOpacity(0.2),
+                                padding: const EdgeInsets.symmetric(
+                                    vertical: 10, horizontal: 10),
+                                child: const Icon(
+                                  Icons.hotel,
+                                  size: 40,
+                                  color: Colors.redAccent,
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(top: 8.0),
+                                child: Text(
+                                  "Hostel",
+                                  style: GoogleFonts.nunito(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w400,
+                                    color: blackColor,
                                   ),
                                 ),
-                                Padding(
-                                  padding: const EdgeInsets.only(top: 8.0),
-                                  child: Text(
-                                    "Water",
-                                    style: GoogleFonts.nunito(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w400,
-                                      color: blackColor,
-                                    ),
-                                  ),
-                                )
-                              ],
-                            ),
-                            Column(
-                              children: [
-                                Container(
-                                  color: Colors.redAccent.withOpacity(0.2),
-                                  padding: const EdgeInsets.symmetric(
-                                      vertical: 10, horizontal: 10),
-                                  child: const Icon(
-                                    Icons.hotel,
-                                    size: 40,
-                                    color: Colors.redAccent,
-                                  ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(top: 8.0),
-                                  child: Text(
-                                    "Hotel",
-                                    style: GoogleFonts.nunito(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w400,
-                                      color: blackColor,
-                                    ),
-                                  ),
-                                )
-                              ],
-                            ),
-                          ],
-                        ),
-                        const Gap(40),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Column(
-                              children: [
-                                const Icon(
+                              )
+                            ],
+                          ),
+                          Column(
+                            children: [
+                              Container(
+                                color: Colors.brown.withOpacity(0.2),
+                                padding: const EdgeInsets.symmetric(
+                                    vertical: 10, horizontal: 10),
+                                child: const Icon(
                                   Icons.school_sharp,
                                   size: 40,
                                   color: Colors.brown,
                                 ),
-                                Padding(
-                                  padding: const EdgeInsets.only(top: 8.0),
-                                  child: Text(
-                                    "Pay Fees",
-                                    style: GoogleFonts.nunito(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w400,
-                                      color: blackColor,
-                                    ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(top: 8.0),
+                                child: Text(
+                                  "Pay Fees",
+                                  style: GoogleFonts.nunito(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w400,
+                                    color: blackColor,
                                   ),
-                                )
-                              ],
-                            ),
-                            Column(
-                              children: [
-                                const Icon(
-                                  Icons.ondemand_video_rounded,
-                                  size: 40,
-                                  color: Colors.blueAccent,
                                 ),
-                                Padding(
-                                  padding: const EdgeInsets.only(top: 8.0),
-                                  child: Text(
-                                    "Movies",
-                                    style: GoogleFonts.nunito(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w400,
-                                      color: blackColor,
-                                    ),
+                              )
+                            ],
+                          ),
+                          Column(
+                            children: [
+                              const Icon(
+                                Icons.more,
+                                size: 40,
+                                color: primaryColor,
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(top: 8.0),
+                                child: Text(
+                                  "More",
+                                  style: GoogleFonts.nunito(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w400,
+                                    color: blackColor,
                                   ),
-                                )
-                              ],
-                            ),
-                            Column(
-                              children: [
-                                Icon(
-                                  Icons.videogame_asset_sharp,
-                                  size: 40,
-                                  color: Colors.yellow.shade900,
                                 ),
-                                Padding(
-                                  padding: const EdgeInsets.only(top: 8.0),
-                                  child: Text(
-                                    "Games",
-                                    style: GoogleFonts.nunito(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w400,
-                                      color: blackColor,
-                                    ),
-                                  ),
-                                )
-                              ],
-                            ),
-                            Column(
-                              children: [
-                                const Icon(
-                                  Icons.more,
-                                  size: 40,
-                                  color: primaryColor,
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(top: 8.0),
-                                  child: Text(
-                                    "More",
-                                    style: GoogleFonts.nunito(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w400,
-                                      color: blackColor,
-                                    ),
-                                  ),
-                                )
-                              ],
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
+                              )
+                            ],
+                          ),
+                        ],
+                      )),
                   Container(
                     color: Colors.teal.shade50,
                     child: Column(

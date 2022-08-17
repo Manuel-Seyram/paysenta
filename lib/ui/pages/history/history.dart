@@ -193,16 +193,16 @@ List<Widget> listTileWidgets = [
         height: 60,
         width: 60,
         decoration: BoxDecoration(
-          color: Colors.amber.shade700.withOpacity(0.2),
+          color: Colors.redAccent.withOpacity(0.2),
           borderRadius: BorderRadius.circular(10),
         ),
-        child: Icon(
-          Icons.videogame_asset_sharp,
-          color: Colors.amber.shade700,
+        child: const Icon(
+          Icons.hotel,
+          color: Colors.redAccent,
         ),
       ),
       title: Text(
-        "Games",
+        "Hostel",
         style: GoogleFonts.nunito(
           fontSize: 18,
           fontWeight: FontWeight.w600,
@@ -218,7 +218,7 @@ List<Widget> listTileWidgets = [
         ),
       ),
       trailing: Text(
-        "-GHS450.00",
+        "-GHS8549.00",
         style: GoogleFonts.nunito(
           fontSize: 18,
           fontWeight: FontWeight.w600,
@@ -261,48 +261,6 @@ List<Widget> listTileWidgets = [
       ),
       trailing: Text(
         "GHS500.00",
-        style: GoogleFonts.nunito(
-          fontSize: 18,
-          fontWeight: FontWeight.w600,
-          color: blackColor,
-        ),
-      ),
-    ),
-  ),
-  Padding(
-    padding: const EdgeInsets.only(top: 16.0),
-    child: ListTile(
-      tileColor: whiteColor.withOpacity(0),
-      leading: Container(
-        height: 60,
-        width: 60,
-        decoration: BoxDecoration(
-          color: primaryColor.withOpacity(0.1),
-          borderRadius: BorderRadius.circular(10),
-        ),
-        child: const Icon(
-          Icons.ondemand_video_rounded,
-          color: primaryColor,
-        ),
-      ),
-      title: Text(
-        "Movies",
-        style: GoogleFonts.nunito(
-          fontSize: 18,
-          fontWeight: FontWeight.w600,
-          color: blackColor,
-        ),
-      ),
-      subtitle: Text(
-        "1 June 2020",
-        style: GoogleFonts.nunito(
-          fontSize: 12,
-          fontWeight: FontWeight.w400,
-          color: Colors.grey.shade800,
-        ),
-      ),
-      trailing: Text(
-        "-GHS80.00",
         style: GoogleFonts.nunito(
           fontSize: 18,
           fontWeight: FontWeight.w600,
@@ -445,48 +403,6 @@ List<Widget> listTileWidgets = [
         height: 60,
         width: 60,
         decoration: BoxDecoration(
-          color: Colors.amber.shade700.withOpacity(0.2),
-          borderRadius: BorderRadius.circular(10),
-        ),
-        child: Icon(
-          Icons.videogame_asset_sharp,
-          color: Colors.amber.shade700,
-        ),
-      ),
-      title: Text(
-        "Games",
-        style: GoogleFonts.nunito(
-          fontSize: 18,
-          fontWeight: FontWeight.w600,
-          color: blackColor,
-        ),
-      ),
-      subtitle: Text(
-        "2 June 2020",
-        style: GoogleFonts.nunito(
-          fontSize: 12,
-          fontWeight: FontWeight.w400,
-          color: Colors.grey.shade800,
-        ),
-      ),
-      trailing: Text(
-        "-GHS450.00",
-        style: GoogleFonts.nunito(
-          fontSize: 18,
-          fontWeight: FontWeight.w600,
-          color: blackColor,
-        ),
-      ),
-    ),
-  ),
-  Padding(
-    padding: const EdgeInsets.only(top: 16.0),
-    child: ListTile(
-      tileColor: whiteColor.withOpacity(0),
-      leading: Container(
-        height: 60,
-        width: 60,
-        decoration: BoxDecoration(
           color: primaryColor.withOpacity(0.2),
           borderRadius: BorderRadius.circular(10),
         ),
@@ -513,48 +429,6 @@ List<Widget> listTileWidgets = [
       ),
       trailing: Text(
         "GHS500.00",
-        style: GoogleFonts.nunito(
-          fontSize: 18,
-          fontWeight: FontWeight.w600,
-          color: blackColor,
-        ),
-      ),
-    ),
-  ),
-  Padding(
-    padding: const EdgeInsets.only(top: 16.0),
-    child: ListTile(
-      tileColor: whiteColor.withOpacity(0),
-      leading: Container(
-        height: 60,
-        width: 60,
-        decoration: BoxDecoration(
-          color: primaryColor.withOpacity(0.1),
-          borderRadius: BorderRadius.circular(10),
-        ),
-        child: const Icon(
-          Icons.ondemand_video_rounded,
-          color: primaryColor,
-        ),
-      ),
-      title: Text(
-        "Movies",
-        style: GoogleFonts.nunito(
-          fontSize: 18,
-          fontWeight: FontWeight.w600,
-          color: blackColor,
-        ),
-      ),
-      subtitle: Text(
-        "1 June 2020",
-        style: GoogleFonts.nunito(
-          fontSize: 12,
-          fontWeight: FontWeight.w400,
-          color: Colors.grey.shade800,
-        ),
-      ),
-      trailing: Text(
-        "-GHS80.00",
         style: GoogleFonts.nunito(
           fontSize: 18,
           fontWeight: FontWeight.w600,
