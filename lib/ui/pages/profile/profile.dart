@@ -89,7 +89,7 @@ class Profile extends StatelessWidget {
                       ),
                       const Gap(8),
                       Text(
-                        "Todd Nelson",
+                        "Keziah Annan",
                         style: GoogleFonts.manrope(
                           fontSize: 20,
                           fontWeight: FontWeight.w600,
