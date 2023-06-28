@@ -26,7 +26,7 @@ dependencies:
   path_provider: ^2.0.11
   flutter_riverpod: ^1.0.4
   intl: ^0.17.0
-  google_fonts: ^3.0.1
+  google_fonts: ^5.1.0
 #  url_launcher: ^6.1.5
   hive: ^2.2.3
   shared_preferences: ^2.0.15
@@ -35,10 +35,13 @@ dependencies:
 #  freezed_annotation: ^2.1.0
   iconsax: ^0.0.8
   accordion: ^2.5.0
-  country_code_picker: ^2.0.2
+  country_picker:
   flutter_staggered_animations: ^1.0.0
-  modal_bottom_sheet: ^2.1.0
-
+  modal_bottom_sheet:
+     git:
+       url: https://github.com/followthemoney1/modal_bottom_sheet.git
+       ref: main
+       path: modal_bottom_sheet
   image_picker: ^0.8.5+3
 #  sqflite: ^2.0.3
   pandabar: ^0.1.2
