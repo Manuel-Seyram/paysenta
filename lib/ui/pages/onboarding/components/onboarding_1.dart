@@ -14,8 +14,8 @@ class OnboardingComponent1 extends StatelessWidget {
           width: MediaQuery.of(context).size.width,
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
           decoration:
-              const BoxDecoration(color: primaryColor1, shape: BoxShape.circle),
-          child: Image.asset("assets/images/illustrations/top-up.png"),
+              const BoxDecoration(color: primaryColor, shape: BoxShape.rectangle),
+          child: Image.asset("assets/images/illustrations/2. Onboarding - 1 - Dark.png", fit:BoxFit.fitWidth),
         ),
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 28),
@@ -39,7 +39,7 @@ class OnboardingComponent1 extends StatelessWidget {
               color: whiteColor.withOpacity(0.7),
             ),
           ),
-        )
+        ),
       ],
     );
   }

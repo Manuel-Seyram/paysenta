@@ -8,6 +8,8 @@ import 'package:paysenta/ui/pages/onboarding/get_started.dart';
 import 'package:paysenta/ui/pages/onboarding/onboarding.dart';
 import 'package:paysenta/ui/pages/onboarding/splash.dart';
 
+import 'ui/pages/authentication/country_residence.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -20,7 +22,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -31,6 +32,7 @@ class MyApp extends StatelessWidget {
         GetStarted.id: (context) => const GetStarted(),
         Login.id: (context) => const Login(),
         Register.id: (context) => const Register(),
+        CountryResidence.id: (context) => const CountryResidence (),
         VerifyOTP.id: (context) => const VerifyOTP(),
         SetPassword.id: (context) => const SetPassword(),
         MainPageNavigator.id: (context) => const MainPageNavigator(),

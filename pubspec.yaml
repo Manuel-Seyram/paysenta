@@ -37,6 +37,7 @@ dependencies:
   accordion: ^2.5.0
   country_picker:
   flutter_staggered_animations: ^1.0.0
+  csc_picker: ^0.2.7
   modal_bottom_sheet:
      git:
        url: https://github.com/followthemoney1/modal_bottom_sheet.git

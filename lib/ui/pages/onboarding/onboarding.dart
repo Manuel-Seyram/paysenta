@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:paysenta/ui/pages/onboarding/components/onboarding_2.dart';
-import 'package:paysenta/ui/pages/onboarding/components/onboarding_3.dart';
 import 'package:paysenta/ui/shared/constants.dart';
 
 import '../../shared/widgets/slide_indicator.dart';
@@ -31,7 +30,6 @@ class _OnboardingState extends State<Onboarding> {
   Widget build(BuildContext context) {
     List<Widget> onboardingPageList = [
       const OnboardingComponent1(),
-      const OnboardingComponent2(),
       GestureDetector(
           onHorizontalDragEnd: (DragEndDetails dragDownDetails) {
             if (dragDownDetails.primaryVelocity == 0) {
@@ -51,7 +49,7 @@ class _OnboardingState extends State<Onboarding> {
               }
             }
           },
-          child: const OnboardingComponent3()),
+          child: const OnboardingComponent2()),
     ];
 
     return Scaffold(
@@ -82,7 +80,7 @@ class _OnboardingState extends State<Onboarding> {
         ),
         body: Column(
           children: [
-            const Gap(50),
+            const Gap(10),
             Expanded(
               child: PageView.builder(
                 scrollDirection: Axis.horizontal,
@@ -118,7 +116,32 @@ class _OnboardingState extends State<Onboarding> {
                 ],
               ),
             ),
-            const Gap(60),
+            const Gap(100),
+            Center(
+                child: Container(
+                    decoration: ShapeDecoration(
+                        color: Colors.white,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        )),
+                    width: 350.0,
+                    height: 56.0,
+                    child: MaterialButton(
+                      onPressed: () {
+                      },
+                      splashColor: Colors.white,
+                      child: const Text(
+                        'Get started',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Color(0xFF1D3A6F),
+                          fontSize: 16,
+                          fontWeight: FontWeight.w700,
+                          letterSpacing: 0.30,
+                        ),
+                      ),
+                    ))),
+                    const Gap(20)
           ],
         ));
   }

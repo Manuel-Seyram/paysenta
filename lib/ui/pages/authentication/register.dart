@@ -1,263 +1,363 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:gap/gap.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
-import 'package:paysenta/ui/pages/authentication/login.dart';
 import 'package:paysenta/ui/shared/constants.dart';
-import 'package:paysenta/ui/shared/widgets/custom_button.dart';
-
-import '../../shared/widgets/custom_country_picker.dart';
 import '../../utils/countries.dart';
-import 'verify_otp.dart';
+import 'country_residence.dart';
+import 'login.dart';
 
 class Register extends StatefulWidget {
   const Register({Key? key}) : super(key: key);
   static const String id = "Register page id";
+
   @override
   State<Register> createState() => _RegisterState();
 }
 
 class _RegisterState extends State<Register> {
-  final TextEditingController _phoneNumberTextController =
-      TextEditingController();
-
-  bool obscureText = true;
-
-  String _countryCode = "+233";
-
   Countries allCountries = Countries();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        children: [
-          SingleChildScrollView(
-            child: Column(
-              children: [
-                Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height * 0.30,
-                  color: primaryColor,
-                ),
-                Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height * 0.70,
-                  color: Colors.teal.shade50,
-                )
-              ],
-            ),
-          ),
-          SizedBox.expand(
+        body: Container(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height,
+            decoration: const BoxDecoration(color: primaryColor),
             child: SingleChildScrollView(
-              physics: const BouncingScrollPhysics(
-                  parent: AlwaysScrollableScrollPhysics()),
-              padding: const EdgeInsets.only(left: 32, right: 32, top: 100),
               child: Column(
                 children: [
-                  Container(
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 32, horizontal: 24),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Column(
+                  const Gap(45),
+                  Row(
+                    children: [
+                      const Gap(15),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.pop(context);
+                        },
+                        child: Container(
+                            height: 40.0,
+                            width: 40.0,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                border:
+                                    Border.all(color: const Color(0xFF374151))),
+                            child: FittedBox(
+                              child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(40.0),
+                                  child: const Padding(
+                                    padding: EdgeInsets.all(10.0),
+                                    child: Icon(Icons.arrow_back_ios_new_sharp,
+                                        color: Colors.white),
+                                  )),
+                            )),
+                      )
+                    ],
+                  ),
+                  const Gap(20),
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width,
+                    height: 70.0,
+                    child: const Column(
                       children: [
-                        Text(
-                          "Register",
-                          style: GoogleFonts.amiri(
-                              fontSize: 24, fontWeight: FontWeight.w600),
-                        ),
-                        Image.asset(
-                          "assets/images/illustrations/register.png",
-                          height: 160,
-                        ),
-                        const Gap(30),
-                        const Text(
-                          "Input Phone Number to begin theregistration",
-                          textAlign: TextAlign.center,
-                        ),
-                        const Gap(24),
                         Row(
                           children: [
-                            SizedBox(
-                              height: 50,
-                              width: 65.0,
-                              child: Container(
-                                padding:
-                                    const EdgeInsets.symmetric(horizontal: 8),
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(8.0),
-                                  border: Border.all(
-                                    color: const Color(0xFFE5E7EB),
-                                  ),
-                                ),
-                                child: InkWell(
-                                  onTap: () async {
-                                    _countryCode =
-                                        await showCupertinoModalBottomSheet(
-                                            expand: true,
-                                            isDismissible: false,
-                                            context: context,
-                                            backgroundColor:
-                                                Colors.amber.withOpacity(0.0),
-                                            builder: (context) =>
-                                                CustomCountryPicker(
-                                                  countyCode: _countryCode,
-                                                ));
-                                    setState(() {});
-                                  },
-                                  child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      Image.asset(
-                                        allCountries.countries.singleWhere(
-                                            (element) =>
-                                                element['code'] ==
-                                                _countryCode)['flag'],
-                                        height: 14,
-                                        width: 18,
-                                        fit: BoxFit.fill,
-                                      ),
-                                      const Icon(
-                                        CupertinoIcons.chevron_down,
-                                        size: 18,
-                                        color: Colors.grey,
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ),
-                            const Gap(5),
-                            Expanded(
-                              child: SizedBox(
-                                height: 50,
-                                child: TextField(
-                                  controller: _phoneNumberTextController,
-                                  maxLength: 9,
-                                  keyboardType: TextInputType.phone,
-                                  style: GoogleFonts.manrope(
-                                    textStyle: const TextStyle(
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 14.00,
-                                      height: 22 / 14,
-                                      color: Color(0xFF18273A),
-                                    ),
-                                  ),
-                                  maxLengthEnforcement:
-                                      MaxLengthEnforcement.enforced,
-                                  autocorrect: false,
-                                  enableSuggestions: false,
-                                  decoration: InputDecoration(
-                                    contentPadding: const EdgeInsets.symmetric(
-                                        vertical: 10, horizontal: 16.0),
-                                    hintText: "Mobile Number",
-                                    counterText: '',
-                                    hintStyle: GoogleFonts.manrope(
-                                      textStyle: TextStyle(
-                                        fontWeight: FontWeight.w500,
-                                        fontSize: 14.0,
-                                        height: 16.39 / 14,
-                                        color: const Color(0xFFC0C0C0)
-                                            .withOpacity(0.94),
-                                      ),
-                                    ),
-                                    prefixIcon: Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                          vertical: 18, horizontal: 16.0),
-                                      child: Text(
-                                        _countryCode,
-                                        textAlign: TextAlign.center,
-                                        style: GoogleFonts.manrope(
-                                          textStyle: TextStyle(
-                                            fontWeight: FontWeight.w500,
-                                            fontSize: 14.0,
-                                            height: 16.39 / 14,
-                                            color: const Color(0xFF18273A)
-                                                .withOpacity(0.94),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                    border: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(5),
-                                      borderSide: const BorderSide(
-                                          color: Color(0xFFE5E7EB), width: 0.9),
-                                    ),
-                                    enabledBorder: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(5),
-                                      borderSide: const BorderSide(
-                                          color: Color(0xFFE5E7EB), width: 1.9),
-                                    ),
-                                    focusedBorder: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(5),
-                                      borderSide: const BorderSide(
-                                          color: Color(0xFFE5E7EB), width: 0.9),
-                                    ),
-                                  ),
-                                ),
+                            Gap(15),
+                            FittedBox(
+                                fit: BoxFit.contain,
+                                child: Text(
+                                  'Create a Paysenta ',
+                                  style: TextStyle(
+                                      fontSize: 24.0,
+                                      fontWeight: FontWeight.w700,
+                                      letterSpacing: -0.20,
+                                      color: Colors.white),
+                                )),
+                          ],
+                        ),
+                        Gap(5),
+                        Row(
+                          children: [
+                            Gap(15),
+                            FittedBox(
+                              child: Text(
+                                'account',
+                                style: TextStyle(
+                                    fontSize: 24.0,
+                                    fontWeight: FontWeight.w700,
+                                    color: Colors.white,
+                                    letterSpacing: 0.38),
                               ),
                             ),
                           ],
                         ),
-                        const Gap(16),
-                        CustomButton(
-                          color: primaryColor,
-                          width: double.infinity,
-                          height: 45,
-                          onPressed: () {
-                            Navigator.pushNamed(context, VerifyOTP.id);
-                          },
-                          radius: 10,
-                          label: Text(
-                            "Register",
-                            style: GoogleFonts.nunito(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w500,
-                                color: Colors.white),
-                          ),
-                        ),
                       ],
                     ),
                   ),
-                  const Gap(50),
-                  RichText(
-                    text: TextSpan(
-                        text: "Already have an account?  ",
-                        style: GoogleFonts.manrope(
-                            fontSize: 14,
-                            color: blackColor,
-                            fontWeight: FontWeight.w500),
+                  const Gap(20),
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width,
+                    height: 250,
+                    child: Column(children: [
+                      Row(
                         children: [
-                          TextSpan(
-                            text: "Login",
-                            style: GoogleFonts.manrope(
-                              fontSize: 14,
-                              color: primaryColor1,
-                              fontWeight: FontWeight.w600,
-                              decoration: TextDecoration.underline,
+                          const Gap(15),
+                          Container(
+                            decoration: ShapeDecoration(
+                                color: const Color(0xFF1D2634),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                )),
+                            width: 350.0,
+                            height: 56.0,
+                            child: TextFormField(
+                              keyboardType: TextInputType.name,
+                              style: const TextStyle(
+                                  color: Color(0xFF9CA3AF),
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w400,
+                                  letterSpacing: 0.30),
+                              decoration: const InputDecoration(
+                                  contentPadding: EdgeInsets.all(10.0),
+                                  hintText: 'Full name',
+                                  hintStyle: TextStyle(
+                                    color: Color(0xFF9CA3AF),
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w400,
+                                    letterSpacing: 0.30,
+                                  ),
+                                  focusedBorder: InputBorder.none,
+                                  enabledBorder: InputBorder.none),
                             ),
-                            recognizer: TapGestureRecognizer()
-                              ..onTap = () {
-                                Navigator.popAndPushNamed(context, Login.id);
-                              },
                           )
-                        ]),
+                        ],
+                      ),
+                      const Gap(20),
+                      Row(
+                        children: [
+                          const Gap(15),
+                          Container(
+                            decoration: ShapeDecoration(
+                                color: const Color(0xFF1D2634),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                )),
+                            width: 350.0,
+                            height: 56.0,
+                            child: TextFormField(
+                              keyboardType: TextInputType.emailAddress,
+                              style: const TextStyle(
+                                  color: Color(0xFF9CA3AF),
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w400,
+                                  letterSpacing: 0.30),
+                              decoration: const InputDecoration(
+                                  contentPadding: EdgeInsets.all(10.0),
+                                  hintText: 'Email',
+                                  hintStyle: TextStyle(
+                                    color: Color(0xFF9CA3AF),
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w400,
+                                    letterSpacing: 0.30,
+                                  ),
+                                  focusedBorder: InputBorder.none,
+                                  enabledBorder: InputBorder.none),
+                            ),
+                          )
+                        ],
+                      ),
+                      const Gap(20),
+                      Row(
+                        children: [
+                          const Gap(15),
+                          Container(
+                            decoration: ShapeDecoration(
+                                color: const Color(0xFF1D2634),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                )),
+                            width: 350.0,
+                            height: 56.0,
+                            child: TextFormField(
+                              keyboardType: TextInputType.name,
+                              obscureText: true,
+                              style: const TextStyle(
+                                  color: Color(0xFF9CA3AF),
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w400,
+                                  letterSpacing: 0.30),
+                              decoration: const InputDecoration(
+                                  contentPadding: EdgeInsets.all(10.0),
+                                  hintText: 'Password',
+                                  hintStyle: TextStyle(
+                                    color: Color(0xFF9CA3AF),
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w400,
+                                    letterSpacing: 0.30,
+                                  ),
+                                  focusedBorder: InputBorder.none,
+                                  enabledBorder: InputBorder.none),
+                            ),
+                          )
+                        ],
+                      )
+                    ]),
+                  ),
+                  const Gap(15),
+                  SizedBox(
+                    child: Row(
+                      children: [
+                        const Gap(15),
+                        Container(
+                            decoration: ShapeDecoration(
+                                color: Colors.white,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                )),
+                            width: 350.0,
+                            height: 56.0,
+                            child: MaterialButton(
+                              onPressed: () {
+                                Navigator.pushNamed(
+                                    context, CountryResidence.id);
+                              },
+                              splashColor: Colors.white,
+                              child: const Text(
+                                'Sign Up',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  color: Color(0xFF1D3A6F),
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w700,
+                                  letterSpacing: 0.30,
+                                ),
+                              ),
+                            ))
+                      ],
+                    ),
+                  ),
+                  const Gap(45),
+                  SizedBox(
+                    child: Row(
+                      children: [
+                        const Gap(100),
+                        Transform(
+                          transform: Matrix4.identity()
+                            ..translate(0.0, 0.0)
+                            ..rotateZ(3.14),
+                          child: Container(
+                            width: 80,
+                            decoration: const ShapeDecoration(
+                              shape: RoundedRectangleBorder(
+                                side: BorderSide(
+                                  width: 0.50,
+                                  strokeAlign: BorderSide.strokeAlignCenter,
+                                  color: Color(0xFF626974),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        const Text(
+                          'OR',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: Color(0xFFB6B6B6),
+                            fontSize: 11,
+                            fontWeight: FontWeight.w400,
+                            letterSpacing: 0.30,
+                          ),
+                        ),
+                        const Gap(60),
+                        Expanded(
+                            child: Container(
+                          width: 90,
+                          decoration: const ShapeDecoration(
+                            shape: RoundedRectangleBorder(
+                              side: BorderSide(
+                                width: 0.50,
+                                strokeAlign: BorderSide.strokeAlignCenter,
+                                color: Color(0xFF616873),
+                              ),
+                            ),
+                          ),
+                        )),
+                        const Gap(60),
+                      ],
+                    ),
+                  ),
+                  const Gap(25),
+                  SizedBox(
+                    child: Column(
+                      children: [
+                        Row(
+                          children: [
+                            const Gap(17),
+                            Container(
+                              width: 160.0,
+                              height: 60.0,
+                              padding: const EdgeInsets.all(15),
+                              decoration: BoxDecoration(
+                                  border: Border.all(color: Colors.white),
+                                  borderRadius: BorderRadius.circular(10.0)),
+                              child: Center(
+                                  child: Image.asset(
+                                      'assets/images/illustrations/google.png')),
+                            ),
+                            const Gap(20),
+                            Container(
+                              width: 160.0,
+                              height: 60.0,
+                              padding: const EdgeInsets.all(15),
+                              decoration: BoxDecoration(
+                                  border: Border.all(color: Colors.white),
+                                  borderRadius: BorderRadius.circular(10.0)),
+                              child: Center(
+                                  child: Image.asset(
+                                      'assets/images/illustrations/apple.png')),
+                            )
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
+                  const Gap(100),
+                  SizedBox(
+                    child: Column(
+                      children: [
+                        Center(
+                          child: RichText(
+                            text: TextSpan(
+                                text: "Already have an account?  ",
+                                style: const TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w400,
+                                  letterSpacing: 0.30,
+                                ),
+                                children: [
+                                  TextSpan(
+                                    text: "Sign In",
+                                    style: const TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w700,
+                                      letterSpacing: 0.30,
+                                    ),
+                                    recognizer: TapGestureRecognizer()
+                                      ..onTap = () {
+                                        Navigator.popAndPushNamed(
+                                            context, Login.id);
+                                      },
+                                  )
+                                ]),
+                          ),
+                        )
+                      ],
+                    ),
                   )
                 ],
               ),
-            ),
-          )
-        ],
-      ),
-    );
+            )));
   }
 }

@@ -29,11 +29,7 @@ packages:
     dependency: "direct main"
     description:
       name: carousel_slider
-<<<<<<< Updated upstream
-      sha256: "869a3f4f2ad0e8d029d9cefd20d2cafd0a50847b74e7aab3a8eec662b0c7d2ee"
-=======
       sha256: "9c695cc963bf1d04a47bd6021f68befce8970bcd61d24938e1fb0918cf5d9c42"
->>>>>>> Stashed changes
       url: "https://pub.dev"
     source: hosted
     version: "4.2.1"
@@ -61,19 +57,11 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.17.1"
-<<<<<<< Updated upstream
-  country_code_picker:
-    dependency: "direct main"
-    description:
-      name: country_code_picker
-      sha256: "6eed752b23cf2331435b08d246f7aee6eae0eda25ae357560b6794ef02e87ee6"
-=======
   country_picker:
     dependency: "direct main"
     description:
       name: country_picker
       sha256: aa975b41c8052298d227ff7ff58d6eddcad0196127445f72af7456224c9ef104
->>>>>>> Stashed changes
       url: "https://pub.dev"
     source: hosted
     version: "2.0.20"
@@ -81,11 +69,7 @@ packages:
     dependency: transitive
     description:
       name: cross_file
-<<<<<<< Updated upstream
-      sha256: "7632a2bcddc8cef4afde3c6f80e69b29a7060e176f01119c229fe4eb3a2a3d4f"
-=======
       sha256: "0b0036e8cccbfbe0555fd83c1d31a6f30b77a96b598b35a5d36dd41f718695e9"
->>>>>>> Stashed changes
       url: "https://pub.dev"
     source: hosted
     version: "0.3.3+4"
@@ -93,14 +77,18 @@ packages:
     dependency: transitive
     description:
       name: crypto
-<<<<<<< Updated upstream
-      sha256: aa274aa7774f8964e4f4f38cc994db7b6158dd36e9187aaceaddc994b35c6c67
-=======
       sha256: ff625774173754681d66daaf4a448684fb04b78f902da9cb3d308c19cc5e8bab
->>>>>>> Stashed changes
       url: "https://pub.dev"
     source: hosted
     version: "3.0.3"
+  csc_picker:
+    dependency: "direct main"
+    description:
+      name: csc_picker
+      sha256: "7e5d6023a81f53b89a7fb0369953fd4dc676f7ea20e9a0c0707973a5f0aedf14"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.2.7"
   cupertino_icons:
     dependency: "direct main"
     description:
@@ -137,11 +125,7 @@ packages:
     dependency: transitive
     description:
       name: ffi
-<<<<<<< Updated upstream
-      sha256: a38574032c5f1dd06c4aee541789906c12ccaab8ba01446e800d9c5b79c4a978
-=======
       sha256: ed5337a5660c506388a9f012be0288fb38b49020ce2b45fe1f8b8323fe429f99
->>>>>>> Stashed changes
       url: "https://pub.dev"
     source: hosted
     version: "2.0.2"
@@ -149,11 +133,7 @@ packages:
     dependency: transitive
     description:
       name: file
-<<<<<<< Updated upstream
-      sha256: b69516f2c26a5bcac4eee2e32512e1a5205ab312b3536c1c1227b2b942b5f9ad
-=======
       sha256: "1b92bec4fc2a72f59a8e15af5f52cd441e4a7860b49499d69dfa817af20e925d"
->>>>>>> Stashed changes
       url: "https://pub.dev"
     source: hosted
     version: "6.1.4"
@@ -198,19 +178,15 @@ packages:
     dependency: "direct dev"
     description:
       name: flutter_lints
-      sha256: aeb0b80a8b3709709c9cc496cdc027c5b3216796bc0af0ce1007eaf24464fd4c
+      sha256: "2118df84ef0c3ca93f96123a616ae8540879991b8b57af2f81b76a7ada49b2a4"
       url: "https://pub.dev"
     source: hosted
-    version: "2.0.1"
+    version: "2.0.2"
   flutter_plugin_android_lifecycle:
     dependency: transitive
     description:
       name: flutter_plugin_android_lifecycle
-<<<<<<< Updated upstream
-      sha256: "60fc7b78455b94e6de2333d2f95196d32cf5c22f4b0b0520a628804cb463503b"
-=======
       sha256: "950e77c2bbe1692bc0874fc7fb491b96a4dc340457f4ea1641443d0a6c1ea360"
->>>>>>> Stashed changes
       url: "https://pub.dev"
     source: hosted
     version: "2.0.15"
@@ -226,11 +202,7 @@ packages:
     dependency: "direct main"
     description:
       name: flutter_staggered_animations
-<<<<<<< Updated upstream
-      sha256: "32ea23c17d655d72f7cf94c87f847a79963cbfc34570456aa7ca44e59d9129d5"
-=======
       sha256: "81d3c816c9bb0dca9e8a5d5454610e21ffb068aedb2bde49d2f8d04f75538351"
->>>>>>> Stashed changes
       url: "https://pub.dev"
     source: hosted
     version: "1.1.1"
@@ -238,11 +210,7 @@ packages:
     dependency: "direct main"
     description:
       name: flutter_svg
-<<<<<<< Updated upstream
-      sha256: "0d957454e9fadaef9c1bfd0189ca94dcf310236a7169b5ec029cac1d8afc117f"
-=======
       sha256: "6ff9fa12892ae074092de2fa6a9938fb21dbabfdaa2ff57dc697ff912fc8d4b2"
->>>>>>> Stashed changes
       url: "https://pub.dev"
     source: hosted
     version: "1.1.6"
@@ -260,11 +228,7 @@ packages:
     dependency: "direct main"
     description:
       name: gap
-<<<<<<< Updated upstream
-      sha256: "17a51ee49227c32472473de8c65c8a22f7fb5afb13d6dc5367926096aa55f2d0"
-=======
       sha256: db02ec4ac4511ea8d324d7f671d526959a8e7857468b4ea64113fe8a82f16a2c
->>>>>>> Stashed changes
       url: "https://pub.dev"
     source: hosted
     version: "2.0.2"
@@ -280,11 +244,7 @@ packages:
     dependency: "direct main"
     description:
       name: google_fonts
-<<<<<<< Updated upstream
-      sha256: "8f099045e2f2a30e4d4d0a35f40c6bc941a8f2ca0e10ad9d214ee9edd3f37483"
-=======
       sha256: e20ff62b158b96f392bfc8afe29dee1503c94fbea2cbe8186fd59b756b8ae982
->>>>>>> Stashed changes
       url: "https://pub.dev"
     source: hosted
     version: "5.1.0"
@@ -300,11 +260,7 @@ packages:
     dependency: transitive
     description:
       name: http
-<<<<<<< Updated upstream
-      sha256: "6aa2946395183537c8b880962d935877325d6a09a2867c3970c05c0fed6ac482"
-=======
       sha256: "759d1a329847dd0f39226c688d3e06a6b8679668e350e2891a6474f8b4bb8525"
->>>>>>> Stashed changes
       url: "https://pub.dev"
     source: hosted
     version: "1.1.0"
@@ -312,11 +268,7 @@ packages:
     dependency: transitive
     description:
       name: http_parser
-<<<<<<< Updated upstream
-      sha256: db3060f22889f3d9d55f6a217565486737037eec3609f7f3eca4d0c67ee0d8a0
-=======
       sha256: "2aa08ce0341cc9b354a498388e30986515406668dbcc4f7c950c3e715496693b"
->>>>>>> Stashed changes
       url: "https://pub.dev"
     source: hosted
     version: "4.0.2"
@@ -340,11 +292,7 @@ packages:
     dependency: "direct main"
     description:
       name: image_picker
-<<<<<<< Updated upstream
-      sha256: f3712cd190227fb92e0960cb0ce22928ba042c7183b16864ade83b259adf8ea6
-=======
       sha256: b6951e25b795d053a6ba03af5f710069c99349de9341af95155d52665cb4607c
->>>>>>> Stashed changes
       url: "https://pub.dev"
     source: hosted
     version: "0.8.9"
@@ -352,11 +300,7 @@ packages:
     dependency: transitive
     description:
       name: image_picker_android
-<<<<<<< Updated upstream
-      sha256: "2d4c2634731ced2debc2a36273351dd1cb68080d505c12c472b0dc0657cd853c"
-=======
       sha256: d2bab152deb2547ea6f53d82ebca9b7e77386bb706e5789e815d37e08ea475bb
->>>>>>> Stashed changes
       url: "https://pub.dev"
     source: hosted
     version: "0.8.7+3"
@@ -364,11 +308,7 @@ packages:
     dependency: transitive
     description:
       name: image_picker_for_web
-<<<<<<< Updated upstream
-      sha256: "60f306ffbdcada4bc8b2691acc420258a1b758e102c87c4f94fb568d640f0e0e"
-=======
       sha256: "869fe8a64771b7afbc99fc433a5f7be2fea4d1cb3d7c11a48b6b579eb9c797f0"
->>>>>>> Stashed changes
       url: "https://pub.dev"
     source: hosted
     version: "2.2.0"
@@ -376,11 +316,7 @@ packages:
     dependency: transitive
     description:
       name: image_picker_ios
-<<<<<<< Updated upstream
-      sha256: aee8b90c2fb018e18cbb437da661d0531a5346d49cab2d5c4a65ebaf026bbd33
-=======
       sha256: b3e2f21feb28b24dd73a35d7ad6e83f568337c70afab5eabac876e23803f264b
->>>>>>> Stashed changes
       url: "https://pub.dev"
     source: hosted
     version: "0.8.8"
@@ -404,11 +340,7 @@ packages:
     dependency: transitive
     description:
       name: image_picker_platform_interface
-<<<<<<< Updated upstream
-      sha256: cedb2650709f066ee83fd65a1d99b6ff33e5adf98cea376426dd33c2b22bf6ad
-=======
       sha256: "7c7b96bb9413a9c28229e717e6fd1e3edd1cc5569c1778fcca060ecf729b65ee"
->>>>>>> Stashed changes
       url: "https://pub.dev"
     source: hosted
     version: "2.8.0"
@@ -440,11 +372,7 @@ packages:
     dependency: transitive
     description:
       name: lints
-<<<<<<< Updated upstream
-      sha256: "5cfd6509652ff5e7fe149b6df4859e687fca9048437857cb2e65c8d780f396e3"
-=======
       sha256: "0a217c6c989d21039f1498c3ed9f3ed71b354e69873f13a8dfc3c9fe76f1b452"
->>>>>>> Stashed changes
       url: "https://pub.dev"
     source: hosted
     version: "2.1.1"
@@ -472,16 +400,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.9.1"
-<<<<<<< Updated upstream
-  modal_bottom_sheet:
-    dependency: "direct main"
-    description:
-      name: modal_bottom_sheet
-      sha256: fc7c6b5848b837122dc1db913545ef673d74222090cad63a2840507e3d483235
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.1.0"
-=======
   mime:
     dependency: transitive
     description:
@@ -499,7 +417,6 @@ packages:
       url: "https://github.com/followthemoney1/modal_bottom_sheet.git"
     source: git
     version: "2.1.2+1"
->>>>>>> Stashed changes
   pandabar:
     dependency: "direct main"
     description:
@@ -536,11 +453,7 @@ packages:
     dependency: "direct main"
     description:
       name: path_provider
-<<<<<<< Updated upstream
-      sha256: "050e8e85e4b7fecdf2bb3682c1c64c4887a183720c802d323de8a5fd76d372dd"
-=======
       sha256: "3087813781ab814e4157b172f1a11c46be20179fcc9bea043e0fba36bc0acaa2"
->>>>>>> Stashed changes
       url: "https://pub.dev"
     source: hosted
     version: "2.0.15"
@@ -548,24 +461,15 @@ packages:
     dependency: transitive
     description:
       name: path_provider_android
-<<<<<<< Updated upstream
-      sha256: "833c8bcb182b515cd872c113e29aaaffd29a1c720259dd2f65ab35ed5e0db748"
-=======
       sha256: "2cec049d282c7f13c594b4a73976b0b4f2d7a1838a6dd5aaf7bd9719196bee86"
->>>>>>> Stashed changes
       url: "https://pub.dev"
     source: hosted
     version: "2.0.27"
   path_provider_foundation:
     dependency: transitive
     description:
-<<<<<<< Updated upstream
-      name: path_provider_ios
-      sha256: "03d639406f5343478352433f00d3c4394d52dac8df3d847869c5e2333e0bbce8"
-=======
       name: path_provider_foundation
       sha256: "1995d88ec2948dac43edf8fe58eb434d35d22a2940ecee1a9fefcd62beee6eb3"
->>>>>>> Stashed changes
       url: "https://pub.dev"
     source: hosted
     version: "2.2.3"
@@ -573,34 +477,15 @@ packages:
     dependency: transitive
     description:
       name: path_provider_linux
-<<<<<<< Updated upstream
-      sha256: ab0987bf95bc591da42dffb38c77398fc43309f0b9b894dcc5d6f40c4b26c379
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.1.7"
-  path_provider_macos:
-    dependency: transitive
-    description:
-      name: path_provider_macos
-      sha256: "2a97e7fbb7ae9dcd0dfc1220a78e9ec3e71da691912e617e8715ff2a13086ae8"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.0.6"
-=======
       sha256: ffbb8cc9ed2c9ec0e4b7a541e56fd79b138e8f47d2fb86815f15358a349b3b57
       url: "https://pub.dev"
     source: hosted
     version: "2.1.11"
->>>>>>> Stashed changes
   path_provider_platform_interface:
     dependency: transitive
     description:
       name: path_provider_platform_interface
-<<<<<<< Updated upstream
-      sha256: "27dc7a224fcd07444cb5e0e60423ccacea3e13cf00fc5282ac2c918132da931d"
-=======
       sha256: "57585299a729335f1298b43245842678cb9f43a6310351b18fb577d6e33165ec"
->>>>>>> Stashed changes
       url: "https://pub.dev"
     source: hosted
     version: "2.0.6"
@@ -608,11 +493,7 @@ packages:
     dependency: transitive
     description:
       name: path_provider_windows
-<<<<<<< Updated upstream
-      sha256: "4fedda0f10803a8530d616ad0a963128c6ef7525065c9b67ad6577315785d931"
-=======
       sha256: "1cb68ba4cd3a795033de62ba1b7b4564dace301f952de6bfb3cd91b202b6ee96"
->>>>>>> Stashed changes
       url: "https://pub.dev"
     source: hosted
     version: "2.1.7"
@@ -620,11 +501,7 @@ packages:
     dependency: transitive
     description:
       name: petitparser
-<<<<<<< Updated upstream
-      sha256: "2ebb289dc4764ec397f5cd3ca9881c6d17196130a7d646ed022a0dd9c2e25a71"
-=======
       sha256: cb3798bef7fc021ac45b308f4b51208a152792445cce0448c9a4ba5879dd8750
->>>>>>> Stashed changes
       url: "https://pub.dev"
     source: hosted
     version: "5.4.0"
@@ -640,11 +517,7 @@ packages:
     dependency: transitive
     description:
       name: plugin_platform_interface
-<<<<<<< Updated upstream
-      sha256: "075f927ebbab4262ace8d0b283929ac5410c0ac4e7fc123c76429564facfb757"
-=======
       sha256: "6a2128648c854906c53fa8e33986fc0247a1116122f9534dd20e3ab9e16a32bc"
->>>>>>> Stashed changes
       url: "https://pub.dev"
     source: hosted
     version: "2.1.4"
@@ -676,11 +549,7 @@ packages:
     dependency: "direct main"
     description:
       name: shared_preferences
-<<<<<<< Updated upstream
-      sha256: "76917b7d4b9526b2ba416808a7eb9fb2863c1a09cf63ec85f1453da240fa818a"
-=======
       sha256: "396f85b8afc6865182610c0a2fc470853d56499f75f7499e2a73a9f0539d23d0"
->>>>>>> Stashed changes
       url: "https://pub.dev"
     source: hosted
     version: "2.1.2"
@@ -688,24 +557,15 @@ packages:
     dependency: transitive
     description:
       name: shared_preferences_android
-<<<<<<< Updated upstream
-      sha256: "853801ce6ba7429ec4e923e37317f32a57c903de50b8c33ffcfbdb7e6f0dd39c"
-=======
       sha256: "6478c6bbbecfe9aced34c483171e90d7c078f5883558b30ec3163cf18402c749"
->>>>>>> Stashed changes
       url: "https://pub.dev"
     source: hosted
     version: "2.1.4"
   shared_preferences_foundation:
     dependency: transitive
     description:
-<<<<<<< Updated upstream
-      name: shared_preferences_ios
-      sha256: "585a14cefec7da8c9c2fb8cd283a3bb726b4155c0952afe6a0caaa7b2272de34"
-=======
       name: shared_preferences_foundation
       sha256: e014107bb79d6d3297196f4f2d0db54b5d1f85b8ea8ff63b8e8b391a02700feb
->>>>>>> Stashed changes
       url: "https://pub.dev"
     source: hosted
     version: "2.2.2"
@@ -713,34 +573,15 @@ packages:
     dependency: transitive
     description:
       name: shared_preferences_linux
-<<<<<<< Updated upstream
-      sha256: "28aefc1261746e7bad3d09799496054beb84e8c4ffcdfed7734e17b4ada459a5"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.1.1"
-  shared_preferences_macos:
-    dependency: transitive
-    description:
-      name: shared_preferences_macos
-      sha256: fbb94bf296576f49be37a1496d5951796211a8db0aa22cc0d68c46440dad808c
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.0.4"
-=======
       sha256: "9d387433ca65717bbf1be88f4d5bb18f10508917a8fa2fb02e0fd0d7479a9afa"
       url: "https://pub.dev"
     source: hosted
     version: "2.2.0"
->>>>>>> Stashed changes
   shared_preferences_platform_interface:
     dependency: transitive
     description:
       name: shared_preferences_platform_interface
-<<<<<<< Updated upstream
-      sha256: "992f0fdc46d0a3c0ac2e5859f2de0e577bbe51f78a77ee8f357cbe626a2ad32d"
-=======
       sha256: "23b052f17a25b90ff2b61aad4cc962154da76fb62848a9ce088efe30d7c50ab1"
->>>>>>> Stashed changes
       url: "https://pub.dev"
     source: hosted
     version: "2.3.0"
@@ -748,11 +589,7 @@ packages:
     dependency: transitive
     description:
       name: shared_preferences_web
-<<<<<<< Updated upstream
-      sha256: a4b5bc37fe1b368bbc81f953197d55e12f49d0296e7e412dfe2d2d77d6929958
-=======
       sha256: "74083203a8eae241e0de4a0d597dbedab3b8fef5563f33cf3c12d7e93c655ca5"
->>>>>>> Stashed changes
       url: "https://pub.dev"
     source: hosted
     version: "2.1.0"
@@ -760,11 +597,7 @@ packages:
     dependency: transitive
     description:
       name: shared_preferences_windows
-<<<<<<< Updated upstream
-      sha256: "97f7ab9a7da96d9cf19581f5de520ceb529548498bd6b5e0ccd02d68a0d15eba"
-=======
       sha256: "5e588e2efef56916a3b229c3bfe81e6a525665a454519ca51dbcc4236a274173"
->>>>>>> Stashed changes
       url: "https://pub.dev"
     source: hosted
     version: "2.2.0"
@@ -833,25 +666,10 @@ packages:
     dependency: transitive
     description:
       name: typed_data
-<<<<<<< Updated upstream
-      sha256: "26f87ade979c47a150c9eaab93ccd2bebe70a27dc0b4b29517f2904f04eb11a5"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.3.1"
-  universal_platform:
-    dependency: transitive
-    description:
-      name: universal_platform
-      sha256: d315be0f6641898b280ffa34e2ddb14f3d12b1a37882557869646e0cc363d0cc
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.0+1"
-=======
       sha256: facc8d6582f16042dd49f2463ff1bd6e2c9ef9f3d5da3d9b087e244a7b564b3c
       url: "https://pub.dev"
     source: hosted
     version: "1.3.2"
->>>>>>> Stashed changes
   vector_math:
     dependency: transitive
     description:
@@ -864,11 +682,7 @@ packages:
     dependency: transitive
     description:
       name: win32
-<<<<<<< Updated upstream
-      sha256: "6b75ac2ddd42f5c226fdaf4498a2b04071c06f1f2b8f7ab1c3f77cc7f2285ff1"
-=======
       sha256: dfdf0136e0aa7a1b474ea133e67cb0154a0acd2599c4f3ada3b49d38d38793ee
->>>>>>> Stashed changes
       url: "https://pub.dev"
     source: hosted
     version: "5.0.5"
@@ -876,11 +690,7 @@ packages:
     dependency: transitive
     description:
       name: xdg_directories
-<<<<<<< Updated upstream
-      sha256: "060b6e1c891d956f72b5ac9463466c37cce3fa962a921532fc001e86fe93438e"
-=======
       sha256: ee1505df1426458f7f60aac270645098d318a8b4766d85fde75f76f2e21807d1
->>>>>>> Stashed changes
       url: "https://pub.dev"
     source: hosted
     version: "1.0.0"
@@ -888,19 +698,10 @@ packages:
     dependency: transitive
     description:
       name: xml
-<<<<<<< Updated upstream
-      sha256: ac0e3f4bf00ba2708c33fbabbbe766300e509f8c82dbd4ab6525039813f7e2fb
-=======
       sha256: "5bc72e1e45e941d825fd7468b9b4cc3b9327942649aeb6fc5cdbf135f0a86e84"
->>>>>>> Stashed changes
       url: "https://pub.dev"
     source: hosted
     version: "6.3.0"
 sdks:
-<<<<<<< Updated upstream
-  dart: ">=3.0.0-0 <4.0.0"
-  flutter: ">=3.0.0"
-=======
   dart: ">=3.0.0 <4.0.0"
   flutter: ">=3.3.0"
->>>>>>> Stashed changes
