@@ -6,6 +6,7 @@ import 'package:paysenta/ui/pages/onboarding/components/onboarding_2.dart';
 import 'package:paysenta/ui/shared/constants.dart';
 
 import '../../shared/widgets/slide_indicator.dart';
+import '../authentication/login.dart';
 import 'components/onboarding_1.dart';
 import 'get_started.dart';
 
@@ -53,15 +54,15 @@ class _OnboardingState extends State<Onboarding> {
     ];
 
     return Scaffold(
-        backgroundColor: primaryColor,
+        extendBodyBehindAppBar: true,
         appBar: AppBar(
           automaticallyImplyLeading: false,
-          backgroundColor: primaryColor,
+          forceMaterialTransparency: true,
           elevation: 0.0,
           actions: [
             GestureDetector(
               onTap: () {
-                Navigator.popAndPushNamed(context, GetStarted.id);
+                Navigator.popAndPushNamed(context, Login.id);
               },
               child: Padding(
                 padding: const EdgeInsets.symmetric(
@@ -78,71 +79,79 @@ class _OnboardingState extends State<Onboarding> {
             )
           ],
         ),
-        body: Column(
-          children: [
-            const Gap(10),
-            Expanded(
-              child: PageView.builder(
-                scrollDirection: Axis.horizontal,
-                physics: const BouncingScrollPhysics(
-                  parent: AlwaysScrollableScrollPhysics(),
+        body: Container(
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height,
+          decoration: const BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage('assets/bg.png'),
+                  fit: BoxFit.fill,
+                  repeat: ImageRepeat.noRepeat)),
+          child: Column(
+            children: [
+              const Gap(70),
+              Expanded(
+                child: PageView.builder(
+                  scrollDirection: Axis.horizontal,
+                  physics: const BouncingScrollPhysics(
+                    parent: AlwaysScrollableScrollPhysics(),
+                  ),
+                  controller: _pageController,
+                  onPageChanged: (int index) {
+                    setState(() {
+                      _currentPage = index;
+                    });
+                  },
+                  itemCount: onboardingPageList.length,
+                  itemBuilder: (context, index) => onboardingPageList[index],
                 ),
-                controller: _pageController,
-                onPageChanged: (int index) {
-                  setState(() {
-                    _currentPage = index;
-                  });
-                },
-                itemCount: onboardingPageList.length,
-                itemBuilder: (context, index) => onboardingPageList[index],
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 18.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  for (int i = 0; i < onboardingPageList.length; i++)
-                    i == _currentPage
-                        ? const SlideIndicator(isActive: true)
-                        : GestureDetector(
-                            onTap: () {
-                              _pageController.jumpToPage(i);
-                            },
-                            child: const SlideIndicator(
-                              isActive: false,
-                            ),
-                          )
-                ],
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 18.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    for (int i = 0; i < onboardingPageList.length; i++)
+                      i == _currentPage
+                          ? const SlideIndicator(isActive: true)
+                          : GestureDetector(
+                              onTap: () {
+                                _pageController.jumpToPage(i);
+                              },
+                              child: const SlideIndicator(
+                                isActive: false,
+                              ),
+                            )
+                  ],
+                ),
               ),
-            ),
-            const Gap(100),
-            Center(
-                child: Container(
-                    decoration: ShapeDecoration(
-                        color: Colors.white,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        )),
-                    width: 350.0,
-                    height: 56.0,
-                    child: MaterialButton(
-                      onPressed: () {
-                      },
-                      splashColor: Colors.white,
-                      child: const Text(
-                        'Get started',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          color: Color(0xFF1D3A6F),
-                          fontSize: 16,
-                          fontWeight: FontWeight.w700,
-                          letterSpacing: 0.30,
+              const Gap(100),
+              Center(
+                  child: Container(
+                      decoration: ShapeDecoration(
+                          color: Colors.white,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          )),
+                      width: 350.0,
+                      height: 56.0,
+                      child: MaterialButton(
+                        onPressed: () {},
+                        splashColor: Colors.white,
+                        child: const Text(
+                          'Get started',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: Color.fromRGBO(8, 173, 173, 1),
+                            fontSize: 16,
+                            fontWeight: FontWeight.w700,
+                            letterSpacing: 0.30,
+                          ),
                         ),
-                      ),
-                    ))),
-                    const Gap(20)
-          ],
+                      ))),
+              const Gap(20)
+            ],
+          ),
         ));
   }
 }

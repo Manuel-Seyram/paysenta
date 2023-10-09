@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:csc_picker/csc_picker.dart';
 
-import '../../shared/constants.dart';
+import 'reasons.dart';
 
 class CountryResidence extends StatefulWidget {
   const CountryResidence({Key? key}) : super(key: key);
@@ -20,14 +20,18 @@ class _CountryResidenceState extends State<CountryResidence> {
         body: Container(
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height,
-      decoration: const BoxDecoration(color: primaryColor),
+      decoration: const BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage('assets/bg.png'),
+              fit: BoxFit.fill,
+              repeat: ImageRepeat.noRepeat)),
       child: SingleChildScrollView(
         child: Column(
           children: [
             const Gap(45),
             Row(
               children: [
-                const Gap(15),
+                const Gap(30),
                 GestureDetector(
                   onTap: () {
                     Navigator.pop(context);
@@ -37,7 +41,7 @@ class _CountryResidenceState extends State<CountryResidence> {
                       width: 40.0,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
-                          border: Border.all(color: const Color(0xFF374151))),
+                          border: Border.all(color: Colors.white)),
                       child: FittedBox(
                         child: ClipRRect(
                             borderRadius: BorderRadius.circular(40.0),
@@ -58,7 +62,7 @@ class _CountryResidenceState extends State<CountryResidence> {
                 children: [
                   Row(
                     children: [
-                      Gap(15),
+                      Gap(30),
                       FittedBox(
                           fit: BoxFit.contain,
                           child: Text(
@@ -74,14 +78,14 @@ class _CountryResidenceState extends State<CountryResidence> {
                   Gap(5),
                   Row(
                     children: [
-                      Gap(15),
+                      Gap(30),
                       FittedBox(
                         child: Text(
                           'Please select all the countries that',
                           style: TextStyle(
                               fontSize: 16.0,
                               fontWeight: FontWeight.w400,
-                              color: Color(0xFF9CA3AF),
+                              color: Colors.white,
                               letterSpacing: 0.38),
                         ),
                       ),
@@ -90,14 +94,14 @@ class _CountryResidenceState extends State<CountryResidence> {
                   Gap(5),
                   Row(
                     children: [
-                      Gap(15),
+                      Gap(30),
                       FittedBox(
                         child: Text(
                           'you’re a tax resident in',
                           style: TextStyle(
                               fontSize: 16.0,
                               fontWeight: FontWeight.w400,
-                              color: Color(0xFF9CA3AF),
+                              color: Colors.white,
                               letterSpacing: 0.38),
                         ),
                       ),
@@ -111,7 +115,7 @@ class _CountryResidenceState extends State<CountryResidence> {
               width: MediaQuery.of(context).size.width,
               child: Row(
                 children: [
-                  const Gap(15.0),
+                  const Gap(30.0),
                   SizedBox(
                     width: 350,
                     child: CSCPicker(
@@ -120,7 +124,7 @@ class _CountryResidenceState extends State<CountryResidence> {
                       flagState: CountryFlag.ENABLE,
                       dropdownDecoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(5),
-                          color: const Color(0xFF1D2634)),
+                          color: Colors.white),
                       //disabledDropdownDecoration: BoxDecoration(borderRadius: BorderRadius.circular(5), color: Colors.black) ,
                       defaultCountry: CscCountry.Ghana,
                       countryDropdownLabel: countryValue != null
@@ -134,7 +138,7 @@ class _CountryResidenceState extends State<CountryResidence> {
                         CscCountry.United_States
                       ],
                       selectedItemStyle: const TextStyle(
-                        color: Colors.white,
+                        color: Colors.black,
                         fontSize: 16,
                       ),
                       dropdownItemStyle: const TextStyle(
@@ -166,14 +170,20 @@ class _CountryResidenceState extends State<CountryResidence> {
                       height: 56.0,
                       child: MaterialButton(
                         onPressed: () {
-                          Navigator.pushNamed(context, CountryResidence.id);
+                          Navigator.pushNamed(
+                            context,
+                            Reasons.id,
+                            arguments: {
+                              'countryValue': countryValue,
+                            },
+                          );
                         },
                         splashColor: Colors.white,
                         child: const Text(
                           'Continue',
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                            color: Color(0xFF1D3A6F),
+                            color: Color.fromRGBO(8, 173, 173, 1),
                             fontSize: 16,
                             fontWeight: FontWeight.w700,
                             letterSpacing: 0.30,

@@ -1,15 +1,153 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:iconly/iconly.dart';
-import 'package:iconsax/iconsax.dart';
+import 'package:paysenta/ui/pages/Deposit/top_up.dart';
+import 'package:paysenta/ui/pages/transactions/transactions.dart';
+import 'package:paysenta/ui/pages/withdraw/withdraw.dart';
 
 import '../../shared/constants.dart';
+import '../transfer/transfer.dart';
 
-class Home extends StatelessWidget {
-  const Home({Key? key}) : super(key: key);
+class Home extends StatefulWidget {
+  const Home({super.key});
+  static const String id = 'home';
 
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  List<Widget> cardList = [
+    Container(
+      height: 250,
+      width: 200,
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20),
+          color: const Color.fromRGBO(8, 173, 173, 1)),
+      child: Column(
+        children: [
+          const Gap(20),
+          Row(
+            children: [
+              const Gap(20),
+              const Text('Paysenta',
+                  style: TextStyle(
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.white,
+                      letterSpacing: 0.3)),
+              const Gap(50),
+              Image.asset(
+                'assets/Card_chips.png',
+                height: 40,
+                width: 40,
+              )
+            ],
+          ),
+          const Gap(120),
+          const Row(
+            children: [
+              Gap(20),
+              Text('Balance',
+                  style: TextStyle(
+                      fontSize: 12.0,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.white,
+                      letterSpacing: 0.3)),
+            ],
+          ),
+          const Gap(10),
+          const Row(
+            children: [
+              Gap(20),
+              Text('Ghs 10,250.00',
+                  style: TextStyle(
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.w700,
+                      color: Colors.white,
+                      letterSpacing: 0.3)),
+            ],
+          ),
+          const Gap(30),
+          Row(
+            children: [
+              const Gap(20),
+              Image.asset(
+                'assets/mastercard.png',
+                height: 40,
+                width: 40,
+              ),
+            ],
+          )
+        ],
+      ),
+    ),
+    Container(
+      height: 250,
+      width: 200,
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20),
+          color: const Color.fromRGBO(0, 0, 0, 0.26)),
+      child: Column(
+        children: [
+          const Gap(20),
+          Row(
+            children: [
+              const Gap(20),
+              const Text('Paysenta',
+                  style: TextStyle(
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.white,
+                      letterSpacing: 0.3)),
+              const Gap(50),
+              Image.asset(
+                'assets/Card_chips.png',
+                height: 40,
+                width: 40,
+              )
+            ],
+          ),
+          const Gap(120),
+          const Row(
+            children: [
+              Gap(20),
+              Text('Balance',
+                  style: TextStyle(
+                      fontSize: 12.0,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.white,
+                      letterSpacing: 0.3)),
+            ],
+          ),
+          const Gap(10),
+          const Row(
+            children: [
+              Gap(20),
+              Text('Ghs 10,250.00',
+                  style: TextStyle(
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.w700,
+                      color: Colors.white,
+                      letterSpacing: 0.3)),
+            ],
+          ),
+          const Gap(30),
+          Row(
+            children: [
+              const Gap(20),
+              Image.asset(
+                'assets/mastercard.png',
+                height: 40,
+                width: 40,
+              ),
+            ],
+          )
+        ],
+      ),
+    )
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,638 +158,389 @@ class Home extends StatelessWidget {
               children: [
                 Container(
                   width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height * 0.35,
-                  color: primaryColor,
+                  height: MediaQuery.of(context).size.height * 0.65,
+                  color: const Color.fromRGBO(29, 39, 52, 1),
                 ),
                 Container(
                   width: MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.height * 0.70,
-                  color: Colors.teal.shade50,
+                  decoration: const BoxDecoration(
+                      image: DecorationImage(
+                          image: AssetImage('assets/bg.png'),
+                          fit: BoxFit.fill)),
                 )
               ],
             ),
           ),
           CustomScrollView(
-            physics: const BouncingScrollPhysics(
-                parent: AlwaysScrollableScrollPhysics()),
+            physics: const NeverScrollableScrollPhysics(),
             slivers: [
               SliverAppBar(
-                backgroundColor: primaryColor,
+                pinned: true,
                 automaticallyImplyLeading: false,
-                centerTitle: false,
-                title: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Gap(20),
-                    Text(
-                      "Balance",
-                      style: GoogleFonts.nunito(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.white,
-                      ),
+                //expandedHeight: 70.0,
+                backgroundColor: const Color.fromRGBO(8, 173, 173, 1),
+                bottom: PreferredSize(
+                  preferredSize: const Size.fromHeight(70.0),
+                  child: AppBar(
+                    backgroundColor: const Color.fromRGBO(8, 173, 173, 1),
+                    toolbarHeight: 90,
+                    leadingWidth: 160,
+                    leading: const Row(
+                      children: [
+                        Column(
+                          children: [
+                            Gap(25),
+                            Padding(
+                              padding: EdgeInsets.only(right: 50.0),
+                              child: Text('Welcome,',
+                                  style: TextStyle(
+                                      fontSize: 12.0,
+                                      fontWeight: FontWeight.w500,
+                                      color: Colors.white,
+                                      letterSpacing: 0.3)),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 15),
+                              child: FittedBox(
+                                child: Row(
+                                  children: [
+                                    Text(
+                                      'Adwoa Kumi',
+                                      style: TextStyle(
+                                          fontSize: 20.0,
+                                          fontWeight: FontWeight.w700,
+                                          color: Colors.white,
+                                          letterSpacing: 0.3),
+                                      softWrap: true,
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      ],
                     ),
-                    Text(
-                      "\$23,000.00",
-                      style: GoogleFonts.nunito(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w700,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ],
-                ),
-                actions: const [
-                  Icon(
-                    IconlyLight.notification,
-                    size: 26,
-                    color: whiteColor,
+                    actions: [
+                      IconButton(
+                          onPressed: () {},
+                          splashRadius: 1.0,
+                          icon: const Icon(
+                            Icons.notifications,
+                            size: 30,
+                            color: Colors.white,
+                          )),
+                    ],
                   ),
-                  Gap(20)
-                ],
+                ),
               ),
               SliverList(
-                  delegate: SliverChildListDelegate(
-                [
-                  Container(
-                    color: primaryColor,
-                    child: Column(
+                  delegate: SliverChildListDelegate([
+                Column(
+                  children: [
+                    const Gap(30),
+                    Row(
                       children: [
-                        const Gap(40),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 38.0),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Column(
+                        Expanded(
+                          flex: 10,
+                          child: Container(
+                            decoration: const BoxDecoration(
+                                color: Color.fromRGBO(29, 39, 52, 1)),
+                            child: Container(
+                              height: 330,
+                              width: 200,
+                              decoration: const BoxDecoration(
+                                  color: Color.fromRGBO(8, 173, 173, 1),
+                                  borderRadius: BorderRadius.only(
+                                      topRight: Radius.circular(20),
+                                      bottomRight: Radius.circular(20))),
+                              child: Column(
                                 children: [
-                                  const Icon(
-                                    Icons.qr_code_scanner_sharp,
-                                    size: 40,
-                                    color: whiteColor,
+                                  const Gap(15),
+                                  GestureDetector(
+                                    onTap: () {
+                                      Navigator.pushNamed(context, TopUp.id);
+                                    },
+                                    child: Image.asset(
+                                      'assets/deposit.png',
+                                      width: 70,
+                                      height: 70,
+                                    ),
                                   ),
-                                  Text(
-                                    "Scan",
-                                    style: GoogleFonts.nunito(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w400,
-                                      color: whiteColor,
+                                  const Gap(5),
+                                  GestureDetector(
+                                    onTap: () {
+                                      Navigator.pushNamed(
+                                          context, Transfers.id);
+                                    },
+                                    child: Image.asset(
+                                      'assets/transfer.png',
+                                      width: 70,
+                                      height: 70,
+                                    ),
+                                  ),
+                                  const Gap(5),
+                                  GestureDetector(
+                                    onTap: () {
+                                      Navigator.pushNamed(context, Withdraw.id);
+                                    },
+                                    child: Image.asset(
+                                      'assets/withdraw.png',
+                                      width: 70,
+                                      height: 70,
+                                    ),
+                                  ),
+                                  const Gap(5),
+                                  GestureDetector(
+                                    onTap: () {},
+                                    child: Image.asset(
+                                      'assets/more.png',
+                                      width: 70,
+                                      height: 70,
                                     ),
                                   )
                                 ],
                               ),
-                              Column(
-                                children: [
-                                  const Icon(
-                                    Icons.add_circle_outline_rounded,
-                                    size: 40,
-                                    color: whiteColor,
-                                  ),
-                                  Text(
-                                    "Top-up",
-                                    style: GoogleFonts.nunito(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w400,
-                                      color: whiteColor,
-                                    ),
-                                  )
-                                ],
-                              ),
-                              Column(
-                                children: [
-                                  const Icon(
-                                    Iconsax.money_send5,
-                                    size: 40,
-                                    color: whiteColor,
-                                  ),
-                                  Text(
-                                    "Send",
-                                    style: GoogleFonts.nunito(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w400,
-                                      color: whiteColor,
-                                    ),
-                                  )
-                                ],
-                              ),
-                              Column(
-                                children: [
-                                  const Icon(
-                                    Iconsax.money_remove5,
-                                    size: 40,
-                                    color: whiteColor,
-                                  ),
-                                  Text(
-                                    "Receive",
-                                    style: GoogleFonts.nunito(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w400,
-                                      color: whiteColor,
-                                    ),
-                                  )
-                                ],
-                              ),
-                            ],
+                            ),
                           ),
                         ),
-                        const Gap(30),
+                        Expanded(
+                          flex: 31,
+                          child: Container(
+                            decoration: const BoxDecoration(
+                                color: Color.fromRGBO(29, 39, 52, 1)),
+                            child: Column(
+                              children: [
+                                const Gap(10),
+                                CarouselSlider(
+                                  options: CarouselOptions(
+                                      autoPlay: false,
+                                      aspectRatio: 1.0,
+                                      enlargeCenterPage: false,
+                                      viewportFraction: 0.75),
+                                  items: cardList,
+                                ),
+                              ],
+                            ),
+                          ),
+                        )
                       ],
                     ),
-                  ),
-                  Container(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 18, vertical: 20),
-                      margin: const EdgeInsets.symmetric(horizontal: 24),
-                      decoration: BoxDecoration(
-                        color: whiteColor,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Wrap(
-                        spacing: 22,
-                        runSpacing: 20,
+                    const Gap(60),
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width,
+                      child: Row(
                         children: [
-                          Column(
-                            children: [
-                              Container(
-                                color: Colors.yellow.withOpacity(0.2),
-                                padding: const EdgeInsets.symmetric(
-                                    vertical: 10, horizontal: 10),
-                                child: const Icon(
-                                  Icons.bolt,
-                                  size: 40,
-                                  color: Colors.amber,
+                          const Gap(25),
+                          const Text('Today, Dec 29',
+                              style: TextStyle(
+                                  fontSize: 14.0,
+                                  fontWeight: FontWeight.w700,
+                                  color: Colors.white,
+                                  letterSpacing: 0.3)),
+                          const Gap(145),
+                          SizedBox(
+                            child: Row(
+                              children: [
+                                GestureDetector(
+                                  onTap: () {
+                                    Navigator.pushNamed(
+                                        context, TransactionsPage.id);
+                                  },
+                                  child: const Text('All transactions',
+                                      style: TextStyle(
+                                          fontSize: 14.0,
+                                          fontWeight: FontWeight.w500,
+                                          color: Colors.white,
+                                          letterSpacing: 0.3)),
                                 ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(top: 8.0),
-                                child: Text(
-                                  "Electricity",
-                                  style: GoogleFonts.nunito(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w400,
-                                    color: blackColor,
+                                const Gap(10),
+                                GestureDetector(
+                                  onTap: () {
+                                    Navigator.pushNamed(
+                                        context, TransactionsPage.id);
+                                  },
+                                  child: const Icon(
+                                    Icons.arrow_forward_ios,
+                                    size: 14,
+                                    color: Colors.white,
                                   ),
-                                ),
-                              )
-                            ],
-                          ),
-                          Column(
-                            children: [
-                              Container(
-                                color: Colors.lightGreenAccent.withOpacity(0.2),
-                                padding: const EdgeInsets.symmetric(
-                                    vertical: 10, horizontal: 10),
-                                child: const Icon(
-                                  Icons.wifi_2_bar,
-                                  size: 40,
-                                  color: Colors.lightGreenAccent,
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(top: 8.0),
-                                child: Text(
-                                  "Internet",
-                                  style: GoogleFonts.nunito(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w400,
-                                    color: blackColor,
-                                  ),
-                                ),
-                              )
-                            ],
-                          ),
-                          Column(
-                            children: [
-                              Container(
-                                color: Colors.redAccent.withOpacity(0.2),
-                                padding: const EdgeInsets.symmetric(
-                                    vertical: 10, horizontal: 10),
-                                child: const Icon(
-                                  Icons.hotel,
-                                  size: 40,
-                                  color: Colors.redAccent,
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(top: 8.0),
-                                child: Text(
-                                  "Hostel",
-                                  style: GoogleFonts.nunito(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w400,
-                                    color: blackColor,
-                                  ),
-                                ),
-                              )
-                            ],
-                          ),
-                          Column(
-                            children: [
-                              Container(
-                                color: Colors.brown.withOpacity(0.2),
-                                padding: const EdgeInsets.symmetric(
-                                    vertical: 10, horizontal: 10),
-                                child: const Icon(
-                                  Icons.school_sharp,
-                                  size: 40,
-                                  color: Colors.brown,
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(top: 8.0),
-                                child: Text(
-                                  "Pay Fees",
-                                  style: GoogleFonts.nunito(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w400,
-                                    color: blackColor,
-                                  ),
-                                ),
-                              )
-                            ],
-                          ),
-                          Column(
-                            children: [
-                              const Icon(
-                                Icons.more,
-                                size: 40,
-                                color: primaryColor,
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(top: 8.0),
-                                child: Text(
-                                  "More",
-                                  style: GoogleFonts.nunito(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w400,
-                                    color: blackColor,
-                                  ),
-                                ),
-                              )
-                            ],
-                          ),
+                                )
+                              ],
+                            ),
+                          )
                         ],
-                      )),
-                  Container(
-                    color: Colors.teal.shade50,
-                    child: Column(
-                      children: [
-                        const Gap(30),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 24.0),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      ),
+                    ),
+                    const Gap(30),
+                    SingleChildScrollView(
+                      child: SizedBox(
+                        width: MediaQuery.of(context).size.width,
+                        child: SizedBox(
+                          child: Column(
                             children: [
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    "Check New Promo",
-                                    style: GoogleFonts.nunito(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.w600,
-                                      color: blackColor,
-                                    ),
-                                  ),
-                                  Text(
-                                    "Easy with promo code",
-                                    style: GoogleFonts.nunito(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w500,
-                                      color: blackColor,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              Container(
+                              Padding(
                                 padding: const EdgeInsets.symmetric(
-                                    horizontal: 10, vertical: 10),
-                                decoration: BoxDecoration(
-                                    border: Border.all(
-                                        width: 1, color: primaryColor),
-                                    borderRadius: BorderRadius.circular(5)),
-                                child: Text(
-                                  "View All",
-                                  style: GoogleFonts.nunito(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w600,
-                                    color: blackColor,
+                                    horizontal: 20.0),
+                                child: ListTile(
+                                  tileColor: whiteColor.withOpacity(0),
+                                  leading: Container(
+                                    height: 60,
+                                    width: 60,
+                                    decoration: BoxDecoration(
+                                      color: primaryColor.withOpacity(0.2),
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    child: const Icon(
+                                      Icons.add_circle,
+                                      color: primaryColor,
+                                    ),
+                                  ),
+                                  title: Text(
+                                    "Top Up",
+                                    style: GoogleFonts.nunito(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w600,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                  subtitle: Text(
+                                    "2 June 2020",
+                                    style: GoogleFonts.nunito(
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w400,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                  trailing: Text(
+                                    "GHS500.00",
+                                    style: GoogleFonts.nunito(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w600,
+                                      color: Colors.green,
+                                    ),
                                   ),
                                 ),
+                              ),
+                              const Gap(20),
+                              const Divider(
+                                thickness: 1.0,
+                                color: Colors.black,
+                                endIndent: 30,
+                                indent: 30,
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 20.0),
+                                child: ListTile(
+                                  tileColor: whiteColor.withOpacity(0),
+                                  leading: Container(
+                                    height: 60,
+                                    width: 60,
+                                    decoration: BoxDecoration(
+                                      color: primaryColor.withOpacity(0.2),
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    child: const Icon(
+                                      Icons.add_circle,
+                                      color: primaryColor,
+                                    ),
+                                  ),
+                                  title: Text(
+                                    "Top Up",
+                                    style: GoogleFonts.nunito(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w600,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                  subtitle: Text(
+                                    "2 June 2020",
+                                    style: GoogleFonts.nunito(
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w400,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                  trailing: Text(
+                                    "GHS500.00",
+                                    style: GoogleFonts.nunito(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w600,
+                                      color: Colors.green,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              const Gap(20),
+                              const Divider(
+                                thickness: 1.0,
+                                color: Colors.black,
+                                endIndent: 30,
+                                indent: 30,
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 20.0),
+                                child: ListTile(
+                                  tileColor: whiteColor.withOpacity(0),
+                                  leading: Container(
+                                    height: 60,
+                                    width: 60,
+                                    decoration: BoxDecoration(
+                                      color: primaryColor.withOpacity(0.2),
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    child: const Icon(
+                                      Icons.add_circle,
+                                      color: primaryColor,
+                                    ),
+                                  ),
+                                  title: Text(
+                                    "Top Up",
+                                    style: GoogleFonts.nunito(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w600,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                  subtitle: Text(
+                                    "2 June 2020",
+                                    style: GoogleFonts.nunito(
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w400,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                  trailing: Text(
+                                    "GHS500.00",
+                                    style: GoogleFonts.nunito(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w600,
+                                      color: Colors.green,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              const Gap(20),
+                              const Divider(
+                                thickness: 1.0,
+                                color: Colors.black,
+                                endIndent: 30,
+                                indent: 30,
                               ),
                             ],
                           ),
                         ),
-                        const Gap(30),
-                        CarouselSlider(
-                          items: [
-                            Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 8.0),
-                              child: Container(
-                                height: 170,
-                                padding: const EdgeInsets.symmetric(
-                                    vertical: 10, horizontal: 20),
-                                decoration: BoxDecoration(
-                                  color: Colors.amber,
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                                child: Row(
-                                  children: [
-                                    Expanded(
-                                      flex: 5,
-                                      child: Image.asset(
-                                        "assets/images/illustrations/discount-3.png",
-                                      ),
-                                    ),
-                                    Expanded(
-                                      flex: 3,
-                                      child: Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Text(
-                                            "DISCOUNT",
-                                            style: GoogleFonts.nunito(
-                                              fontSize: 18,
-                                              fontWeight: FontWeight.w600,
-                                              color: whiteColor,
-                                            ),
-                                          ),
-                                          Text(
-                                            "30%",
-                                            style: GoogleFonts.acme(
-                                              fontSize: 40,
-                                              fontWeight: FontWeight.w600,
-                                              color: whiteColor,
-                                            ),
-                                          ),
-                                          Text(
-                                            "use the promo code",
-                                            style: GoogleFonts.nunito(
-                                              fontSize: 10,
-                                              fontWeight: FontWeight.w600,
-                                              color: whiteColor,
-                                            ),
-                                          ),
-                                          const Gap(5),
-                                          Container(
-                                            padding: const EdgeInsets.symmetric(
-                                                horizontal: 10, vertical: 5),
-                                            decoration: BoxDecoration(
-                                              color: whiteColor,
-                                              borderRadius:
-                                                  BorderRadius.circular(10),
-                                            ),
-                                            child: Text(
-                                              "PAYSENT22",
-                                              style: GoogleFonts.manrope(
-                                                  fontSize: 14,
-                                                  color: primaryColor,
-                                                  fontWeight: FontWeight.w800),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    )
-                                  ],
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 8.0),
-                              child: Container(
-                                height: 170,
-                                padding: const EdgeInsets.symmetric(
-                                    vertical: 10, horizontal: 20),
-                                decoration: BoxDecoration(
-                                  color: primaryColor,
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                                child: Row(
-                                  children: [
-                                    Expanded(
-                                      flex: 5,
-                                      child: Image.asset(
-                                          "assets/images/illustrations/discount.png"),
-                                    ),
-                                    // const Gap(50),
-                                    Expanded(
-                                      flex: 3,
-                                      child: Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Text(
-                                            "DISCOUNT",
-                                            style: GoogleFonts.nunito(
-                                              fontSize: 18,
-                                              fontWeight: FontWeight.w600,
-                                              color: whiteColor,
-                                            ),
-                                          ),
-                                          Text(
-                                            "30%",
-                                            style: GoogleFonts.acme(
-                                              fontSize: 40,
-                                              fontWeight: FontWeight.w600,
-                                              color: whiteColor,
-                                            ),
-                                          ),
-                                          Text(
-                                            "use the promo code",
-                                            style: GoogleFonts.nunito(
-                                              fontSize: 10,
-                                              fontWeight: FontWeight.w600,
-                                              color: whiteColor,
-                                            ),
-                                          ),
-                                          const Gap(5),
-                                          Container(
-                                            padding: const EdgeInsets.symmetric(
-                                                horizontal: 10, vertical: 5),
-                                            decoration: BoxDecoration(
-                                              color: whiteColor,
-                                              borderRadius:
-                                                  BorderRadius.circular(10),
-                                            ),
-                                            child: Text(
-                                              "PAYSENT22",
-                                              style: GoogleFonts.manrope(
-                                                  fontSize: 14,
-                                                  color: primaryColor,
-                                                  fontWeight: FontWeight.w800),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    )
-                                  ],
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 8.0),
-                              child: Container(
-                                height: 170,
-                                padding: const EdgeInsets.symmetric(
-                                    vertical: 10, horizontal: 20),
-                                decoration: BoxDecoration(
-                                  color: Colors.pinkAccent,
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                                child: Row(
-                                  children: [
-                                    Expanded(
-                                      flex: 5,
-                                      child: Image.asset(
-                                          "assets/images/illustrations/discount-1.png"),
-                                    ),
-                                    Expanded(
-                                      flex: 3,
-                                      child: Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Text(
-                                            "DISCOUNT",
-                                            style: GoogleFonts.nunito(
-                                              fontSize: 18,
-                                              fontWeight: FontWeight.w600,
-                                              color: whiteColor,
-                                            ),
-                                          ),
-                                          Text(
-                                            "30%",
-                                            style: GoogleFonts.acme(
-                                              fontSize: 40,
-                                              fontWeight: FontWeight.w600,
-                                              color: whiteColor,
-                                            ),
-                                          ),
-                                          Text(
-                                            "use the promo code",
-                                            style: GoogleFonts.nunito(
-                                              fontSize: 10,
-                                              fontWeight: FontWeight.w600,
-                                              color: whiteColor,
-                                            ),
-                                          ),
-                                          const Gap(5),
-                                          Container(
-                                            padding: const EdgeInsets.symmetric(
-                                                horizontal: 10, vertical: 5),
-                                            decoration: BoxDecoration(
-                                              color: whiteColor,
-                                              borderRadius:
-                                                  BorderRadius.circular(10),
-                                            ),
-                                            child: Text(
-                                              "PAYSENT22",
-                                              style: GoogleFonts.manrope(
-                                                  fontSize: 14,
-                                                  color: primaryColor,
-                                                  fontWeight: FontWeight.w800),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    )
-                                  ],
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 8.0),
-                              child: Container(
-                                height: 170,
-                                padding: const EdgeInsets.symmetric(
-                                    vertical: 10, horizontal: 20),
-                                decoration: BoxDecoration(
-                                  color: Colors.greenAccent,
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                                child: Row(
-                                  children: [
-                                    Expanded(
-                                      flex: 5,
-                                      child: Image.asset(
-                                          "assets/images/illustrations/discount-.png"),
-                                    ),
-                                    Expanded(
-                                      flex: 3,
-                                      child: Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Text(
-                                            "DISCOUNT",
-                                            style: GoogleFonts.nunito(
-                                              fontSize: 18,
-                                              fontWeight: FontWeight.w600,
-                                              color: whiteColor,
-                                            ),
-                                          ),
-                                          Text(
-                                            "30%",
-                                            style: GoogleFonts.acme(
-                                              fontSize: 40,
-                                              fontWeight: FontWeight.w600,
-                                              color: whiteColor,
-                                            ),
-                                          ),
-                                          Text(
-                                            "use the promo code",
-                                            style: GoogleFonts.nunito(
-                                              fontSize: 10,
-                                              fontWeight: FontWeight.w600,
-                                              color: whiteColor,
-                                            ),
-                                          ),
-                                          const Gap(5),
-                                          Container(
-                                            padding: const EdgeInsets.symmetric(
-                                                horizontal: 10, vertical: 5),
-                                            decoration: BoxDecoration(
-                                              color: whiteColor,
-                                              borderRadius:
-                                                  BorderRadius.circular(10),
-                                            ),
-                                            child: Text(
-                                              "PAYSENT22",
-                                              style: GoogleFonts.manrope(
-                                                  fontSize: 14,
-                                                  color: primaryColor,
-                                                  fontWeight: FontWeight.w800),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    )
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ],
-                          options: CarouselOptions(
-                              viewportFraction: 0.91,
-                              aspectRatio: 16 / 7,
-                              // enlargeCenterPage: true,
-                              initialPage: 0,
-                              autoPlay: true,
-                              autoPlayInterval: const Duration(seconds: 8)),
-                        ),
-                      ],
-                    ),
-                  ),
-                  const Gap(120),
-                ],
-              ))
+                      ),
+                    )
+                  ],
+                ),
+              ]))
             ],
-          ),
+          )
         ],
       ),
     );

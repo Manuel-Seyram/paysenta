@@ -1,12 +1,14 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:iconly/iconly.dart';
-import 'package:iconsax/iconsax.dart';
-import 'package:paysenta/ui/pages/authentication/login.dart';
-import 'package:paysenta/ui/shared/widgets/custom_button.dart';
+import 'package:paysenta/ui/pages/profile/widgets/general%20settings/general_settings.dart';
+import 'package:paysenta/ui/pages/profile/widgets/password%20recovery/password_recovery.dart';
 
 import '../../shared/constants.dart';
+import 'widgets/account info/account_info.dart';
+import 'widgets/faq/faq.dart';
+import 'widgets/referral/referral.dart';
 
 class Profile extends StatelessWidget {
   const Profile({Key? key}) : super(key: key);
@@ -14,294 +16,297 @@ class Profile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBodyBehindAppBar: true,
-      appBar: AppBar(
-        backgroundColor: primaryColor,
-        elevation: 0.1,
-        automaticallyImplyLeading: false,
-        centerTitle: false,
-        title: Text(
-          "Profile",
-          style: GoogleFonts.nunito(
-            fontSize: 22,
-            color: Colors.white,
-          ),
-        ),
-        actions: const [
-          Icon(
-            IconlyLight.notification,
-            size: 24,
-            color: whiteColor,
-          ),
-          Gap(20)
-        ],
-      ),
-      body: Stack(
-        children: [
-          SingleChildScrollView(
+      body: Container(
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        decoration: const BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage('assets/bg.png'),
+                fit: BoxFit.fill,
+                repeat: ImageRepeat.noRepeat)),
+        child: SingleChildScrollView(
             child: Column(
-              children: [
-                Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height * 0.25,
-                  color: primaryColor,
-                ),
-                Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height * 0.75,
-                  color: Colors.teal.shade50,
-                )
-              ],
+          children: [
+            const Gap(60),
+            const Center(
+              child: Text('Profile',
+                  style: TextStyle(
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.w700,
+                      color: Colors.white,
+                      letterSpacing: 0.3)),
             ),
-          ),
-          SafeArea(
-            bottom: false,
-            child: ListView(
-              physics: const BouncingScrollPhysics(
-                  parent: AlwaysScrollableScrollPhysics()),
-              padding: const EdgeInsets.only(top: 10),
-              children: [
-                const Gap(20),
-                Container(
-                  height: 270,
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 18, vertical: 20),
-                  margin:
-                      const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                  decoration: BoxDecoration(
-                    color: whiteColor,
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Column(
-                    children: [
-                      Container(
-                        height: 90,
-                        width: 90,
-                        padding: const EdgeInsets.all(20),
-                        margin: const EdgeInsets.only(top: 20),
-                        decoration: BoxDecoration(
-                          color: Colors.grey,
-                          borderRadius: BorderRadius.circular(10),
-                          image: const DecorationImage(
-                              image: AssetImage("assets/images/avatar"),
-                              fit: BoxFit.fill),
-                        ),
+            const Gap(40),
+            const SizedBox(
+              child: Center(
+                child: CircleAvatar(
+                  radius: 75,
+                  backgroundColor: Color.fromRGBO(29, 171, 135, 1),
+                  child: CircleAvatar(
+                    radius: 73,
+                    backgroundColor: Color.fromRGBO(8, 173, 173, 0.4),
+                    child: CircleAvatar(
+                      radius: 70,
+                      backgroundColor: Color.fromRGBO(8, 173, 173, 0.4),
+                      child: CircleAvatar(
+                        radius: 55,
+                        foregroundImage: AssetImage('assets/avatar.png'),
                       ),
-                      const Gap(8),
-                      Text(
-                        "Keziah Annan",
-                        style: GoogleFonts.manrope(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                      Text(
-                        "054-243-5381",
-                        style: GoogleFonts.manrope(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                      Divider(
-                        thickness: 0.7,
-                        color: Colors.grey.shade500,
-                      ),
-                      Row(
-                        children: [
-                          Expanded(
-                            child: Container(
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 12, vertical: 8),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(5),
-                                border: Border.all(
-                                  width: 1,
-                                  color: Colors.grey.shade500,
-                                ),
-                              ),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  const Icon(Icons.qr_code_scanner_outlined),
-                                  const Gap(10),
-                                  Text(
-                                    "QR Code",
-                                    style: GoogleFonts.poppins(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w600),
-                                  )
-                                ],
-                              ),
-                            ),
-                          ),
-                          const Gap(20),
-                          Expanded(
-                            child: Container(
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 12, vertical: 8),
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(5),
-                                  border: Border.all(
-                                    width: 1,
-                                    color: Colors.grey.shade500,
-                                  )),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  const Icon(Iconsax.scan_barcode),
-                                  const Gap(10),
-                                  Text(
-                                    " Barcode",
-                                    style: GoogleFonts.poppins(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w600,
-                                    ),
-                                  )
-                                ],
-                              ),
-                            ),
-                          ),
-                        ],
-                      )
-                    ],
+                    ),
                   ),
                 ),
-                const Gap(16),
-                Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
-                  color: Colors.teal.shade50,
-                  child: Column(
-                    children: [
-                      Card(
-                        child: ListTile(
-                          horizontalTitleGap: 0,
-                          contentPadding: const EdgeInsets.symmetric(
-                              vertical: 8, horizontal: 16),
-                          tileColor: whiteColor,
-                          leading: const Icon(Icons.person),
-                          title: Text(
-                            "Change Profile",
-                            style: GoogleFonts.manrope(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                          trailing: const Icon(Icons.arrow_forward_ios),
-                        ),
-                      ),
-                      const Gap(10),
-                      Card(
-                        child: ListTile(
-                          horizontalTitleGap: 0,
-                          contentPadding: const EdgeInsets.symmetric(
-                              vertical: 8, horizontal: 16),
-                          leading: const Icon(Icons.credit_card),
-                          title: Text(
-                            "My Card",
-                            style: GoogleFonts.manrope(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                          trailing: const Icon(Icons.arrow_forward_ios),
-                        ),
-                      ),
-                      const Gap(10),
-                      Card(
-                        child: ListTile(
-                          horizontalTitleGap: 0,
-                          contentPadding: const EdgeInsets.symmetric(
-                              vertical: 8, horizontal: 16),
-                          leading: const Icon(Icons.airplane_ticket),
-                          title: Text(
-                            "Promo Code",
-                            style: GoogleFonts.manrope(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                          trailing: const Icon(Icons.arrow_forward_ios),
-                        ),
-                      ),
-                      const Gap(10),
-                      Card(
-                        child: ListTile(
-                          horizontalTitleGap: 0,
-                          contentPadding: const EdgeInsets.symmetric(
-                              vertical: 8, horizontal: 16),
-                          leading: const Icon(Icons.security),
-                          title: Text(
-                            "Change Security Code",
-                            style: GoogleFonts.manrope(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                          trailing: const Icon(Icons.arrow_forward_ios),
-                        ),
-                      ),
-                      const Gap(10),
-                      Card(
-                        child: ListTile(
-                          horizontalTitleGap: 0,
-                          contentPadding: const EdgeInsets.symmetric(
-                              vertical: 8, horizontal: 16),
-                          leading: const Icon(Icons.settings),
-                          title: Text(
-                            "Settings",
-                            style: GoogleFonts.manrope(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                          trailing: const Icon(Icons.arrow_forward_ios),
-                        ),
-                      ),
-                      const Gap(10),
-                      Card(
-                        child: ListTile(
-                          horizontalTitleGap: 0,
-                          contentPadding: const EdgeInsets.symmetric(
-                              vertical: 8, horizontal: 16),
-                          leading: const Icon(Icons.receipt_rounded),
-                          title: Text(
-                            "Terms of Service",
-                            style: GoogleFonts.manrope(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                          trailing: const Icon(Icons.arrow_forward_ios),
-                        ),
-                      ),
-                      const Gap(20),
-                      CustomButton(
-                        color: Colors.pink,
-                        width: double.infinity,
-                        height: 50,
-                        onPressed: () {
-                          Navigator.pushNamedAndRemoveUntil(
-                              context, Login.id, (route) => true);
-                        },
-                        radius: 10,
-                        label: Text(
-                          "Sign Out",
-                          style: GoogleFonts.manrope(
-                            fontWeight: FontWeight.w600,
-                            color: whiteColor,
-                            fontSize: 16,
-                          ),
-                        ),
-                      ),
-                      const Gap(120),
-                    ],
-                  ),
-                )
-              ],
+              ),
             ),
-          )
-        ],
+            const Gap(20),
+            const Center(
+              child: Text('Adwoa Kumi',
+                  style: TextStyle(
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.w700,
+                      color: Colors.white,
+                      letterSpacing: 0.3)),
+            ),
+            const Gap(5),
+            const Center(
+              child: Text('adwoakumi@mail.com',
+                  style: TextStyle(
+                      fontSize: 12.0,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.white,
+                      letterSpacing: 0.3)),
+            ),
+            const Gap(20),
+            SizedBox(
+              height: MediaQuery.of(context).size.height,
+              child: ListView.builder(
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: listTileWidgets(context).length,
+                itemBuilder: (context, index) {
+                  return listTileWidgets(context)[index];
+                },
+              ),
+            ),
+            const Gap(20),
+          ],
+        )),
       ),
     );
   }
+}
+
+List<Widget> listTileWidgets(BuildContext context) {
+  return [
+    GestureDetector(
+      onTap: () {
+        Navigator.pushNamed(context, Referral.id);
+      },
+      child: Padding(
+        padding: const EdgeInsets.only(top: 16.0),
+        child: ListTile(
+          tileColor: whiteColor.withOpacity(0),
+          leading: Container(
+            height: 60,
+            width: 60,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: const Icon(
+              Icons.bolt,
+              color: Colors.amber,
+            ),
+          ),
+          title: Text(
+            "Referral Code",
+            style: GoogleFonts.nunito(
+              fontSize: 18,
+              fontWeight: FontWeight.w600,
+              color: Colors.white,
+            ),
+          ),
+          trailing: const Icon(
+            Icons.arrow_forward_ios_sharp,
+            color: Colors.white,
+          ),
+        ),
+      ),
+    ),
+    GestureDetector(
+      onTap: () {
+        Navigator.pushNamed(context, AccountInfo.id);
+      },
+      child: Padding(
+        padding: const EdgeInsets.only(top: 16.0),
+        child: ListTile(
+          tileColor: whiteColor.withOpacity(0),
+          leading: Container(
+            height: 60,
+            width: 60,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: const Icon(
+              Icons.person,
+              color: Colors.grey,
+            ),
+          ),
+          title: Text(
+            "Account Info",
+            style: GoogleFonts.nunito(
+              fontSize: 18,
+              fontWeight: FontWeight.w600,
+              color: Colors.white,
+            ),
+          ),
+          trailing: const Icon(
+            Icons.arrow_forward_ios_sharp,
+            color: Colors.white,
+          ),
+        ),
+      ),
+    ),
+    GestureDetector(
+      onTap: () {
+        Navigator.pushNamed(context, FAQ.id);
+      },
+      child: Padding(
+        padding: const EdgeInsets.only(top: 16.0),
+        child: ListTile(
+          tileColor: whiteColor.withOpacity(0),
+          leading: Container(
+            height: 60,
+            width: 60,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: const Icon(
+              CupertinoIcons.person_2,
+              color: Colors.purple,
+            ),
+          ),
+          title: Text(
+            "FAQs",
+            style: GoogleFonts.nunito(
+              fontSize: 18,
+              fontWeight: FontWeight.w600,
+              color: Colors.white,
+            ),
+          ),
+          trailing: const Icon(
+            Icons.arrow_forward_ios_sharp,
+            color: Colors.white,
+          ),
+        ),
+      ),
+    ),
+    Padding(
+      padding: const EdgeInsets.only(top: 16.0),
+      child: ListTile(
+        tileColor: whiteColor.withOpacity(0),
+        leading: Container(
+          height: 60,
+          width: 60,
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(10),
+          ),
+          child: const Icon(
+            Icons.language_rounded,
+            color: Colors.blue,
+          ),
+        ),
+        title: Text(
+          "Language",
+          style: GoogleFonts.nunito(
+            fontSize: 18,
+            fontWeight: FontWeight.w600,
+            color: Colors.white,
+          ),
+        ),
+        trailing: const Icon(
+          Icons.arrow_forward_ios_sharp,
+          color: Colors.white,
+        ),
+      ),
+    ),
+    const Gap(30),
+    const Divider(
+      thickness: 1.0,
+      indent: 30,
+      endIndent: 30,
+      color: Colors.white,
+    ),
+    GestureDetector(
+      onTap: () {
+        Navigator.pushNamed(context, GeneralSettings.id);
+      },
+      child: Padding(
+        padding: const EdgeInsets.only(top: 16.0),
+        child: ListTile(
+          tileColor: whiteColor.withOpacity(0),
+          leading: Container(
+            height: 60,
+            width: 60,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: const Icon(
+              Icons.settings,
+              color: Colors.pink,
+            ),
+          ),
+          title: Text(
+            "General Settings",
+            style: GoogleFonts.nunito(
+              fontSize: 18,
+              fontWeight: FontWeight.w600,
+              color: Colors.white,
+            ),
+          ),
+          trailing: const Icon(
+            Icons.arrow_forward_ios_sharp,
+            color: Colors.white,
+          ),
+        ),
+      ),
+    ),
+    GestureDetector(
+      onTap: () {
+        Navigator.pushNamed(context, PasswordRecovery.id);
+      },
+      child: Padding(
+        padding: const EdgeInsets.only(top: 16.0),
+        child: ListTile(
+          tileColor: whiteColor.withOpacity(0),
+          leading: Container(
+            height: 60,
+            width: 60,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: const Icon(
+              Icons.lock_outline_rounded,
+              color: Colors.orange,
+            ),
+          ),
+          title: Text(
+            "Change Password",
+            style: GoogleFonts.nunito(
+              fontSize: 18,
+              fontWeight: FontWeight.w600,
+              color: Colors.white,
+            ),
+          ),
+          trailing: const Icon(
+            Icons.arrow_forward_ios_sharp,
+            color: Colors.white,
+          ),
+        ),
+      ),
+    ),
+  ];
 }

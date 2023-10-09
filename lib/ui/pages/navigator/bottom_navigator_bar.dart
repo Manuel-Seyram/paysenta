@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 import 'package:pandabar/pandabar.dart';
+import 'package:paysenta/ui/pages/home/home.dart';
 import 'package:paysenta/ui/pages/profile/profile.dart';
 
 import '../../shared/constants.dart';
-import '../deals/deals.dart';
-import '../history/history.dart';
-import '../home/home.dart';
+import '../my cards/my_card.dart';
+import '../transactions/transactions.dart';
 
 class MainPageNavigator extends StatefulWidget {
   const MainPageNavigator({Key? key}) : super(key: key);
@@ -25,8 +25,8 @@ class _MainPageNavigatorState extends State<MainPageNavigator> {
 
   List<Widget> pageData = [
     const Home(),
-    const HistoryPage(),
-    const Deals(),
+    const MyCards(),
+    const TransactionsPage(),
     const Profile()
   ];
 
@@ -36,8 +36,8 @@ class _MainPageNavigatorState extends State<MainPageNavigator> {
       backgroundColor: Colors.transparent,
       bottomNavigationBar: PandaBar(
         backgroundColor: whiteColor,
-        buttonColor: primaryColor.withOpacity(0.5),
-        buttonSelectedColor: primaryColor,
+        buttonColor: Colors.black.withOpacity(0.5),
+        buttonSelectedColor: const Color.fromRGBO(8, 173, 173, 1),
         buttonData: [
           PandaBarButtonData(
               id: 0,
@@ -46,13 +46,15 @@ class _MainPageNavigatorState extends State<MainPageNavigator> {
           PandaBarButtonData(
               id: 1,
               icon: bottomNavBarIndex == 1
-                  ? IconlyBold.time_square
-                  : IconlyLight.time_circle,
-              title: 'History'),
+                  ? Icons.credit_card_rounded
+                  : Icons.credit_card_outlined,
+              title: 'My Cards'),
           PandaBarButtonData(
               id: 2,
-              icon: bottomNavBarIndex == 2 ? IconlyBold.buy : IconlyLight.buy,
-              title: 'Deals'),
+              icon: bottomNavBarIndex == 2
+                  ? Icons.table_chart_outlined
+                  : Icons.table_chart_rounded,
+              title: 'Activity'),
           PandaBarButtonData(
               id: 3,
               icon: bottomNavBarIndex == 3
@@ -61,7 +63,10 @@ class _MainPageNavigatorState extends State<MainPageNavigator> {
               title: 'Profile'),
         ],
         onChange: newIndex,
-        fabColors: const [primaryColor, primaryColor1],
+        fabColors: const [
+          Color.fromRGBO(8, 173, 173, 1),
+          Color.fromRGBO(8, 173, 173, 1)
+        ],
         fabIcon: const Icon(
           Icons.qr_code_scanner_rounded,
           color: whiteColor,

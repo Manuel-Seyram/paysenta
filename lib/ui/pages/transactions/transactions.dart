@@ -3,56 +3,51 @@ import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:paysenta/ui/shared/constants.dart';
 
-class HistoryPage extends StatefulWidget {
-  const HistoryPage({Key? key}) : super(key: key);
+class TransactionsPage extends StatefulWidget {
+  const TransactionsPage({Key? key}) : super(key: key);
+  static String id = "transactions";
 
   @override
-  State<HistoryPage> createState() => _HistoryPageState();
+  State<TransactionsPage> createState() => _TransactionsPageState();
 }
 
-class _HistoryPageState extends State<HistoryPage> {
+class _TransactionsPageState extends State<TransactionsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: CustomScrollView(
-        physics: const BouncingScrollPhysics(
-            parent: AlwaysScrollableScrollPhysics()),
-        slivers: [
-          SliverAppBar(
-            toolbarHeight: 60,
-            floating: true,
-            automaticallyImplyLeading: false,
-            backgroundColor: primaryColor,
-            leadingWidth: 100,
-            centerTitle: false,
-            title: Padding(
-              padding: const EdgeInsets.only(left: 8.0),
-              child: Text(
-                "History",
-                style: GoogleFonts.manrope(
-                  fontSize: 22,
-                  fontWeight: FontWeight.w800,
-                  color: whiteColor,
-                ),
-              ),
-            ),
-            actions: [
-              GestureDetector(
-                child: const Icon(
-                  Icons.search,
-                  color: whiteColor,
-                ),
+      body: Container(
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        decoration: const BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage('assets/bg.png'),
+                fit: BoxFit.fill,
+                repeat: ImageRepeat.noRepeat)),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              const Gap(60),
+              const Center(
+                child: Text('All Transactions',
+                    style: TextStyle(
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.w700,
+                        color: Colors.white,
+                        letterSpacing: 0.3)),
               ),
               const Gap(20),
+              SizedBox(
+                height: MediaQuery.of(context).size.height,
+                child: ListView.builder(
+                  itemCount: listTileWidgets.length,
+                  itemBuilder: (context, index) {
+                    return listTileWidgets[index];
+                  },
+                ),
+              )
             ],
           ),
-          SliverList(
-            delegate:
-                SliverChildBuilderDelegate((BuildContext context, int index) {
-              return listTileWidgets[index];
-            }, childCount: listTileWidgets.length),
-          ),
-        ],
+        ),
       ),
     );
   }
@@ -80,7 +75,7 @@ List<Widget> listTileWidgets = [
         style: GoogleFonts.nunito(
           fontSize: 18,
           fontWeight: FontWeight.w600,
-          color: blackColor,
+          color: Colors.white,
         ),
       ),
       subtitle: Text(
@@ -88,7 +83,7 @@ List<Widget> listTileWidgets = [
         style: GoogleFonts.nunito(
           fontSize: 12,
           fontWeight: FontWeight.w400,
-          color: Colors.grey.shade800,
+          color: Colors.white,
         ),
       ),
       trailing: Text(
@@ -96,7 +91,7 @@ List<Widget> listTileWidgets = [
         style: GoogleFonts.nunito(
           fontSize: 18,
           fontWeight: FontWeight.w600,
-          color: blackColor,
+          color: Colors.red,
         ),
       ),
     ),
@@ -122,7 +117,7 @@ List<Widget> listTileWidgets = [
         style: GoogleFonts.nunito(
           fontSize: 18,
           fontWeight: FontWeight.w600,
-          color: blackColor,
+          color: Colors.white,
         ),
       ),
       subtitle: Text(
@@ -130,7 +125,7 @@ List<Widget> listTileWidgets = [
         style: GoogleFonts.nunito(
           fontSize: 12,
           fontWeight: FontWeight.w400,
-          color: Colors.grey.shade800,
+          color: Colors.white,
         ),
       ),
       trailing: Text(
@@ -138,7 +133,7 @@ List<Widget> listTileWidgets = [
         style: GoogleFonts.nunito(
           fontSize: 18,
           fontWeight: FontWeight.w600,
-          color: blackColor,
+          color: Colors.green,
         ),
       ),
     ),
@@ -164,7 +159,7 @@ List<Widget> listTileWidgets = [
         style: GoogleFonts.nunito(
           fontSize: 18,
           fontWeight: FontWeight.w600,
-          color: blackColor,
+          color: Colors.white,
         ),
       ),
       subtitle: Text(
@@ -172,7 +167,7 @@ List<Widget> listTileWidgets = [
         style: GoogleFonts.nunito(
           fontSize: 12,
           fontWeight: FontWeight.w400,
-          color: Colors.grey.shade800,
+          color: Colors.white,
         ),
       ),
       trailing: Text(
@@ -180,7 +175,7 @@ List<Widget> listTileWidgets = [
         style: GoogleFonts.nunito(
           fontSize: 18,
           fontWeight: FontWeight.w600,
-          color: blackColor,
+          color: Colors.red,
         ),
       ),
     ),
@@ -206,7 +201,7 @@ List<Widget> listTileWidgets = [
         style: GoogleFonts.nunito(
           fontSize: 18,
           fontWeight: FontWeight.w600,
-          color: blackColor,
+          color: Colors.white,
         ),
       ),
       subtitle: Text(
@@ -214,7 +209,7 @@ List<Widget> listTileWidgets = [
         style: GoogleFonts.nunito(
           fontSize: 12,
           fontWeight: FontWeight.w400,
-          color: Colors.grey.shade800,
+          color: Colors.white,
         ),
       ),
       trailing: Text(
@@ -222,7 +217,7 @@ List<Widget> listTileWidgets = [
         style: GoogleFonts.nunito(
           fontSize: 18,
           fontWeight: FontWeight.w600,
-          color: blackColor,
+          color: Colors.red,
         ),
       ),
     ),
@@ -248,7 +243,7 @@ List<Widget> listTileWidgets = [
         style: GoogleFonts.nunito(
           fontSize: 18,
           fontWeight: FontWeight.w600,
-          color: blackColor,
+          color: Colors.white,
         ),
       ),
       subtitle: Text(
@@ -256,7 +251,7 @@ List<Widget> listTileWidgets = [
         style: GoogleFonts.nunito(
           fontSize: 12,
           fontWeight: FontWeight.w400,
-          color: Colors.grey.shade800,
+          color: Colors.white,
         ),
       ),
       trailing: Text(
@@ -264,7 +259,7 @@ List<Widget> listTileWidgets = [
         style: GoogleFonts.nunito(
           fontSize: 18,
           fontWeight: FontWeight.w600,
-          color: blackColor,
+          color: Colors.green,
         ),
       ),
     ),
@@ -290,7 +285,7 @@ List<Widget> listTileWidgets = [
         style: GoogleFonts.nunito(
           fontSize: 18,
           fontWeight: FontWeight.w600,
-          color: blackColor,
+          color: Colors.white,
         ),
       ),
       subtitle: Text(
@@ -298,7 +293,7 @@ List<Widget> listTileWidgets = [
         style: GoogleFonts.nunito(
           fontSize: 12,
           fontWeight: FontWeight.w400,
-          color: Colors.grey.shade800,
+          color: Colors.white,
         ),
       ),
       trailing: Text(
@@ -306,7 +301,7 @@ List<Widget> listTileWidgets = [
         style: GoogleFonts.nunito(
           fontSize: 18,
           fontWeight: FontWeight.w600,
-          color: blackColor,
+          color: Colors.red,
         ),
       ),
     ),
@@ -332,7 +327,7 @@ List<Widget> listTileWidgets = [
         style: GoogleFonts.nunito(
           fontSize: 18,
           fontWeight: FontWeight.w600,
-          color: blackColor,
+          color: Colors.white,
         ),
       ),
       subtitle: Text(
@@ -340,7 +335,7 @@ List<Widget> listTileWidgets = [
         style: GoogleFonts.nunito(
           fontSize: 12,
           fontWeight: FontWeight.w400,
-          color: Colors.grey.shade800,
+          color: Colors.white,
         ),
       ),
       trailing: Text(
@@ -348,7 +343,7 @@ List<Widget> listTileWidgets = [
         style: GoogleFonts.nunito(
           fontSize: 18,
           fontWeight: FontWeight.w600,
-          color: blackColor,
+          color: Colors.green,
         ),
       ),
     ),
@@ -374,7 +369,7 @@ List<Widget> listTileWidgets = [
         style: GoogleFonts.nunito(
           fontSize: 18,
           fontWeight: FontWeight.w600,
-          color: blackColor,
+          color: Colors.white,
         ),
       ),
       subtitle: Text(
@@ -382,7 +377,7 @@ List<Widget> listTileWidgets = [
         style: GoogleFonts.nunito(
           fontSize: 12,
           fontWeight: FontWeight.w400,
-          color: Colors.grey.shade800,
+          color: Colors.white,
         ),
       ),
       trailing: Text(
@@ -390,7 +385,7 @@ List<Widget> listTileWidgets = [
         style: GoogleFonts.nunito(
           fontSize: 18,
           fontWeight: FontWeight.w600,
-          color: blackColor,
+          color: Colors.red,
         ),
       ),
     ),
@@ -416,7 +411,7 @@ List<Widget> listTileWidgets = [
         style: GoogleFonts.nunito(
           fontSize: 18,
           fontWeight: FontWeight.w600,
-          color: blackColor,
+          color: Colors.white,
         ),
       ),
       subtitle: Text(
@@ -424,7 +419,7 @@ List<Widget> listTileWidgets = [
         style: GoogleFonts.nunito(
           fontSize: 12,
           fontWeight: FontWeight.w400,
-          color: Colors.grey.shade800,
+          color: Colors.white,
         ),
       ),
       trailing: Text(
@@ -432,7 +427,7 @@ List<Widget> listTileWidgets = [
         style: GoogleFonts.nunito(
           fontSize: 18,
           fontWeight: FontWeight.w600,
-          color: blackColor,
+          color: Colors.green,
         ),
       ),
     ),
