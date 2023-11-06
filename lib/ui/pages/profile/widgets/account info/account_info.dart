@@ -13,10 +13,7 @@ class AccountInfo extends StatelessWidget {
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         decoration: const BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage('assets/bg.png'),
-                fit: BoxFit.fill,
-                repeat: ImageRepeat.noRepeat)),
+            color: Colors.white),
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -33,14 +30,16 @@ class AccountInfo extends StatelessWidget {
                         width: 40.0,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
-                            border: Border.all(color: Colors.white)),
+                            border: Border.all(color: const Color.fromRGBO(8, 173, 173, 1),
+                            )),
                         child: FittedBox(
                           child: ClipRRect(
                               borderRadius: BorderRadius.circular(40.0),
                               child: const Padding(
                                 padding: EdgeInsets.all(10.0),
                                 child: Icon(Icons.arrow_back_ios_new_sharp,
-                                    color: Colors.white),
+                                    color: Color.fromRGBO(8, 173, 173, 1),
+                                ),
                               )),
                         )),
                   ),
@@ -49,7 +48,7 @@ class AccountInfo extends StatelessWidget {
                       style: TextStyle(
                           fontSize: 20.0,
                           fontWeight: FontWeight.w700,
-                          color: Colors.white,
+                          color: Color.fromRGBO(8, 173, 173, 1),
                           letterSpacing: 0.3))
                 ],
               ),
@@ -83,7 +82,7 @@ class AccountInfo extends StatelessWidget {
                         style: TextStyle(
                             fontSize: 20.0,
                             fontWeight: FontWeight.w700,
-                            color: Colors.white,
+                            color: Colors.black,
                             letterSpacing: 0.3)),
                   ],
                 ),
@@ -97,7 +96,7 @@ class AccountInfo extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20),
                       border: Border.all(
                           color: const Color.fromRGBO(29, 171, 135, 1),
-                          width: 3.0)),
+                          )),
                   child: const Column(
                     children: [
                       Gap(20),
@@ -191,7 +190,7 @@ class AccountInfo extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20),
                     border: Border.all(
                         color: const Color.fromRGBO(29, 171, 135, 1),
-                        width: 3.0),
+                        ),
                   ),
                   child: const Column(
                     children: [

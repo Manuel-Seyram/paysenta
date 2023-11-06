@@ -14,11 +14,7 @@ class SelectTransferType extends StatelessWidget {
       body: Container(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
-        decoration: const BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage('assets/bg.png'),
-                fit: BoxFit.fill,
-                repeat: ImageRepeat.noRepeat)),
+        decoration: const BoxDecoration(color: Colors.white),
         child: Column(
           children: [
             const Gap(60),
@@ -34,14 +30,18 @@ class SelectTransferType extends StatelessWidget {
                       width: 40.0,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
-                          border: Border.all(color: Colors.white)),
+                          border: Border.all(
+                            color: const Color.fromRGBO(8, 173, 173, 1),
+                          )),
                       child: FittedBox(
                         child: ClipRRect(
                             borderRadius: BorderRadius.circular(40.0),
                             child: const Padding(
                               padding: EdgeInsets.all(10.0),
-                              child: Icon(Icons.arrow_back_ios_new_sharp,
-                                  color: Colors.white),
+                              child: Icon(
+                                Icons.arrow_back_ios_new_sharp,
+                                color: Color.fromRGBO(8, 173, 173, 1),
+                              ),
                             )),
                       )),
                 ),
@@ -50,7 +50,7 @@ class SelectTransferType extends StatelessWidget {
                     style: TextStyle(
                         fontSize: 20.0,
                         fontWeight: FontWeight.w700,
-                        color: Colors.white,
+                        color: Color.fromRGBO(8, 173, 173, 1),
                         letterSpacing: 0.3))
               ],
             ),
@@ -69,7 +69,14 @@ class SelectTransferType extends StatelessWidget {
                         child: const Column(
                           children: [
                             CircleAvatar(
-                              radius: 50,
+                              radius: 52,
+                              backgroundColor: Color.fromRGBO(8, 173, 173, 1),
+                              child: CircleAvatar(
+                                radius: 50,
+                                backgroundColor: Colors.white,
+                                foregroundImage: AssetImage(
+                                    'assets/images/illustrations/mtn.png'),
+                              ),
                             ),
                             Gap(15),
                             Center(
@@ -77,7 +84,7 @@ class SelectTransferType extends StatelessWidget {
                                   style: TextStyle(
                                       fontSize: 14.0,
                                       fontWeight: FontWeight.w700,
-                                      color: Colors.white,
+                                      color: Colors.black,
                                       letterSpacing: 0.3)),
                             ),
                             Center(
@@ -85,7 +92,7 @@ class SelectTransferType extends StatelessWidget {
                                   style: TextStyle(
                                       fontSize: 14.0,
                                       fontWeight: FontWeight.w700,
-                                      color: Colors.white,
+                                      color: Colors.black,
                                       letterSpacing: 0.3)),
                             )
                           ],
@@ -95,18 +102,26 @@ class SelectTransferType extends StatelessWidget {
                         onTap: () {
                           Navigator.pushNamed(context, SendMoneyBank.id);
                         },
-                        child: const Column(
+                        child: Column(
                           children: [
                             CircleAvatar(
-                              radius: 50,
+                              radius: 52,
+                              backgroundColor:
+                                  const Color.fromRGBO(8, 173, 173, 1),
+                              child: CircleAvatar(
+                                radius: 50,
+                                backgroundColor: Colors.white,
+                                child: Image.asset(
+                                      'assets/images/illustrations/bank-transfer.png', height: 60, width: 60,),
+                              ),
                             ),
-                            Gap(15),
-                            Center(
-                              child: Text('Bank',
+                            const Gap(15),
+                            const Center(
+                              child: Text('Bank Direct',
                                   style: TextStyle(
                                       fontSize: 14.0,
                                       fontWeight: FontWeight.w700,
-                                      color: Colors.white,
+                                      color: Colors.black,
                                       letterSpacing: 0.3)),
                             ),
                           ],
@@ -119,7 +134,13 @@ class SelectTransferType extends StatelessWidget {
                         child: const Column(
                           children: [
                             CircleAvatar(
-                              radius: 50,
+                              radius: 52,
+                              backgroundColor: Color.fromRGBO(8, 173, 173, 1),
+                              child: CircleAvatar(
+                                radius: 50,
+                                backgroundColor: Colors.white,
+                                foregroundImage: AssetImage('assets/images/illustrations/vodafone.png'),
+                              ),
                             ),
                             Gap(15),
                             Center(
@@ -127,7 +148,7 @@ class SelectTransferType extends StatelessWidget {
                                   style: TextStyle(
                                       fontSize: 14.0,
                                       fontWeight: FontWeight.w700,
-                                      color: Colors.white,
+                                      color: Colors.black,
                                       letterSpacing: 0.3)),
                             ),
                             Center(
@@ -135,7 +156,7 @@ class SelectTransferType extends StatelessWidget {
                                   style: TextStyle(
                                       fontSize: 14.0,
                                       fontWeight: FontWeight.w700,
-                                      color: Colors.white,
+                                      color: Colors.black,
                                       letterSpacing: 0.3)),
                             )
                           ],
@@ -153,7 +174,14 @@ class SelectTransferType extends StatelessWidget {
                         child: const Column(
                           children: [
                             CircleAvatar(
-                              radius: 50,
+                              radius: 52,
+                              backgroundColor: Color.fromRGBO(8, 173, 173, 1),
+                              child: CircleAvatar(
+                                radius: 50,
+                                backgroundColor: Colors.white,
+                                foregroundImage: AssetImage(
+                                    'assets/images/illustrations/AT.png'),
+                              ),
                             ),
                             Gap(15),
                             Center(
@@ -161,7 +189,7 @@ class SelectTransferType extends StatelessWidget {
                                   style: TextStyle(
                                       fontSize: 14.0,
                                       fontWeight: FontWeight.w700,
-                                      color: Colors.white,
+                                      color: Colors.black,
                                       letterSpacing: 0.3)),
                             ),
                             Center(
@@ -169,7 +197,7 @@ class SelectTransferType extends StatelessWidget {
                                   style: TextStyle(
                                       fontSize: 14.0,
                                       fontWeight: FontWeight.w700,
-                                      color: Colors.white,
+                                      color: Colors.black,
                                       letterSpacing: 0.3)),
                             )
                           ],

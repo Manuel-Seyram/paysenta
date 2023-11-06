@@ -17,13 +17,10 @@ class _SendMoneyState extends State<SendMoney> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        height: MediaQuery.of(context).size.height,
+        height: MediaQuery.of(context).size.height,        
         width: MediaQuery.of(context).size.width,
         decoration: const BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage('assets/bg.png'),
-                fit: BoxFit.fill,
-                repeat: ImageRepeat.noRepeat)),
+            color: Colors.white),
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -40,14 +37,16 @@ class _SendMoneyState extends State<SendMoney> {
                         width: 40.0,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
-                            border: Border.all(color: Colors.white)),
+                            border: Border.all(color: const Color.fromRGBO(8, 173, 173, 1),
+                            )),
                         child: FittedBox(
                           child: ClipRRect(
                               borderRadius: BorderRadius.circular(40.0),
                               child: const Padding(
                                 padding: EdgeInsets.all(10.0),
                                 child: Icon(Icons.arrow_back_ios_new_sharp,
-                                    color: Colors.white),
+                                    color:  Color.fromRGBO(8, 173, 173, 1),
+                                ),
                               )),
                         )),
                   ),
@@ -56,7 +55,7 @@ class _SendMoneyState extends State<SendMoney> {
                       style: TextStyle(
                           fontSize: 20.0,
                           fontWeight: FontWeight.w700,
-                          color: Colors.white,
+                          color: Color.fromRGBO(8, 173, 173, 1),
                           letterSpacing: 0.3))
                 ],
               ),
@@ -87,7 +86,7 @@ class _SendMoneyState extends State<SendMoney> {
                     style: TextStyle(
                         fontSize: 14.0,
                         fontWeight: FontWeight.w700,
-                        color: Colors.white,
+                        color: Colors.black,
                         letterSpacing: 0.3)),
               ),
               const Gap(30),
@@ -96,6 +95,8 @@ class _SendMoneyState extends State<SendMoney> {
                 child: Container(
                   height: 110,
                   decoration: BoxDecoration(
+                    border: Border.all(color: const Color.fromRGBO(8, 173, 173, 1),
+                      ),
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(15)),
                   child: Column(
@@ -174,7 +175,7 @@ class _SendMoneyState extends State<SendMoney> {
               Center(
                   child: Container(
                       decoration: ShapeDecoration(
-                          color: Colors.white,
+                          color: const Color.fromRGBO(8, 173, 173, 1),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10),
                           )),
@@ -184,12 +185,12 @@ class _SendMoneyState extends State<SendMoney> {
                         onPressed: () {
                           _showMyDialog(context);
                         },
-                        splashColor: Colors.white,
+                        splashColor: const Color.fromRGBO(8, 173, 173, 1),
                         child: const Text(
                           'Send Money',
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                            color: Color.fromRGBO(8, 173, 173, 1),
+                            color: Colors.white,
                             fontSize: 16,
                             fontWeight: FontWeight.w700,
                             letterSpacing: 0.30,

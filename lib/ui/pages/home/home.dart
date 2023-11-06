@@ -159,15 +159,12 @@ class _HomeState extends State<Home> {
                 Container(
                   width: MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.height * 0.65,
-                  color: const Color.fromRGBO(29, 39, 52, 1),
+                  color: const Color.fromRGBO(245, 246, 250, 1),
                 ),
                 Container(
                   width: MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.height * 0.70,
-                  decoration: const BoxDecoration(
-                      image: DecorationImage(
-                          image: AssetImage('assets/bg.png'),
-                          fit: BoxFit.fill)),
+                  decoration: const BoxDecoration(color: Colors.white),
                 )
               ],
             ),
@@ -179,11 +176,11 @@ class _HomeState extends State<Home> {
                 pinned: true,
                 automaticallyImplyLeading: false,
                 //expandedHeight: 70.0,
-                backgroundColor: const Color.fromRGBO(8, 173, 173, 1),
+                backgroundColor: Colors.white,
                 bottom: PreferredSize(
                   preferredSize: const Size.fromHeight(70.0),
                   child: AppBar(
-                    backgroundColor: const Color.fromRGBO(8, 173, 173, 1),
+                    backgroundColor: Colors.white,
                     toolbarHeight: 90,
                     leadingWidth: 160,
                     leading: const Row(
@@ -197,7 +194,7 @@ class _HomeState extends State<Home> {
                                   style: TextStyle(
                                       fontSize: 12.0,
                                       fontWeight: FontWeight.w500,
-                                      color: Colors.white,
+                                      color: Color.fromRGBO(8, 173, 173, 1),
                                       letterSpacing: 0.3)),
                             ),
                             Padding(
@@ -210,7 +207,7 @@ class _HomeState extends State<Home> {
                                       style: TextStyle(
                                           fontSize: 20.0,
                                           fontWeight: FontWeight.w700,
-                                          color: Colors.white,
+                                          color: Colors.black,
                                           letterSpacing: 0.3),
                                       softWrap: true,
                                       overflow: TextOverflow.ellipsis,
@@ -224,14 +221,24 @@ class _HomeState extends State<Home> {
                       ],
                     ),
                     actions: [
-                      IconButton(
-                          onPressed: () {},
-                          splashRadius: 1.0,
-                          icon: const Icon(
-                            Icons.notifications,
-                            size: 30,
-                            color: Colors.white,
-                          )),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 15, vertical: 20),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: const Color.fromRGBO(8, 173, 173, 1),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: IconButton(
+                              onPressed: () {},
+                              splashRadius: 1.0,
+                              icon: const Icon(
+                                Icons.notifications_none_rounded,
+                                size: 30,
+                                color: Colors.white,
+                              )),
+                        ),
+                      ),
                     ],
                   ),
                 ),
@@ -247,7 +254,7 @@ class _HomeState extends State<Home> {
                           flex: 10,
                           child: Container(
                             decoration: const BoxDecoration(
-                                color: Color.fromRGBO(29, 39, 52, 1)),
+                                color: Color.fromRGBO(245, 246, 250, 1)),
                             child: Container(
                               height: 330,
                               width: 200,
@@ -310,7 +317,7 @@ class _HomeState extends State<Home> {
                           flex: 31,
                           child: Container(
                             decoration: const BoxDecoration(
-                                color: Color.fromRGBO(29, 39, 52, 1)),
+                                color: Color.fromRGBO(245, 246, 250, 1)),
                             child: Column(
                               children: [
                                 const Gap(10),
@@ -338,7 +345,7 @@ class _HomeState extends State<Home> {
                               style: TextStyle(
                                   fontSize: 14.0,
                                   fontWeight: FontWeight.w700,
-                                  color: Colors.white,
+                                  color: Colors.black,
                                   letterSpacing: 0.3)),
                           const Gap(145),
                           SizedBox(
@@ -353,7 +360,7 @@ class _HomeState extends State<Home> {
                                       style: TextStyle(
                                           fontSize: 14.0,
                                           fontWeight: FontWeight.w500,
-                                          color: Colors.white,
+                                          color: Colors.black,
                                           letterSpacing: 0.3)),
                                 ),
                                 const Gap(10),
@@ -365,7 +372,7 @@ class _HomeState extends State<Home> {
                                   child: const Icon(
                                     Icons.arrow_forward_ios,
                                     size: 14,
-                                    color: Colors.white,
+                                    color: Colors.black,
                                   ),
                                 )
                               ],
@@ -374,8 +381,11 @@ class _HomeState extends State<Home> {
                         ],
                       ),
                     ),
+
+                    //Transactions
                     const Gap(30),
                     SingleChildScrollView(
+                      physics: const AlwaysScrollableScrollPhysics(),
                       child: SizedBox(
                         width: MediaQuery.of(context).size.width,
                         child: SizedBox(
@@ -403,7 +413,7 @@ class _HomeState extends State<Home> {
                                     style: GoogleFonts.nunito(
                                       fontSize: 18,
                                       fontWeight: FontWeight.w600,
-                                      color: Colors.white,
+                                      color: Colors.black,
                                     ),
                                   ),
                                   subtitle: Text(
@@ -411,7 +421,7 @@ class _HomeState extends State<Home> {
                                     style: GoogleFonts.nunito(
                                       fontSize: 12,
                                       fontWeight: FontWeight.w400,
-                                      color: Colors.white,
+                                      color: Colors.black,
                                     ),
                                   ),
                                   trailing: Text(
@@ -453,7 +463,7 @@ class _HomeState extends State<Home> {
                                     style: GoogleFonts.nunito(
                                       fontSize: 18,
                                       fontWeight: FontWeight.w600,
-                                      color: Colors.white,
+                                      color: Colors.black,
                                     ),
                                   ),
                                   subtitle: Text(
@@ -461,7 +471,7 @@ class _HomeState extends State<Home> {
                                     style: GoogleFonts.nunito(
                                       fontSize: 12,
                                       fontWeight: FontWeight.w400,
-                                      color: Colors.white,
+                                      color: Colors.black,
                                     ),
                                   ),
                                   trailing: Text(

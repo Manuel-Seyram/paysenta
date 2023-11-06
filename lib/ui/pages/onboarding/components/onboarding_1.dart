@@ -10,11 +10,11 @@ class OnboardingComponent1 extends StatelessWidget {
     return Column(
       children: [
         Container(
-          height: 300,
+          height: 350,
           width: MediaQuery.of(context).size.width,
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
           decoration:
-              const BoxDecoration(image: DecorationImage(image:AssetImage('assets/bg.png'), fit: BoxFit.fill, repeat: ImageRepeat.noRepeat), shape: BoxShape.rectangle),
+              const BoxDecoration(color: Colors.white, shape: BoxShape.rectangle),
           child: Image.asset("assets/images/illustrations/2. Onboarding - 1 - Dark.png", fit:BoxFit.fitWidth),
         ),
         Padding(

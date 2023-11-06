@@ -7,7 +7,6 @@ import 'package:paysenta/ui/pages/authentication/set_password.dart';
 import 'package:paysenta/ui/pages/authentication/verify_otp.dart';
 import 'package:paysenta/ui/pages/card/card_1.dart';
 import 'package:paysenta/ui/pages/navigator/bottom_navigator_bar.dart';
-import 'package:paysenta/ui/pages/onboarding/get_started.dart';
 import 'package:paysenta/ui/pages/onboarding/onboarding.dart';
 import 'package:paysenta/ui/pages/onboarding/splash.dart';
 import 'package:paysenta/ui/pages/profile/widgets/account%20info/account_info.dart';
@@ -18,6 +17,8 @@ import 'package:paysenta/ui/pages/transfer/select_transfer.dart';
 import 'ui/pages/Deposit/top_up.dart';
 import 'ui/pages/Deposit/top_up_confirmation.dart';
 import 'ui/pages/authentication/country_residence.dart';
+import 'ui/pages/authentication/national_id.dart';
+import 'ui/pages/authentication/passport.dart';
 import 'ui/pages/authentication/proof_residence.dart';
 import 'ui/pages/card/card_2.dart';
 import 'ui/pages/card/card_3.dart';
@@ -55,10 +56,11 @@ class MyApp extends StatelessWidget {
       routes: {
         Splash.id: (context) => const Splash(),
         Onboarding.id: (context) => const Onboarding(),
-        GetStarted.id: (context) => const GetStarted(),
         Login.id: (context) => const Login(),
         Register.id: (context) => const Register(),
         CountryResidence.id: (context) => const CountryResidence(),
+        NationalId.id: (context) => const NationalId(),
+        Passport.id: (context) => const Passport(),
         VerifyOTP.id: (context) => const VerifyOTP(),
         SetPassword.id: (context) => const SetPassword(),
         MainPageNavigator.id: (context) => const MainPageNavigator(),
@@ -86,8 +88,8 @@ class MyApp extends StatelessWidget {
         GeneralSettings.id: (context) => const GeneralSettings(),
         EditProfile.id: (context) => const EditProfile(),
         PasswordRecovery.id: (context) => const PasswordRecovery(),
-        VerifyIdentity.id:(context) => const VerifyIdentity(),
-        CreateNewPassword.id:(context) => const CreateNewPassword(),
+        VerifyIdentity.id: (context) => const VerifyIdentity(),
+        CreateNewPassword.id: (context) => const CreateNewPassword(),
       },
     );
   }

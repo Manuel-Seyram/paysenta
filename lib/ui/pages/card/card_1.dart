@@ -63,9 +63,8 @@ class _AddCard1State extends State<AddCard1> {
                   width: MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.height * 0.70,
                   decoration: const BoxDecoration(
-                      image: DecorationImage(
-                          image: AssetImage('assets/bg.png'),
-                          fit: BoxFit.fill)),
+                    color: Color.fromRGBO(8, 173, 173, 1),
+                  ),
                 )
               ],
             ),

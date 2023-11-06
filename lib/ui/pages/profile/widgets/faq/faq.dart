@@ -18,11 +18,7 @@ class _FAQState extends State<FAQ> {
         body: Container(
       height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width,
-      decoration: const BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage('assets/bg.png'),
-              fit: BoxFit.fill,
-              repeat: ImageRepeat.noRepeat)),
+      decoration: const BoxDecoration(color: Colors.white),
       child: SingleChildScrollView(
         child: Column(
           children: [
@@ -39,14 +35,18 @@ class _FAQState extends State<FAQ> {
                       width: 40.0,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
-                          border: Border.all(color: Colors.white)),
+                          border: Border.all(
+                            color: const Color.fromRGBO(8, 173, 173, 1),
+                          )),
                       child: FittedBox(
                         child: ClipRRect(
                             borderRadius: BorderRadius.circular(40.0),
                             child: const Padding(
                               padding: EdgeInsets.all(10.0),
-                              child: Icon(Icons.arrow_back_ios_new_sharp,
-                                  color: Colors.white),
+                              child: Icon(
+                                Icons.arrow_back_ios_new_sharp,
+                                color: Color.fromRGBO(8, 173, 173, 1),
+                              ),
                             )),
                       )),
                 ),
@@ -55,7 +55,7 @@ class _FAQState extends State<FAQ> {
                     style: TextStyle(
                         fontSize: 20.0,
                         fontWeight: FontWeight.w700,
-                        color: Colors.white,
+                        color: Color.fromRGBO(8, 173, 173, 1),
                         letterSpacing: 0.3))
               ],
             ),
@@ -68,7 +68,7 @@ class _FAQState extends State<FAQ> {
                       style: TextStyle(
                           fontSize: 24.0,
                           fontWeight: FontWeight.w700,
-                          color: Colors.white,
+                          color: Colors.black,
                           letterSpacing: -0.2))
                 ],
               ),
@@ -79,8 +79,11 @@ class _FAQState extends State<FAQ> {
               child: Container(
                 height: 60.0,
                 decoration: BoxDecoration(
+                  border: Border.all(
+                    color: const Color.fromRGBO(8, 173, 173, 1),
+                  ),
                   borderRadius: BorderRadius.circular(15),
-                  color: Colors.white,
+                  color: Colors.grey.shade100,
                 ),
                 child: Padding(
                   padding: const EdgeInsets.all(6.0),
@@ -114,13 +117,13 @@ class _FAQState extends State<FAQ> {
                       style: TextStyle(
                           fontSize: 20.0,
                           fontWeight: FontWeight.w700,
-                          color: Colors.white,
+                          color: Colors.black,
                           letterSpacing: 0.3)),
                   Text('View all',
                       style: TextStyle(
                           fontSize: 16.0,
                           fontWeight: FontWeight.w700,
-                          color: Colors.white,
+                          color: Colors.black,
                           letterSpacing: 0.3))
                 ],
               ),
@@ -131,7 +134,9 @@ class _FAQState extends State<FAQ> {
               child: Container(
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
-                    border: Border.all(color: Colors.white, width: 1.0)),
+                    border: Border.all(
+                      color: const Color.fromRGBO(8, 173, 173, 1),
+                    )),
                 child: const Column(
                   children: [
                     Gap(20),
@@ -143,7 +148,7 @@ class _FAQState extends State<FAQ> {
                               style: TextStyle(
                                   fontSize: 16.0,
                                   fontWeight: FontWeight.w700,
-                                  color: Colors.white,
+                                  color: Colors.black,
                                   letterSpacing: 0.3)),
                         ],
                       ),
@@ -156,7 +161,7 @@ class _FAQState extends State<FAQ> {
                         style: TextStyle(
                             fontSize: 12.0,
                             fontWeight: FontWeight.w400,
-                            color: Colors.white,
+                            color: Colors.black,
                             letterSpacing: 0.3),
                         softWrap: true,
                         maxLines: 3,
@@ -174,7 +179,9 @@ class _FAQState extends State<FAQ> {
               child: Container(
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
-                    border: Border.all(color: Colors.white, width: 1.0)),
+                    border: Border.all(
+                      color: const Color.fromRGBO(8, 173, 173, 1),
+                    )),
                 child: const Column(
                   children: [
                     Gap(20),
@@ -186,7 +193,7 @@ class _FAQState extends State<FAQ> {
                               style: TextStyle(
                                   fontSize: 16.0,
                                   fontWeight: FontWeight.w700,
-                                  color: Colors.white,
+                                  color: Colors.black,
                                   letterSpacing: 0.3)),
                         ],
                       ),
@@ -199,7 +206,7 @@ class _FAQState extends State<FAQ> {
                         style: TextStyle(
                             fontSize: 12.0,
                             fontWeight: FontWeight.w400,
-                            color: Colors.white,
+                            color: Colors.black,
                             letterSpacing: 0.3),
                         softWrap: true,
                         maxLines: 3,
@@ -217,7 +224,9 @@ class _FAQState extends State<FAQ> {
               child: Container(
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
-                    border: Border.all(color: Colors.white, width: 1.0)),
+                    border: Border.all(
+                      color: const Color.fromRGBO(8, 173, 173, 1),
+                    )),
                 child: const Column(
                   children: [
                     Gap(20),
@@ -229,7 +238,7 @@ class _FAQState extends State<FAQ> {
                               style: TextStyle(
                                   fontSize: 16.0,
                                   fontWeight: FontWeight.w700,
-                                  color: Colors.white,
+                                  color: Colors.black,
                                   letterSpacing: 0.3)),
                         ],
                       ),
@@ -242,7 +251,7 @@ class _FAQState extends State<FAQ> {
                         style: TextStyle(
                             fontSize: 12.0,
                             fontWeight: FontWeight.w400,
-                            color: Colors.white,
+                            color: Colors.black,
                             letterSpacing: 0.3),
                         softWrap: true,
                         maxLines: 3,
@@ -258,7 +267,7 @@ class _FAQState extends State<FAQ> {
             Center(
                 child: Container(
                     decoration: ShapeDecoration(
-                        color: Colors.white,
+                        color: const Color.fromRGBO(8, 173, 173, 1),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10),
                         )),
@@ -266,12 +275,12 @@ class _FAQState extends State<FAQ> {
                     height: 56.0,
                     child: MaterialButton(
                       onPressed: () {},
-                      splashColor: Colors.white,
+                      splashColor: const Color.fromRGBO(8, 173, 173, 1),
                       child: const Text(
                         'Load more',
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          color: Color.fromRGBO(8, 173, 173, 1),
+                          color: Colors.white,
                           fontSize: 16,
                           fontWeight: FontWeight.w700,
                           letterSpacing: 0.30,

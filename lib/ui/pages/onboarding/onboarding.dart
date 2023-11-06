@@ -3,12 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:paysenta/ui/pages/onboarding/components/onboarding_2.dart';
-import 'package:paysenta/ui/shared/constants.dart';
 
 import '../../shared/widgets/slide_indicator.dart';
 import '../authentication/login.dart';
 import 'components/onboarding_1.dart';
-import 'get_started.dart';
 
 class Onboarding extends StatefulWidget {
   const Onboarding({Key? key}) : super(key: key);
@@ -39,7 +37,7 @@ class _OnboardingState extends State<Onboarding> {
 
             if (dragDownDetails.primaryVelocity?.compareTo(0) == -1) {
               if (kDebugMode) {
-                Navigator.popAndPushNamed(context, GetStarted.id);
+                Navigator.popAndPushNamed(context, Login.id);
               }
             } else {
               setState(() {
@@ -54,10 +52,11 @@ class _OnboardingState extends State<Onboarding> {
     ];
 
     return Scaffold(
-        extendBodyBehindAppBar: true,
+        extendBodyBehindAppBar: false,
         appBar: AppBar(
           automaticallyImplyLeading: false,
           forceMaterialTransparency: true,
+          backgroundColor: Colors.white,
           elevation: 0.0,
           actions: [
             GestureDetector(
@@ -72,7 +71,7 @@ class _OnboardingState extends State<Onboarding> {
                   style: GoogleFonts.manrope(
                     fontSize: 16,
                     fontWeight: FontWeight.w600,
-                    color: whiteColor,
+                    color: const Color.fromRGBO(8, 173, 173, 1),
                   ),
                 ),
               ),
@@ -83,13 +82,10 @@ class _OnboardingState extends State<Onboarding> {
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
           decoration: const BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage('assets/bg.png'),
-                  fit: BoxFit.fill,
-                  repeat: ImageRepeat.noRepeat)),
+              color: Color.fromRGBO(8, 173, 173, 1),
+          ),
           child: Column(
             children: [
-              const Gap(70),
               Expanded(
                 child: PageView.builder(
                   scrollDirection: Axis.horizontal,
@@ -107,7 +103,7 @@ class _OnboardingState extends State<Onboarding> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: 18.0),
+                padding: const EdgeInsets.symmetric(vertical: 1.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

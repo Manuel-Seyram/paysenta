@@ -13,10 +13,8 @@ class CardSplash extends StatelessWidget {
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         decoration: const BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage('assets/bg.png'),
-                fit: BoxFit.fill,
-                repeat: ImageRepeat.noRepeat)),
+          color: Color.fromRGBO(8, 173, 173, 1),
+        ),
         child: SingleChildScrollView(
           child: Column(
             children: [

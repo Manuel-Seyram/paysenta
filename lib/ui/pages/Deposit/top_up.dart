@@ -30,10 +30,7 @@ class _TopUpState extends State<TopUp> {
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         decoration: const BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage('assets/bg.png'),
-                fit: BoxFit.fill,
-                repeat: ImageRepeat.noRepeat)),
+            color: Colors.white),
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -50,14 +47,16 @@ class _TopUpState extends State<TopUp> {
                         width: 40.0,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
-                            border: Border.all(color: Colors.white)),
+                            border: Border.all(color: const Color.fromRGBO(8, 173, 173, 1),
+                            )),
                         child: FittedBox(
                           child: ClipRRect(
                               borderRadius: BorderRadius.circular(40.0),
                               child: const Padding(
                                 padding: EdgeInsets.all(10.0),
                                 child: Icon(Icons.arrow_back_ios_new_sharp,
-                                    color: Colors.white),
+                                    color:  Color.fromRGBO(8, 173, 173, 1),
+                                ),
                               )),
                         )),
                   ),
@@ -66,7 +65,7 @@ class _TopUpState extends State<TopUp> {
                       style: TextStyle(
                           fontSize: 20.0,
                           fontWeight: FontWeight.w700,
-                          color: Colors.white,
+                          color:  Color.fromRGBO(8, 173, 173, 1),
                           letterSpacing: 0.3))
                 ],
               ),
@@ -78,9 +77,12 @@ class _TopUpState extends State<TopUp> {
                   height: 80,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
+                      border: Border.all(
+                            color: const Color.fromRGBO(8, 173, 173, 1),
+                          ),
                       color: Colors.white),
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    padding: const EdgeInsets.symmetric(horizontal: 12),
                     child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -173,6 +175,9 @@ class _TopUpState extends State<TopUp> {
                   height: 110,
                   decoration: BoxDecoration(
                       color: Colors.white,
+                      border: Border.all(
+                        color: const Color.fromRGBO(8, 173, 173, 1),
+                      ),
                       borderRadius: BorderRadius.circular(15)),
                   child: Column(
                     children: [
@@ -253,6 +258,9 @@ class _TopUpState extends State<TopUp> {
                   width: 350,
                   height: 80,
                   decoration: BoxDecoration(
+                    border: Border.all(
+                        color: const Color.fromRGBO(8, 173, 173, 1),
+                      ),
                       borderRadius: BorderRadius.circular(20),
                       color: Colors.white),
                   child: Padding(
@@ -350,7 +358,7 @@ class _TopUpState extends State<TopUp> {
               Center(
                   child: Container(
                       decoration: ShapeDecoration(
-                          color: Colors.white,
+                          color: const Color.fromRGBO(8, 173, 173, 1),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10),
                           )),
@@ -360,12 +368,12 @@ class _TopUpState extends State<TopUp> {
                         onPressed: () {
                           Navigator.pushNamed(context, TopUpConfirmation.id);
                         },
-                        splashColor: Colors.white,
+                        splashColor: const Color.fromRGBO(8, 173, 173, 1),
                         child: const Text(
                           'Continue',
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                            color: Color.fromRGBO(8, 173, 173, 1),
+                            color: Colors.white,
                             fontSize: 16,
                             fontWeight: FontWeight.w700,
                             letterSpacing: 0.30,

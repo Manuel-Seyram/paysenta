@@ -1,4 +1,4 @@
- import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
 class Withdraw extends StatelessWidget {
@@ -11,11 +11,7 @@ class Withdraw extends StatelessWidget {
       body: Container(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
-        decoration: const BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage('assets/bg.png'),
-                fit: BoxFit.fill,
-                repeat: ImageRepeat.noRepeat)),
+        decoration: const BoxDecoration(color: Colors.white),
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -32,14 +28,18 @@ class Withdraw extends StatelessWidget {
                         width: 40.0,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
-                            border: Border.all(color: Colors.white)),
+                            border: Border.all(
+                              color: const Color.fromRGBO(8, 173, 173, 1),
+                            )),
                         child: FittedBox(
                           child: ClipRRect(
                               borderRadius: BorderRadius.circular(40.0),
                               child: const Padding(
                                 padding: EdgeInsets.all(10.0),
-                                child: Icon(Icons.arrow_back_ios_new_sharp,
-                                    color: Colors.white),
+                                child: Icon(
+                                  Icons.arrow_back_ios_new_sharp,
+                                  color: Color.fromRGBO(8, 173, 173, 1),
+                                ),
                               )),
                         )),
                   ),
@@ -48,7 +48,7 @@ class Withdraw extends StatelessWidget {
                       style: TextStyle(
                           fontSize: 20.0,
                           fontWeight: FontWeight.w700,
-                          color: Colors.white,
+                          color: Color.fromRGBO(8, 173, 173, 1),
                           letterSpacing: 0.3))
                 ],
               ),
@@ -58,7 +58,7 @@ class Withdraw extends StatelessWidget {
                       style: TextStyle(
                           fontSize: 40.0,
                           fontWeight: FontWeight.w700,
-                          color: Colors.white,
+                          color: Colors.black,
                           letterSpacing: 0.3))),
               const Gap(30),
               const Center(
@@ -66,39 +66,45 @@ class Withdraw extends StatelessWidget {
                       style: TextStyle(
                           fontSize: 12.0,
                           fontWeight: FontWeight.w400,
-                          color: Colors.white,
+                          color: Colors.black,
                           letterSpacing: 0.3))),
               const Gap(30),
-              const Center(
-                child: FittedBox(
-                  fit: BoxFit.contain,
-                  alignment: Alignment.center,
-                  child: SizedBox(
-                    height: 90,
-                    width: 250,
-                    child: Padding(
-                      padding: EdgeInsets.only(top: 15, left: 40),
-                      child: TextField(
-                        keyboardType: TextInputType.number,
-                        cursorColor: Colors.black,
-                        autofocus: true,
-                        decoration: InputDecoration(
-                          prefix: Text(
-                            'GHS ',
-                            style: TextStyle(
-                                fontSize: 40.0,
-                                fontWeight: FontWeight.w700,
-                                color: Colors.white,
-                                letterSpacing: -0.2),
+              Center(
+                child: Container(
+                  decoration: BoxDecoration(
+                      border: Border.all(
+                    color: const Color.fromRGBO(8, 173, 173, 1),
+                  )),
+                  child: const FittedBox(
+                    fit: BoxFit.contain,
+                    alignment: Alignment.center,
+                    child: SizedBox(
+                      height: 90,
+                      width: 250,
+                      child: Padding(
+                        padding: EdgeInsets.only(top: 15, left: 40),
+                        child: TextField(
+                          keyboardType: TextInputType.number,
+                          cursorColor: Colors.black,
+                          autofocus: true,
+                          decoration: InputDecoration(
+                            prefix: Text(
+                              'GHS ',
+                              style: TextStyle(
+                                  fontSize: 40.0,
+                                  fontWeight: FontWeight.w700,
+                                  color: Colors.white,
+                                  letterSpacing: -0.2),
+                            ),
+                            enabledBorder: InputBorder.none,
+                            focusedBorder: InputBorder.none,
                           ),
-                          enabledBorder: InputBorder.none,
-                          focusedBorder: InputBorder.none,
+                          style: TextStyle(
+                              fontSize: 40.0,
+                              fontWeight: FontWeight.w700,
+                              color: Colors.white,
+                              letterSpacing: -0.2),
                         ),
-                        style: TextStyle(
-                            fontSize: 40.0,
-                            fontWeight: FontWeight.w700,
-                            color: Colors.white,
-                            letterSpacing: -0.2),
                       ),
                     ),
                   ),
@@ -108,7 +114,7 @@ class Withdraw extends StatelessWidget {
               Center(
                   child: Container(
                       decoration: ShapeDecoration(
-                          color: Colors.white,
+                          color: const Color.fromRGBO(8, 173, 173, 1),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10),
                           )),
@@ -118,12 +124,12 @@ class Withdraw extends StatelessWidget {
                         onPressed: () {
                           _bottomsheet(context);
                         },
-                        splashColor: Colors.white,
+                        splashColor: const Color.fromRGBO(8, 173, 173, 1),
                         child: const Text(
                           'Withdraw',
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                            color: Color.fromRGBO(8, 173, 173, 1),
+                            color: Colors.white,
                             fontSize: 16,
                             fontWeight: FontWeight.w700,
                             letterSpacing: 0.30,
@@ -192,11 +198,15 @@ void _bottomsheet(BuildContext context) {
                       color: Colors.white,
                     ),
                     child: ListTile(
-                      leading:  CircleAvatar(
+                      leading: CircleAvatar(
                         radius: 40,
                         backgroundColor: const Color.fromRGBO(8, 173, 173, 1),
                         child: Center(
-                          child: Image.asset('assets/stanbic.png', height: 30, width: 30,),
+                          child: Image.asset(
+                            'assets/stanbic.png',
+                            height: 30,
+                            width: 30,
+                          ),
                         ),
                       ),
                       title: const Text(
@@ -238,7 +248,7 @@ void _bottomsheet(BuildContext context) {
             ],
           ),
           const Gap(30),
-           Row(
+          Row(
             children: [
               Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 30),
@@ -251,22 +261,25 @@ void _bottomsheet(BuildContext context) {
                       color: Colors.white,
                     ),
                     child: const ListTile(
-                      leading: Icon(Icons.money_rounded, color: Color.fromRGBO(8, 173, 173, 1), size: 30,),
-                      title:  Text(
-                        'Add new bank',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          color: Colors.black54,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w700,
-                          letterSpacing: 0.30,
+                        leading: Icon(
+                          Icons.money_rounded,
+                          color: Color.fromRGBO(8, 173, 173, 1),
+                          size: 30,
                         ),
-                      ),
-                      trailing: Padding(
-                        padding: EdgeInsets.only(left: 100),
-                        child: Icon(Icons.arrow_forward_ios_rounded),
-                      )
-                    ),
+                        title: Text(
+                          'Add new bank',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: Colors.black54,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w700,
+                            letterSpacing: 0.30,
+                          ),
+                        ),
+                        trailing: Padding(
+                          padding: EdgeInsets.only(left: 100),
+                          child: Icon(Icons.arrow_forward_ios_rounded),
+                        )),
                   )),
             ],
           ),

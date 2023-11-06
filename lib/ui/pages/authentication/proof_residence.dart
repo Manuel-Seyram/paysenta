@@ -1,7 +1,9 @@
 import 'package:csc_picker/csc_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:paysenta/ui/pages/card/home_card_splash.dart';
+import 'package:paysenta/ui/pages/authentication/national_id.dart';
+
+import 'passport.dart';
 
 class ProofRecidency extends StatefulWidget {
   const ProofRecidency({super.key});
@@ -21,14 +23,10 @@ class _ProofRecidencyState extends State<ProofRecidency> {
       body: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
-        decoration: const BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage('assets/bg.png'),
-                fit: BoxFit.fill,
-                repeat: ImageRepeat.noRepeat)),
+        decoration: const BoxDecoration(color: Colors.white),
         child: Column(
           children: [
-            const Gap(45),
+            const Gap(65),
             Row(
               children: [
                 const Gap(30),
@@ -41,14 +39,18 @@ class _ProofRecidencyState extends State<ProofRecidency> {
                       width: 40.0,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
-                          border: Border.all(color: Colors.white)),
+                          border: Border.all(
+                            color: const Color.fromRGBO(8, 173, 173, 1),
+                          )),
                       child: FittedBox(
                         child: ClipRRect(
                             borderRadius: BorderRadius.circular(40.0),
                             child: const Padding(
                               padding: EdgeInsets.all(10.0),
-                              child: Icon(Icons.arrow_back_ios_new_sharp,
-                                  color: Colors.white),
+                              child: Icon(
+                                Icons.arrow_back_ios_new_sharp,
+                                color: Color.fromRGBO(8, 173, 173, 1),
+                              ),
                             )),
                       )),
                 )
@@ -71,7 +73,7 @@ class _ProofRecidencyState extends State<ProofRecidency> {
                                 fontSize: 24.0,
                                 fontWeight: FontWeight.w700,
                                 letterSpacing: -0.20,
-                                color: Colors.white),
+                                color: Colors.black),
                           )),
                     ],
                   ),
@@ -85,7 +87,7 @@ class _ProofRecidencyState extends State<ProofRecidency> {
                           style: TextStyle(
                               fontSize: 16.0,
                               fontWeight: FontWeight.w400,
-                              color: Colors.white,
+                              color: Colors.black,
                               letterSpacing: 0.38),
                         ),
                       ),
@@ -97,47 +99,60 @@ class _ProofRecidencyState extends State<ProofRecidency> {
             const Gap(30.0),
             SizedBox(
               width: MediaQuery.of(context).size.width,
-              child: Row(
-                children: [
-                  const Gap(30.0),
-                  SizedBox(
-                    width: 350,
-                    child: CSCPicker(
-                      showCities: false,
-                      showStates: false,
-                      flagState: CountryFlag.ENABLE,
-                      dropdownDecoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5),
-                          color: Colors.white),
-                      //disabledDropdownDecoration: BoxDecoration(borderRadius: BorderRadius.circular(5), color: Colors.black) ,
-                      //defaultCountry: CscCountry.Ghana,
-                      countryDropdownLabel: countryValue != null
-                          ? '  $countryValue'
-                          : '  Choose country',
-                      countrySearchPlaceholder: "country",
-                      countryFilter: const [
-                        CscCountry.Ghana,
-                        CscCountry.Nigeria,
-                        CscCountry.United_Kingdom,
-                        CscCountry.United_States
-                      ],
-                      selectedItemStyle: const TextStyle(
-                        color: Colors.black,
-                        fontSize: 16,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 10),
+                child: Row(
+                  children: [
+                    const Gap(30.0),
+                    Container(
+                      decoration: BoxDecoration(
+                          color: Colors.grey.shade100,
+                          border: Border.all(
+                            color: const Color.fromRGBO(8, 173, 173, 1),
+                          ),
+                          borderRadius: BorderRadius.circular(10.0)),
+                      width: 350,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 2),
+                        child: CSCPicker(
+                          showCities: false,
+                          showStates: false,
+                          flagState: CountryFlag.ENABLE,
+                          dropdownDecoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(5),
+                            color: Colors.grey.shade100,
+                          ),
+                          //disabledDropdownDecoration: BoxDecoration(borderRadius: BorderRadius.circular(5), color: Colors.black) ,
+                          defaultCountry: CscCountry.Ghana,
+                          countryDropdownLabel: countryValue != null
+                              ? '  $countryValue'
+                              : '  Choose country',
+                          countrySearchPlaceholder: "Country",
+                          countryFilter: const [
+                            CscCountry.Ghana,
+                            CscCountry.Nigeria,
+                            CscCountry.United_Kingdom,
+                            CscCountry.United_States
+                          ],
+                          selectedItemStyle: const TextStyle(
+                            color: Colors.black,
+                            fontSize: 16,
+                          ),
+                          dropdownItemStyle: const TextStyle(
+                            color: Colors.black,
+                            fontSize: 14,
+                          ),
+                          onCountryChanged: (value) {
+                            setState(() {
+                              ///store value in country variable
+                              countryValue = value;
+                            });
+                          },
+                        ),
                       ),
-                      dropdownItemStyle: const TextStyle(
-                        color: Colors.black,
-                        fontSize: 14,
-                      ),
-                      onCountryChanged: (value) {
-                        setState(() {
-                          ///store value in country variable
-                          countryValue = value;
-                        });
-                      },
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
             const Gap(40),
@@ -148,7 +163,7 @@ class _ProofRecidencyState extends State<ProofRecidency> {
                     style: TextStyle(
                         fontSize: 16.0,
                         fontWeight: FontWeight.w400,
-                        color: Colors.white,
+                        color: Colors.black,
                         letterSpacing: 0.38)),
               ],
             ),
@@ -168,7 +183,7 @@ class _ProofRecidencyState extends State<ProofRecidency> {
                       const Gap(20),
                       GestureDetector(
                         onTap: () {
-                          Navigator.pushNamed(context, CardSplash.id);
+                          Navigator.pushNamed(context, Passport.id);
                         },
                         child: SizedBox(
                           child: Row(
@@ -205,7 +220,9 @@ class _ProofRecidencyState extends State<ProofRecidency> {
                       ),
                       const Gap(10),
                       GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.pushNamed(context, NationalId.id);
+                        },
                         child: SizedBox(
                           child: Row(
                             children: [

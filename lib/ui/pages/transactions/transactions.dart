@@ -18,11 +18,7 @@ class _TransactionsPageState extends State<TransactionsPage> {
       body: Container(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
-        decoration: const BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage('assets/bg.png'),
-                fit: BoxFit.fill,
-                repeat: ImageRepeat.noRepeat)),
+        decoration: const BoxDecoration(color: Colors.white),
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -32,7 +28,7 @@ class _TransactionsPageState extends State<TransactionsPage> {
                     style: TextStyle(
                         fontSize: 20.0,
                         fontWeight: FontWeight.w700,
-                        color: Colors.white,
+                        color: Color.fromRGBO(8, 173, 173, 1),
                         letterSpacing: 0.3)),
               ),
               const Gap(20),
@@ -75,7 +71,7 @@ List<Widget> listTileWidgets = [
         style: GoogleFonts.nunito(
           fontSize: 18,
           fontWeight: FontWeight.w600,
-          color: Colors.white,
+          color: Colors.black,
         ),
       ),
       subtitle: Text(
@@ -83,7 +79,7 @@ List<Widget> listTileWidgets = [
         style: GoogleFonts.nunito(
           fontSize: 12,
           fontWeight: FontWeight.w400,
-          color: Colors.white,
+          color: Colors.black,
         ),
       ),
       trailing: Text(
@@ -117,7 +113,7 @@ List<Widget> listTileWidgets = [
         style: GoogleFonts.nunito(
           fontSize: 18,
           fontWeight: FontWeight.w600,
-          color: Colors.white,
+          color: Colors.black,
         ),
       ),
       subtitle: Text(
@@ -125,7 +121,7 @@ List<Widget> listTileWidgets = [
         style: GoogleFonts.nunito(
           fontSize: 12,
           fontWeight: FontWeight.w400,
-          color: Colors.white,
+          color: Colors.black,
         ),
       ),
       trailing: Text(
@@ -159,7 +155,7 @@ List<Widget> listTileWidgets = [
         style: GoogleFonts.nunito(
           fontSize: 18,
           fontWeight: FontWeight.w600,
-          color: Colors.white,
+          color: Colors.black,
         ),
       ),
       subtitle: Text(
@@ -167,7 +163,7 @@ List<Widget> listTileWidgets = [
         style: GoogleFonts.nunito(
           fontSize: 12,
           fontWeight: FontWeight.w400,
-          color: Colors.white,
+          color: Colors.black,
         ),
       ),
       trailing: Text(
@@ -201,7 +197,7 @@ List<Widget> listTileWidgets = [
         style: GoogleFonts.nunito(
           fontSize: 18,
           fontWeight: FontWeight.w600,
-          color: Colors.white,
+          color: Colors.black,
         ),
       ),
       subtitle: Text(
@@ -209,7 +205,7 @@ List<Widget> listTileWidgets = [
         style: GoogleFonts.nunito(
           fontSize: 12,
           fontWeight: FontWeight.w400,
-          color: Colors.white,
+          color: Colors.black,
         ),
       ),
       trailing: Text(
@@ -243,7 +239,7 @@ List<Widget> listTileWidgets = [
         style: GoogleFonts.nunito(
           fontSize: 18,
           fontWeight: FontWeight.w600,
-          color: Colors.white,
+          color: Colors.black,
         ),
       ),
       subtitle: Text(
@@ -251,7 +247,7 @@ List<Widget> listTileWidgets = [
         style: GoogleFonts.nunito(
           fontSize: 12,
           fontWeight: FontWeight.w400,
-          color: Colors.white,
+          color: Colors.black,
         ),
       ),
       trailing: Text(
@@ -285,7 +281,7 @@ List<Widget> listTileWidgets = [
         style: GoogleFonts.nunito(
           fontSize: 18,
           fontWeight: FontWeight.w600,
-          color: Colors.white,
+          color: Colors.black,
         ),
       ),
       subtitle: Text(
@@ -293,7 +289,7 @@ List<Widget> listTileWidgets = [
         style: GoogleFonts.nunito(
           fontSize: 12,
           fontWeight: FontWeight.w400,
-          color: Colors.white,
+          color: Colors.black,
         ),
       ),
       trailing: Text(
@@ -327,7 +323,7 @@ List<Widget> listTileWidgets = [
         style: GoogleFonts.nunito(
           fontSize: 18,
           fontWeight: FontWeight.w600,
-          color: Colors.white,
+          color: Colors.black,
         ),
       ),
       subtitle: Text(
@@ -335,7 +331,7 @@ List<Widget> listTileWidgets = [
         style: GoogleFonts.nunito(
           fontSize: 12,
           fontWeight: FontWeight.w400,
-          color: Colors.white,
+          color: Colors.black,
         ),
       ),
       trailing: Text(
@@ -369,7 +365,7 @@ List<Widget> listTileWidgets = [
         style: GoogleFonts.nunito(
           fontSize: 18,
           fontWeight: FontWeight.w600,
-          color: Colors.white,
+          color: Colors.black,
         ),
       ),
       subtitle: Text(
@@ -377,7 +373,7 @@ List<Widget> listTileWidgets = [
         style: GoogleFonts.nunito(
           fontSize: 12,
           fontWeight: FontWeight.w400,
-          color: Colors.white,
+          color: Colors.black,
         ),
       ),
       trailing: Text(
@@ -411,7 +407,7 @@ List<Widget> listTileWidgets = [
         style: GoogleFonts.nunito(
           fontSize: 18,
           fontWeight: FontWeight.w600,
-          color: Colors.white,
+          color: Colors.black,
         ),
       ),
       subtitle: Text(
@@ -419,7 +415,7 @@ List<Widget> listTileWidgets = [
         style: GoogleFonts.nunito(
           fontSize: 12,
           fontWeight: FontWeight.w400,
-          color: Colors.white,
+          color: Colors.black,
         ),
       ),
       trailing: Text(

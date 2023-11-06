@@ -13,10 +13,7 @@ class TransferSuccessful extends StatelessWidget {
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         decoration: const BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage('assets/bg.png'),
-                fit: BoxFit.fill,
-                repeat: ImageRepeat.noRepeat)),
+            color: Colors.white),
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -34,7 +31,7 @@ class TransferSuccessful extends StatelessWidget {
                     style: TextStyle(
                         fontSize: 24.0,
                         fontWeight: FontWeight.w700,
-                        color: Colors.white,
+                        color:  Color.fromRGBO(8, 173, 173, 1),
                         letterSpacing: -0.2)),
               ),
               const Gap(70),
@@ -70,7 +67,7 @@ class TransferSuccessful extends StatelessWidget {
               const Gap(100),
               Container(
                   decoration: ShapeDecoration(
-                      color: Colors.white,
+                      color: const Color.fromRGBO(8, 173, 173, 1),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
                       )),
@@ -80,12 +77,12 @@ class TransferSuccessful extends StatelessWidget {
                     onPressed: () {
                       Navigator.pushNamed(context, MainPageNavigator.id);
                     },
-                    splashColor: Colors.white,
+                    splashColor: const Color.fromRGBO(8, 173, 173, 1),
                     child: const Text(
                       'Back to Home',
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        color: Color.fromRGBO(8, 173, 173, 1),
+                        color: Colors.white,
                         fontSize: 16,
                         fontWeight: FontWeight.w700,
                         letterSpacing: 0.30,

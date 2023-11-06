@@ -22,21 +22,17 @@ class _RegisterState extends State<Register> {
         body: Container(
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
-            decoration: const BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage('assets/bg.png'),
-                    fit: BoxFit.fill,
-                    repeat: ImageRepeat.noRepeat)),
+            decoration: const BoxDecoration(color: Colors.white), 
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  const Gap(45),
+                  const Gap(65),
                   const Gap(20),
                   SizedBox(
                     width: MediaQuery.of(context).size.width,
                     height: 70.0,
                     child: const Column(
-                      children: [
+                      children: [ 
                         Row(
                           children: [
                             Gap(30),
@@ -48,7 +44,7 @@ class _RegisterState extends State<Register> {
                                       fontSize: 24.0,
                                       fontWeight: FontWeight.w700,
                                       letterSpacing: -0.20,
-                                      color: Colors.white),
+                                      color: Colors.black),
                                 )),
                           ],
                         ),
@@ -62,7 +58,7 @@ class _RegisterState extends State<Register> {
                                 style: TextStyle(
                                     fontSize: 24.0,
                                     fontWeight: FontWeight.w700,
-                                    color: Colors.white,
+                                    color: Colors.black,
                                     letterSpacing: 0.38),
                               ),
                             ),
@@ -79,11 +75,11 @@ class _RegisterState extends State<Register> {
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 30),
                         child: Container(
-                          decoration: ShapeDecoration(
-                              color: Colors.white,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10),
-                              )),
+                          decoration: BoxDecoration(
+                            color: Colors.grey.shade100,
+                              border: Border.all(color: const Color.fromRGBO(8, 173, 173, 1),
+                              ),
+                              borderRadius: BorderRadius.circular(10.0)),
                           width: 350.0,
                           height: 56.0,
                           child: TextFormField(
@@ -111,11 +107,11 @@ class _RegisterState extends State<Register> {
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 30),
                         child: Container(
-                          decoration: ShapeDecoration(
-                              color: Colors.white,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10),
-                              )),
+                          decoration: BoxDecoration(
+                            color: Colors.grey.shade100,
+                              border: Border.all(color: const Color.fromRGBO(8, 173, 173, 1),
+                              ),
+                              borderRadius: BorderRadius.circular(10.0)),
                           width: 350.0,
                           height: 56.0,
                           child: TextFormField(
@@ -143,11 +139,11 @@ class _RegisterState extends State<Register> {
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 30),
                         child: Container(
-                          decoration: ShapeDecoration(
-                              color: Colors.white,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10),
-                              )),
+                          decoration: BoxDecoration(
+                            color: Colors.grey.shade100,
+                              border: Border.all(color: const Color.fromRGBO(8, 173, 173, 1),
+                              ),
+                              borderRadius: BorderRadius.circular(10.0)),
                           width: 350.0,
                           height: 56.0,
                           child: TextFormField(
@@ -180,7 +176,7 @@ class _RegisterState extends State<Register> {
                     padding: const EdgeInsets.symmetric(horizontal: 30),
                     child: Container(
                         decoration: ShapeDecoration(
-                            color: Colors.white,
+                            color: const Color.fromRGBO(8, 173, 173, 1),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10),
                             )),
@@ -190,12 +186,12 @@ class _RegisterState extends State<Register> {
                           onPressed: () {
                             Navigator.pushNamed(context, CountryResidence.id);
                           },
-                          splashColor: Colors.white,
+                          splashColor: const Color.fromRGBO(8, 173, 173, 1),
                           child: const Text(
                             'Sign Up',
                             textAlign: TextAlign.center,
                             style: TextStyle(
-                              color: Color.fromRGBO(8, 173, 173, 1),
+                              color: Colors.white,
                               fontSize: 16,
                               fontWeight: FontWeight.w700,
                               letterSpacing: 0.30,
@@ -213,13 +209,13 @@ class _RegisterState extends State<Register> {
                           thickness: 1.5,
                           endIndent: 30,
                           indent: 30,
-                          color: Colors.white,
+                          color: Colors.black,
                         ),
                         Text(
                           'OR',
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                            color: Color(0xFFB6B6B6),
+                            color: Colors.black,
                             fontSize: 16,
                             fontWeight: FontWeight.w400,
                             letterSpacing: 0.30,
@@ -229,7 +225,7 @@ class _RegisterState extends State<Register> {
                           thickness: 1.5,
                           endIndent: 30,
                           indent: 30,
-                          color: Colors.white,
+                          color: Colors.black45,
                         ),
                       ],
                     ),
@@ -248,7 +244,8 @@ class _RegisterState extends State<Register> {
                                 height: 60.0,
                                 padding: const EdgeInsets.all(15),
                                 decoration: BoxDecoration(
-                                    border: Border.all(color: Colors.white),
+                                    border: Border.all(color: const Color.fromRGBO(8, 173, 173, 1),
+                                    ),
                                     borderRadius: BorderRadius.circular(10.0)),
                                 child: Center(
                                     child: Image.asset(
@@ -259,7 +256,8 @@ class _RegisterState extends State<Register> {
                                 height: 60.0,
                                 padding: const EdgeInsets.all(15),
                                 decoration: BoxDecoration(
-                                    border: Border.all(color: Colors.white),
+                                    border: Border.all(color: const Color.fromRGBO(8, 173, 173, 1),
+                                    ),
                                     borderRadius: BorderRadius.circular(10.0)),
                                 child: Center(
                                     child: Image.asset(
@@ -271,7 +269,7 @@ class _RegisterState extends State<Register> {
                       ],
                     ),
                   ),
-                  const Gap(100),
+                  const Gap(150),
                   SizedBox(
                     child: Column(
                       children: [
@@ -280,7 +278,7 @@ class _RegisterState extends State<Register> {
                             text: TextSpan(
                                 text: "Already have an account?  ",
                                 style: const TextStyle(
-                                  color: Colors.white,
+                                  color: Colors.black,
                                   fontSize: 16,
                                   fontWeight: FontWeight.w400,
                                   letterSpacing: 0.30,
@@ -289,7 +287,7 @@ class _RegisterState extends State<Register> {
                                   TextSpan(
                                     text: "Sign In",
                                     style: const TextStyle(
-                                      color: Colors.white,
+                                      color: Color.fromRGBO(8, 173, 173, 1),
                                       fontSize: 16,
                                       fontWeight: FontWeight.w700,
                                       letterSpacing: 0.30,

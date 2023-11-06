@@ -22,14 +22,12 @@ class _ReasonsState extends State<Reasons> {
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         decoration: const BoxDecoration(
-            image: DecorationImage(
-          image: AssetImage('assets/bg.png'),
-          fit: BoxFit.fill,
-        )),
+          color: Color.fromRGBO(8, 173, 173, 1),
+        ),
         child: SingleChildScrollView(
           child: Column(
             children: [
-              const Gap(45),
+              const Gap(55),
               Row(
                 children: [
                   const Gap(15),
@@ -112,19 +110,15 @@ class _ReasonsState extends State<Reasons> {
                 ),
               ),
               const Gap(30),
-              SizedBox(
-                height: 450,
-                width: 400,
-                child: GridView.count(
-                  padding: const EdgeInsets.all(20),
-                  crossAxisCount: 2,
-                  crossAxisSpacing: 20,
-                  mainAxisSpacing: 20,
-                  childAspectRatio: 1.5,
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Container(
-                      width: 30,
-                      height: 10,
+                      width: 180,
+                      height: 120,
                       decoration: BoxDecoration(
                           border: Border.all(color: Colors.white),
                           borderRadius: BorderRadius.circular(10)),
@@ -136,8 +130,7 @@ class _ReasonsState extends State<Reasons> {
                               Padding(
                                 padding:
                                     const EdgeInsets.symmetric(horizontal: 20),
-                                child: FittedBox(
-                                  fit: BoxFit.contain,
+                                child: SizedBox(
                                   child: Image.asset(
                                       'assets/tabler-chart-pie.png'),
                                 ),
@@ -180,6 +173,8 @@ class _ReasonsState extends State<Reasons> {
                       ),
                     ),
                     Container(
+                      width: 180,
+                      height: 120,
                       decoration: BoxDecoration(
                           border: Border.all(color: Colors.white),
                           borderRadius: BorderRadius.circular(10)),
@@ -191,8 +186,7 @@ class _ReasonsState extends State<Reasons> {
                               Padding(
                                 padding:
                                     const EdgeInsets.symmetric(horizontal: 20),
-                                child: FittedBox(
-                                  fit: BoxFit.contain,
+                                child: SizedBox(
                                   child: Image.asset('assets/tabler-bolt.png'),
                                 ),
                               ),
@@ -233,7 +227,18 @@ class _ReasonsState extends State<Reasons> {
                         ],
                       ),
                     ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
                     Container(
+                      width: 180,
+                      height: 120,
                       decoration: BoxDecoration(
                           border: Border.all(color: Colors.white),
                           borderRadius: BorderRadius.circular(10)),
@@ -245,8 +250,7 @@ class _ReasonsState extends State<Reasons> {
                               Padding(
                                 padding:
                                     const EdgeInsets.symmetric(horizontal: 20),
-                                child: FittedBox(
-                                  fit: BoxFit.contain,
+                                child: SizedBox(
                                   child: Image.asset('assets/tabler-users.png'),
                                 ),
                               ),
@@ -288,6 +292,8 @@ class _ReasonsState extends State<Reasons> {
                       ),
                     ),
                     Container(
+                      width: 180,
+                      height: 120,
                       decoration: BoxDecoration(
                           border: Border.all(color: Colors.white),
                           borderRadius: BorderRadius.circular(10)),
@@ -299,8 +305,7 @@ class _ReasonsState extends State<Reasons> {
                               Padding(
                                 padding:
                                     const EdgeInsets.symmetric(horizontal: 20),
-                                child: FittedBox(
-                                  fit: BoxFit.contain,
+                                child: SizedBox(
                                   child: Image.asset(
                                       'assets/tabler-credit-card.png'),
                                 ),
@@ -342,7 +347,18 @@ class _ReasonsState extends State<Reasons> {
                         ],
                       ),
                     ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
                     Container(
+                      width: 180,
+                      height: 120,
                       decoration: BoxDecoration(
                           border: Border.all(color: Colors.white),
                           borderRadius: BorderRadius.circular(10)),
@@ -354,8 +370,7 @@ class _ReasonsState extends State<Reasons> {
                               Padding(
                                 padding:
                                     const EdgeInsets.symmetric(horizontal: 20),
-                                child: FittedBox(
-                                  fit: BoxFit.contain,
+                                child: SizedBox(
                                   child: Image.asset('assets/tabler-beach.png'),
                                 ),
                               ),
@@ -397,6 +412,8 @@ class _ReasonsState extends State<Reasons> {
                       ),
                     ),
                     Container(
+                      width: 180,
+                      height: 120,
                       decoration: BoxDecoration(
                           border: Border.all(color: Colors.white),
                           borderRadius: BorderRadius.circular(10)),
@@ -408,8 +425,7 @@ class _ReasonsState extends State<Reasons> {
                               Padding(
                                 padding:
                                     const EdgeInsets.symmetric(horizontal: 20),
-                                child: FittedBox(
-                                  fit: BoxFit.contain,
+                                child: SizedBox(
                                   child: Image.asset(
                                       'assets/tabler-businessplan.png'),
                                 ),
@@ -454,7 +470,7 @@ class _ReasonsState extends State<Reasons> {
                   ],
                 ),
               ),
-              const Gap(30),
+              const Gap(50),
               SizedBox(
                 width: MediaQuery.of(context).size.width,
                 child: Center(
