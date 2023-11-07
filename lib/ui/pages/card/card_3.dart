@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:gap/gap.dart';
 import 'package:awesome_card/awesome_card.dart';
-import 'dart:math' as math;
 
 import '../navigator/bottom_navigator_bar.dart';
 
@@ -15,7 +13,7 @@ class AddCard3 extends StatefulWidget {
 }
 
 class _AddCard3State extends State<AddCard3> {
-  String cardNumber = '';
+  String cardNumber = '8746 5324 1568 7908';
   String cardHolderName = '';
   String expiryDate = '';
   String cvv = '';
@@ -23,10 +21,6 @@ class _AddCard3State extends State<AddCard3> {
   int customColorValue = const Color.fromRGBO(0, 0, 0, 0.54).value;
 
   late FocusNode _focusNode;
-  TextEditingController cardNumberCtrllr = TextEditingController();
-  TextEditingController expiryFieldCtrllr = TextEditingController();
-  TextEditingController cardNameCtrllr = TextEditingController();
-  TextEditingController cvvCtrllr = TextEditingController();
 
   @override
   void initState() {
@@ -57,13 +51,13 @@ class _AddCard3State extends State<AddCard3> {
                 Container(
                   width: MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.height * 0.50,
-                  color: const Color.fromRGBO(29, 39, 52, 1),
+                  color: const Color.fromRGBO(245, 246, 250, 1),
                 ),
                 Container(
                   width: MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.height * 0.70,
                   decoration: const BoxDecoration(
-                    color: Color.fromRGBO(8, 173, 173, 1),
+                    color: Colors.white,
                   ),
                 )
               ],
@@ -74,11 +68,11 @@ class _AddCard3State extends State<AddCard3> {
               SliverAppBar(
                 automaticallyImplyLeading: false,
                 expandedHeight: 120.0,
-                backgroundColor: const Color.fromRGBO(8, 173, 173, 1),
+                backgroundColor: Colors.white,
                 bottom: PreferredSize(
                   preferredSize: const Size.fromHeight(50.0),
                   child: AppBar(
-                    backgroundColor: const Color.fromRGBO(8, 173, 173, 1),
+                    backgroundColor: Colors.white,
                     toolbarHeight: 100,
                     leadingWidth: 100,
                     leading: Row(
@@ -93,7 +87,9 @@ class _AddCard3State extends State<AddCard3> {
                               width: 40.0,
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10),
-                                  border: Border.all(color: Colors.white)),
+                                  border: Border.all(
+                                      color: const Color.fromRGBO(
+                                          8, 173, 173, 1))),
                               child: FittedBox(
                                 child: ClipRRect(
                                     borderRadius: BorderRadius.circular(40.0),
@@ -101,7 +97,8 @@ class _AddCard3State extends State<AddCard3> {
                                       padding: EdgeInsets.all(10.0),
                                       child: Icon(
                                           Icons.arrow_back_ios_new_sharp,
-                                          color: Colors.white),
+                                          color:
+                                              Color.fromRGBO(8, 173, 173, 1)),
                                     )),
                               )),
                         )
@@ -111,7 +108,7 @@ class _AddCard3State extends State<AddCard3> {
                         style: TextStyle(
                             fontSize: 20.0,
                             fontWeight: FontWeight.w700,
-                            color: Colors.white,
+                            color: Color.fromRGBO(8, 173, 173, 1),
                             letterSpacing: 0.3)),
                     centerTitle: true,
                   ),
@@ -124,16 +121,16 @@ class _AddCard3State extends State<AddCard3> {
                     const Gap(30),
                     CreditCard(
                       cardNumber: cardNumber,
-                      cardExpiry: expiryDate,
-                      cardHolderName: cardHolderName,
-                      cvv: cvv,
+                      cardExpiry: '11/26',
+                      cardHolderName: 'Adwoa Kumi',
+                      cvv: '453',
                       bankName: 'Paysenta',
                       showBackSide: showBack,
                       frontBackground: CardBackgrounds.custom(customColorValue),
                       backBackground: CardBackgrounds.white,
                       //showShadow: true,
                       cardType: CardType.visa,
-                      // mask: getCardTypeMask(cardType: CardType.americanExpress),
+                      mask: getCardTypeMask(cardType: CardType.visa),
                     ),
                   ],
                 ),
@@ -143,183 +140,41 @@ class _AddCard3State extends State<AddCard3> {
                     const Row(
                       children: [
                         Gap(30),
-                        Text('Card Detail',
+                        Text('Card Limit',
                             style: TextStyle(
                                 fontSize: 18.0,
                                 fontWeight: FontWeight.w700,
-                                color: Colors.white,
+                                color: Colors.black,
                                 letterSpacing: 0.3)),
                       ],
                     ),
                     const Gap(20),
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      padding: const EdgeInsets.all(8.0),
                       child: Container(
-                        width: MediaQuery.of(context).size.width,
-                        height: 60,
+                        width: 360,
+                        height: 50,
                         decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            color: Colors.white),
-                        child: Column(
-                          children: [
-                            const Gap(5),
-                            TextFormField(
-                              controller: cardNumberCtrllr,
-                              keyboardType: TextInputType.number,
-                              maxLength: 16,
-                              textInputAction: TextInputAction.next,
-                              maxLengthEnforcement:
-                                  MaxLengthEnforcement.enforced,
-                              decoration: const InputDecoration(
-                                hintText: 'Card Number',
-                                counterText: "",
-                                border: InputBorder.none,
-                                contentPadding: EdgeInsets.all(10.0),
-                              ),
-                              onChanged: (value) {
-                                final newCardNumber = value.trim();
-                                var newStr = '';
-                                const step = 4;
-
-                                for (var i = 0;
-                                    i < newCardNumber.length;
-                                    i += step) {
-                                  newStr += newCardNumber.substring(i,
-                                      math.min(i + step, newCardNumber.length));
-                                  if (i + step < newCardNumber.length) {
-                                    newStr += ' ';
-                                  }
-                                }
-
-                                setState(() {
-                                  cardNumber = newStr;
-                                });
-                              },
-                            ),
-                          ],
+                          borderRadius: BorderRadius.circular(15),
+                          border: Border.all(
+                            color: const Color.fromRGBO(8, 173, 173, 1),
+                          ),
+                        ),
+                        child: const Center(
+                          child: Text('GHS 4000.00',
+                              style: TextStyle(
+                                  fontSize: 16.0,
+                                  fontWeight: FontWeight.w700,
+                                  color: Colors.black,
+                                  letterSpacing: 0.3)),
                         ),
                       ),
                     ),
-                    const Gap(20),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20),
-                      child: Row(
-                        children: [
-                          Container(
-                            width: MediaQuery.of(context).size.width * 0.425,
-                            height: 60,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(20),
-                                color: Colors.white),
-                            child: Column(
-                              children: [
-                                const Gap(5),
-                                TextFormField(
-                                  controller: expiryFieldCtrllr,
-                                  textInputAction: TextInputAction.next,
-                                  maxLengthEnforcement:
-                                      MaxLengthEnforcement.enforced,
-                                  decoration: const InputDecoration(
-                                    hintText: 'Card Expiry',
-                                    counterText: '',
-                                    border: InputBorder.none,
-                                    contentPadding: EdgeInsets.all(10.0),
-                                  ),
-                                  maxLength: 5,
-                                  onChanged: (value) {
-                                    var newDateValue = value.trim();
-                                    final isPressingBackspace =
-                                        expiryDate.length > newDateValue.length;
-                                    final containsSlash =
-                                        newDateValue.contains('/');
-
-                                    if (newDateValue.length >= 2 &&
-                                        !containsSlash &&
-                                        !isPressingBackspace) {
-                                      newDateValue =
-                                          '${newDateValue.substring(0, 2)}/${newDateValue.substring(2)}';
-                                    }
-                                    setState(() {
-                                      expiryFieldCtrllr.text = newDateValue;
-                                      expiryFieldCtrllr.selection =
-                                          TextSelection.fromPosition(
-                                              TextPosition(
-                                                  offset: newDateValue.length));
-                                      expiryDate = newDateValue;
-                                    });
-                                  },
-                                ),
-                              ],
-                            ),
-                          ),
-                          const Gap(20),
-                          Container(
-                            width: MediaQuery.of(context).size.width * 0.425,
-                            height: 60,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(20),
-                                color: Colors.white),
-                            child: Column(
-                              children: [
-                                const Gap(5),
-                                TextFormField(
-                                  textInputAction: TextInputAction.next,
-                                  keyboardType: TextInputType.number,
-                                  controller: cvvCtrllr,
-                                  maxLengthEnforcement:
-                                      MaxLengthEnforcement.enforced,
-                                  decoration: const InputDecoration(
-                                      hintText: 'CVV',
-                                      counterText: "",
-                                      border: InputBorder.none,
-                                      contentPadding: EdgeInsets.all(10.0)),
-                                  maxLength: 3,
-                                  onChanged: (value) {
-                                    setState(() {
-                                      cvv = value;
-                                    });
-                                  },
-                                  focusNode: _focusNode,
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    const Gap(20),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20),
-                      child: Container(
-                        width: MediaQuery.of(context).size.width,
-                        height: 60,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            color: Colors.white),
-                        child: Column(
-                          children: [
-                            const Gap(5),
-                            TextFormField(
-                              textInputAction: TextInputAction.done,
-                              decoration: const InputDecoration(
-                                  hintText: 'Card Holder Name',
-                                  border: InputBorder.none,
-                                  contentPadding: EdgeInsets.all(10.0)),
-                              onChanged: (value) {
-                                setState(() {
-                                  cardHolderName = value;
-                                });
-                              },
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    const Gap(20),
+                    const Gap(150),
                     Center(
                         child: Container(
                             decoration: ShapeDecoration(
-                                color: Colors.white,
+                                color: const Color.fromRGBO(8, 173, 173, 1),
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(20),
                                 )),
@@ -330,12 +185,12 @@ class _AddCard3State extends State<AddCard3> {
                                 Navigator.pushNamed(
                                     context, MainPageNavigator.id);
                               },
-                              splashColor: Colors.white,
+                              splashColor: const Color.fromRGBO(8, 173, 173, 1),
                               child: const Text(
                                 'Save',
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
-                                  color: Color.fromRGBO(8, 173, 173, 1),
+                                  color: Colors.white,
                                   fontSize: 16,
                                   fontWeight: FontWeight.w700,
                                   letterSpacing: 0.30,

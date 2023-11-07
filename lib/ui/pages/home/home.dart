@@ -158,7 +158,7 @@ class _HomeState extends State<Home> {
               children: [
                 Container(
                   width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height * 0.65,
+                  height: MediaQuery.of(context).size.height * 0.60,
                   color: const Color.fromRGBO(245, 246, 250, 1),
                 ),
                 Container(
@@ -178,7 +178,7 @@ class _HomeState extends State<Home> {
                 //expandedHeight: 70.0,
                 backgroundColor: Colors.white,
                 bottom: PreferredSize(
-                  preferredSize: const Size.fromHeight(70.0),
+                  preferredSize: const Size.fromHeight(40.0),
                   child: AppBar(
                     backgroundColor: Colors.white,
                     toolbarHeight: 90,
@@ -335,55 +335,57 @@ class _HomeState extends State<Home> {
                         )
                       ],
                     ),
-                    const Gap(60),
+                    const Gap(50),
                     SizedBox(
                       width: MediaQuery.of(context).size.width,
-                      child: Row(
-                        children: [
-                          const Gap(25),
-                          const Text('Today, Dec 29',
-                              style: TextStyle(
-                                  fontSize: 14.0,
-                                  fontWeight: FontWeight.w700,
-                                  color: Colors.black,
-                                  letterSpacing: 0.3)),
-                          const Gap(145),
-                          SizedBox(
-                            child: Row(
-                              children: [
-                                GestureDetector(
-                                  onTap: () {
-                                    Navigator.pushNamed(
-                                        context, TransactionsPage.id);
-                                  },
-                                  child: const Text('All transactions',
-                                      style: TextStyle(
-                                          fontSize: 14.0,
-                                          fontWeight: FontWeight.w500,
-                                          color: Colors.black,
-                                          letterSpacing: 0.3)),
-                                ),
-                                const Gap(10),
-                                GestureDetector(
-                                  onTap: () {
-                                    Navigator.pushNamed(
-                                        context, TransactionsPage.id);
-                                  },
-                                  child: const Icon(
-                                    Icons.arrow_forward_ios,
-                                    size: 14,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 30),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            const Text('Today, Dec 29',
+                                style: TextStyle(
+                                    fontSize: 14.0,
+                                    fontWeight: FontWeight.w700,
                                     color: Colors.black,
+                                    letterSpacing: 0.3)),
+                            SizedBox(
+                              child: Row(
+                                children: [
+                                  GestureDetector(
+                                    onTap: () {
+                                      Navigator.pushNamed(
+                                          context, TransactionsPage.id);
+                                    },
+                                    child: const Text('All transactions',
+                                        style: TextStyle(
+                                            fontSize: 14.0,
+                                            fontWeight: FontWeight.w500,
+                                            color: Colors.black,
+                                            letterSpacing: 0.3)),
                                   ),
-                                )
-                              ],
-                            ),
-                          )
-                        ],
+                                  const Gap(10),
+                                  GestureDetector(
+                                    onTap: () {
+                                      Navigator.pushNamed(
+                                          context, TransactionsPage.id);
+                                    },
+                                    child: const Icon(
+                                      Icons.arrow_forward_ios,
+                                      size: 14,
+                                      color: Colors.black,
+                                    ),
+                                  )
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
                       ),
                     ),
 
                     //Transactions
-                    const Gap(30),
+                    const Gap(20),
                     SingleChildScrollView(
                       physics: const AlwaysScrollableScrollPhysics(),
                       child: SizedBox(
