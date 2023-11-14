@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 
 import 'onboarding.dart';
 
@@ -30,14 +31,28 @@ class _SplashState extends State<Splash> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.teal.shade50,
-      body: Padding(
-        padding: const EdgeInsets.all(40.0),
-        child: Center(
-          child: Image.asset(
-            "assets/images/logo.webp",
+      backgroundColor: const Color.fromRGBO(8, 173, 173, 1),
+      body: Column(
+        children: [
+          const Gap(100),
+          Padding(
+            padding: const EdgeInsets.all(40.0),
+            child: Center(
+              child: Image.asset(
+                "assets/images/logo.png",
+              ),
+            ),
           ),
-        ),
+          const Gap(20),
+          Padding(
+            padding: const EdgeInsets.all(40.0),
+            child: Center(
+              child: Image.asset(
+                "assets/images/logopay.png",
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

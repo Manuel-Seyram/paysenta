@@ -29,8 +29,7 @@ class _TopUpState extends State<TopUp> {
       body: Container(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
-        decoration: const BoxDecoration(
-            color: Colors.white),
+        decoration: const BoxDecoration(color: Colors.white),
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -47,15 +46,17 @@ class _TopUpState extends State<TopUp> {
                         width: 40.0,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
-                            border: Border.all(color: const Color.fromRGBO(8, 173, 173, 1),
+                            border: Border.all(
+                              color: const Color.fromRGBO(8, 173, 173, 1),
                             )),
                         child: FittedBox(
                           child: ClipRRect(
                               borderRadius: BorderRadius.circular(40.0),
                               child: const Padding(
                                 padding: EdgeInsets.all(10.0),
-                                child: Icon(Icons.arrow_back_ios_new_sharp,
-                                    color:  Color.fromRGBO(8, 173, 173, 1),
+                                child: Icon(
+                                  Icons.arrow_back_ios_new_sharp,
+                                  color: Color.fromRGBO(8, 173, 173, 1),
                                 ),
                               )),
                         )),
@@ -65,7 +66,7 @@ class _TopUpState extends State<TopUp> {
                       style: TextStyle(
                           fontSize: 20.0,
                           fontWeight: FontWeight.w700,
-                          color:  Color.fromRGBO(8, 173, 173, 1),
+                          color: Color.fromRGBO(8, 173, 173, 1),
                           letterSpacing: 0.3))
                 ],
               ),
@@ -78,8 +79,8 @@ class _TopUpState extends State<TopUp> {
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
                       border: Border.all(
-                            color: const Color.fromRGBO(8, 173, 173, 1),
-                          ),
+                        color: const Color.fromRGBO(8, 173, 173, 1),
+                      ),
                       color: Colors.white),
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 12),
@@ -258,7 +259,7 @@ class _TopUpState extends State<TopUp> {
                   width: 350,
                   height: 80,
                   decoration: BoxDecoration(
-                    border: Border.all(
+                      border: Border.all(
                         color: const Color.fromRGBO(8, 173, 173, 1),
                       ),
                       borderRadius: BorderRadius.circular(20),
@@ -268,10 +269,10 @@ class _TopUpState extends State<TopUp> {
                     child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Container(
+                          SizedBox(
                             height: 40,
                             width: 40,
-                            color: Colors.blue,
+                            child: Image.asset('assets/images/bank.png'),
                           ),
                           DropdownButtonHideUnderline(
                             child: DropdownButton2<String>(

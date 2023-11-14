@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import '../../utils/countries.dart';
 import '../navigator/bottom_navigator_bar.dart';
+import '../profile/widgets/password recovery/password_recovery.dart';
 import 'register.dart';
 
 class Login extends StatefulWidget {
@@ -74,8 +75,9 @@ class _LoginState extends State<Login> {
                         padding: const EdgeInsets.symmetric(horizontal: 30),
                         child: Container(
                           decoration: BoxDecoration(
-                            color: Colors.grey.shade100,
-                              border: Border.all(color: const Color.fromRGBO(8, 173, 173, 1),
+                              color: Colors.grey.shade100,
+                              border: Border.all(
+                                color: const Color.fromRGBO(8, 173, 173, 1),
                               ),
                               borderRadius: BorderRadius.circular(10.0)),
                           width: 350.0,
@@ -106,8 +108,9 @@ class _LoginState extends State<Login> {
                         padding: const EdgeInsets.symmetric(horizontal: 30),
                         child: Container(
                           decoration: BoxDecoration(
-                            color: Colors.grey.shade100,
-                              border: Border.all(color: const Color.fromRGBO(8, 173, 173, 1),
+                              color: Colors.grey.shade100,
+                              border: Border.all(
+                                color: const Color.fromRGBO(8, 173, 173, 1),
                               ),
                               borderRadius: BorderRadius.circular(10.0)),
                           width: 350.0,
@@ -144,12 +147,15 @@ class _LoginState extends State<Login> {
                         const Gap(30),
                         FittedBox(
                           child: GestureDetector(
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.pushNamed(context, PasswordRecovery.id);
+                            },
                             child: const Text(
                               'Forgot Password?',
                               style: TextStyle(
                                   fontSize: 16.0,
                                   fontWeight: FontWeight.w700,
+                                  decoration: TextDecoration.underline,
                                   color: Colors.black,
                                   letterSpacing: 0.38),
                             ),
@@ -232,7 +238,9 @@ class _LoginState extends State<Login> {
                                 height: 60.0,
                                 padding: const EdgeInsets.all(15),
                                 decoration: BoxDecoration(
-                                    border: Border.all(color: const Color.fromRGBO(8, 173, 173, 1),
+                                    border: Border.all(
+                                      color:
+                                          const Color.fromRGBO(8, 173, 173, 1),
                                     ),
                                     borderRadius: BorderRadius.circular(10.0)),
                                 child: Center(
@@ -244,12 +252,17 @@ class _LoginState extends State<Login> {
                                 height: 60.0,
                                 padding: const EdgeInsets.all(15),
                                 decoration: BoxDecoration(
-                                    border: Border.all(color: const Color.fromRGBO(8, 173, 173, 1),
+                                    border: Border.all(
+                                      color:
+                                          const Color.fromRGBO(8, 173, 173, 1),
                                     ),
                                     borderRadius: BorderRadius.circular(10.0)),
                                 child: Center(
                                     child: Image.asset(
-                                        'assets/images/illustrations/apple.png', height: 60, width: 60,)),
+                                  'assets/images/illustrations/apple.png',
+                                  height: 60,
+                                  width: 60,
+                                )),
                               )
                             ],
                           ),
@@ -275,7 +288,7 @@ class _LoginState extends State<Login> {
                                   TextSpan(
                                     text: "Sign Up",
                                     style: const TextStyle(
-                                      color:  Color.fromRGBO(8, 173, 173, 1),
+                                      color: Color.fromRGBO(8, 173, 173, 1),
                                       fontSize: 16,
                                       fontWeight: FontWeight.w700,
                                       letterSpacing: 0.30,

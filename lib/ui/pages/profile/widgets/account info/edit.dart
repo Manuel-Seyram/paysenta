@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:paysenta/ui/pages/navigator/bottom_navigator_bar.dart';
+
+import 'account_info.dart';
 
 class EditProfile extends StatefulWidget {
   const EditProfile({super.key});
@@ -285,7 +286,7 @@ class _EditProfileState extends State<EditProfile> {
                       height: 56.0,
                       child: MaterialButton(
                         onPressed: () {
-                          Navigator.pushNamed(context, MainPageNavigator.id);
+                          Navigator.pushNamed(context, AccountInfo.id);
                         },
                         splashColor: const Color.fromRGBO(8, 173, 173, 1),
                         child: const Text(

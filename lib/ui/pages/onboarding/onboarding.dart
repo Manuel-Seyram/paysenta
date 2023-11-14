@@ -18,6 +18,7 @@ class Onboarding extends StatefulWidget {
 class _OnboardingState extends State<Onboarding> {
   int _currentPage = 0;
   final PageController _pageController = PageController(initialPage: 0);
+  int _clickCount = 0; // Variable to keep track of button clicks
 
   @override
   void dispose() {
@@ -82,7 +83,7 @@ class _OnboardingState extends State<Onboarding> {
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
           decoration: const BoxDecoration(
-              color: Color.fromRGBO(8, 173, 173, 1),
+            color: Color.fromRGBO(8, 173, 173, 1),
           ),
           child: Column(
             children: [
@@ -132,7 +133,14 @@ class _OnboardingState extends State<Onboarding> {
                       width: 350.0,
                       height: 56.0,
                       child: MaterialButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          _pageController.jumpToPage(_currentPage + 1);
+                          _clickCount++; // Increment the click count
+                          if (_clickCount == 2) {
+                            // Check if button has been clicked twice
+                            Navigator.pushNamed(context, Login.id);
+                          }
+                        },
                         splashColor: Colors.white,
                         child: const Text(
                           'Get started',

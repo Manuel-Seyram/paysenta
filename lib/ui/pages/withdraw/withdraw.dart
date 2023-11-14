@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
+import '../navigator/bottom_navigator_bar.dart';
+
 class Withdraw extends StatelessWidget {
   const Withdraw({super.key});
   static String id = "Withdraw";
@@ -86,6 +88,7 @@ class Withdraw extends StatelessWidget {
                         child: TextField(
                           keyboardType: TextInputType.number,
                           cursorColor: Colors.black,
+                          maxLines: 1,
                           autofocus: true,
                           decoration: InputDecoration(
                             prefix: Text(
@@ -93,7 +96,7 @@ class Withdraw extends StatelessWidget {
                               style: TextStyle(
                                   fontSize: 40.0,
                                   fontWeight: FontWeight.w700,
-                                  color: Colors.white,
+                                  color: Colors.black,
                                   letterSpacing: -0.2),
                             ),
                             enabledBorder: InputBorder.none,
@@ -102,7 +105,8 @@ class Withdraw extends StatelessWidget {
                           style: TextStyle(
                               fontSize: 40.0,
                               fontWeight: FontWeight.w700,
-                              color: Colors.white,
+                              color: Colors.black,
+                              overflow: TextOverflow.ellipsis,
                               letterSpacing: -0.2),
                         ),
                       ),
@@ -293,7 +297,9 @@ void _bottomsheet(BuildContext context) {
               width: 350.0,
               height: 56.0,
               child: MaterialButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, MainPageNavigator.id);
+                },
                 splashColor: Colors.white,
                 child: const Text(
                   'Confirm',

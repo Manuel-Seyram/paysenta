@@ -160,13 +160,25 @@ class _AddCard1State extends State<AddCard1> {
                             color: const Color.fromRGBO(8, 173, 173, 1),
                           ),
                         ),
-                        child: const Center(
-                          child: Text('GHS 4000.00',
-                              style: TextStyle(
-                                  fontSize: 16.0,
-                                  fontWeight: FontWeight.w700,
-                                  color: Colors.black,
-                                  letterSpacing: 0.3)),
+                        child: const Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 120),
+                          child: TextField(
+                            keyboardType: TextInputType.number,
+                            cursorColor: Colors.black,
+                            maxLines: 1,
+                            autofocus: false,
+                            decoration: InputDecoration(
+                                prefixText: 'GHS ',
+                                enabledBorder: InputBorder.none,
+                                focusedBorder: InputBorder.none,
+                                hintText: 'Enter limit'),
+                            style: TextStyle(
+                                fontSize: 16.0,
+                                fontWeight: FontWeight.w700,
+                                color: Colors.black54,
+                                overflow: TextOverflow.ellipsis,
+                                letterSpacing: -0.2),
+                          ),
                         ),
                       ),
                     ),

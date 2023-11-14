@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:paysenta/ui/pages/navigator/bottom_navigator_bar.dart';
+
+import '../../../authentication/login.dart';
 
 class CreateNewPassword extends StatefulWidget {
   const CreateNewPassword({super.key});
@@ -167,7 +168,7 @@ class _CreateNewPasswordState extends State<CreateNewPassword> {
                         onPressed: () {
                           Navigator.pushNamed(
                             context,
-                            MainPageNavigator.id,
+                            Login.id,
                           );
                         },
                         splashColor: const Color.fromRGBO(8, 173, 173, 1),

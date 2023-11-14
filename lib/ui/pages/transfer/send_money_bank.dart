@@ -116,10 +116,10 @@ class _SendMoneyBankState extends State<SendMoneyBank> {
                     child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Container(
+                          SizedBox(
                             height: 40,
                             width: 40,
-                            color: Colors.blue,
+                            child: Image.asset('assets/images/bank.png'),
                           ),
                           DropdownButtonHideUnderline(
                             child: DropdownButton2<String>(
